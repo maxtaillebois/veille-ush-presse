@@ -576,6 +576,12 @@ def build_content(output_path, semaine, articles):
         meta_line = date_fr
         if auteur:
             meta_line += f" — {auteur}"
+        chaine = art.get('chaine', '')
+        emission = art.get('emission', '')
+        if chaine:
+            meta_line += f" — {chaine}"
+        if emission:
+            meta_line += f" — {emission}"
         story.append(Paragraph(meta_line, styles['ArticleMeta']))
 
         art_line = Table([['']], colWidths=[W - 40*mm])
@@ -601,7 +607,14 @@ def build_content(output_path, semaine, articles):
 
         if url_source:
             story.append(Spacer(1, 3*mm))
-            source_text = f'<a href="{url_source}" color="#97C33D">Lire l\'article source →</a>'
+            type_contenu = art.get('type_contenu', 'article')
+            if type_contenu == 'audio':
+                link_label = "Écouter l'émission →"
+            elif type_contenu == 'video':
+                link_label = "Voir la vidéo →"
+            else:
+                link_label = "Lire l'article source →"
+            source_text = f'<a href="{url_source}" color="#97C33D">{link_label}</a>'
             story.append(Paragraph(source_text, styles['ArticleSource']))
 
         if idx < len(articles) - 1:

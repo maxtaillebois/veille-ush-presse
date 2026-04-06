@@ -360,6 +360,13 @@
             background: #fef3c7;
         }
 
+        .article-actions-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
         .article-controls {
             display: flex;
             align-items: center;
@@ -496,7 +503,7 @@
             display: inline-flex;
             align-items: center;
             gap: 6px;
-            padding: 8px 14px;
+            padding: 6px 14px;
             background: var(--ush-mint);
             border: 1px solid var(--ush-pale);
             border-radius: 6px;
@@ -505,7 +512,6 @@
             color: var(--ush-dark);
             cursor: pointer;
             transition: all 0.2s;
-            margin-top: 4px;
         }
 
         .article-fulltext-toggle:hover {
@@ -1158,17 +1164,16 @@
                         '</div></div>';
                 }
 
-                let fulltextHtml = '';
+                let fulltextBtnHtml = '';
+                let fulltextBodyHtml = '';
                 if (fulltext && fulltext !== '—' && fulltext.length > 0) {
                     const formattedText = formatArticleText(fulltext, title, author);
-                    fulltextHtml = `
-                        <div class="article-section">
+                    fulltextBtnHtml = `
                             <button class="article-fulltext-toggle" onclick="toggleFulltext(this)">
-                                <span class="arrow">▶</span> Lire l'article complet
+                                <span class="arrow">▶</span> Voir l'article complet
                             </button>
-                            <div class="article-fulltext">${formattedText}</div>
-                        </div>
                     `;
+                    fulltextBodyHtml = `<div class="article-fulltext">${formattedText}</div>`;
                 }
 
                 const html = `
@@ -1192,13 +1197,16 @@
                                 <div class="article-meta-item">📅 ${date}</div>
                                 ${author ? `<div class="article-meta-item">✍️ ${author}</div>` : ''}
                             </div>
-                            ${sourceLinkHtml ? `<div class="article-section">${sourceLinkHtml}</div>` : ''}
                             <div class="article-section">
                                 <div class="article-section-label">Résumé</div>
                                 <div class="article-summary">${summary}</div>
                             </div>
                             ${keywordsHtml}
-                            ${fulltextHtml}
+                            <div class="article-section article-actions-row">
+                                ${sourceLinkHtml}
+                                ${fulltextBtnHtml}
+                            </div>
+                            ${fulltextBodyHtml}
                         </div>
                     </div>
                 `;
@@ -1244,14 +1252,15 @@
         }
 
         function toggleFulltext(btn) {
-            const container = btn.nextElementSibling;
+            // Le body est le .article-fulltext qui suit la row de boutons
+            const actionsRow = btn.closest('.article-actions-row');
+            const container = actionsRow.nextElementSibling;
             const isOpen = container.classList.contains('visible');
             container.classList.toggle('visible');
             btn.classList.toggle('open');
             btn.querySelector('.arrow').textContent = isOpen ? '▶' : '▼';
-            // Update button text
             const textNode = btn.childNodes[btn.childNodes.length - 1];
-            textNode.textContent = isOpen ? ' Lire l\'article complet' : ' Masquer l\'article';
+            textNode.textContent = isOpen ? ' Voir l\'article complet' : ' Masquer l\'article';
         }
 
         function updateSelectionUI() {

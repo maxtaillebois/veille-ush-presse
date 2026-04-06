@@ -4,15 +4,67 @@
   "articles": [
     {
       "semaine": "S14-2026",
-      "media": "www.lyonpoleimmo.com",
-      "titre": "Test - article de vérification",
+      "media": "LA NOUVELLE REPUBLIQUE DU CENTRE-OUEST",
+      "titre": "Les demandes de logement social à la hausse",
       "date_publication": "2026-04-03",
-      "auteur": "Test",
-      "resume": "Ceci est un article de test pour vérifier que le push GitHub fonctionne.",
-      "mots_cles": "test, vérification, github",
+      "auteur": "Christine Berkovicius",
+      "resume": "En Centre-Val de Loire, les demandes de logement social ont augmenté de 3 % en 2025, atteignant plus de 74 200 demandes en attente. Les attributions progressent également de 5 % avec environ 18 000 logements distribués dans un parc de 200 000 unités. Les zones les plus tendues se situent à Orléans et Bourges. L'USH Centre-Val de Loire a renouvelé sa gouvernance avec Grégoire Simon à la présidence, dans un contexte de défis majeurs incluant la production de nouveaux logements et l'adaptation au changement climatique.",
+      "mots_cles": "logement social, demande, Centre-Val de Loire",
       "texte_integral": "",
       "selectionne": "Non",
       "url_source": "",
+      "type_contenu": "article"
+    },
+    {
+      "semaine": "S14-2026",
+      "media": "www.lyonpoleimmo.com",
+      "titre": "Décès de Louis Besson, «inlassable militant du logement»",
+      "date_publication": "2026-04-03",
+      "auteur": "Sylvain d'Huissel",
+      "resume": "Louis Besson, ancien ministre socialiste et figure majeure des politiques du logement en France, est décédé. L'USH et le Mouvement HLM ont salué son engagement en faveur de l'habitat social, notamment la loi Besson à l'origine de la loi SRU. Emmanuelle Cosse, présidente de l'USH, le qualifie d'inlassable militant ayant défendu toute sa vie la pertinence du logement social. Son héritage structure encore aujourd'hui les politiques publiques françaises.",
+      "mots_cles": "Louis Besson, logement social, héritage politique",
+      "texte_integral": "",
+      "selectionne": "Non",
+      "url_source": "http://www.lyonpoleimmo.com/2026/04/02/94866/deces-de-louis-besson-inlassable-militant-du-logement/",
+      "type_contenu": "article"
+    },
+    {
+      "semaine": "S14-2026",
+      "media": "LE PARISIEN",
+      "titre": "L'angoisse des locataires à la fin de la trêve hivernale",
+      "date_publication": "2026-04-03",
+      "auteur": "Anne-Laure Abraham",
+      "resume": "À la fin de la trêve hivernale, les appels d'aide se multiplient auprès de plateformes comme Allô Prévention Expulsion. La Fondation pour le logement rapporte une augmentation alarmante des expulsions, passant de 24 500 en 2024 à 30 500 en 2025. Des locataires en situation précaire redoutent l'expulsion tandis que certains propriétaires pratiquent des abus, notamment en refusant de déclarer les revenus locatifs ou d'autoriser l'accès aux aides sociales.",
+      "mots_cles": "expulsion, locataires, trêve hivernale",
+      "texte_integral": "",
+      "selectionne": "Non",
+      "url_source": "",
+      "type_contenu": "article"
+    },
+    {
+      "semaine": "S14-2026",
+      "media": "www.mercipourlinfo.fr",
+      "titre": "Immobilier : et si vous achetiez un logement à moitié prix grâce au bail réel solidaire (BRS) ?",
+      "date_publication": "2026-04-02",
+      "auteur": "Pauline Clément",
+      "resume": "Le bail réel solidaire permet d'acheter des logements avec des réductions de 20 à 50 % en excluant le coût du terrain, propriété d'organismes de foncier solidaire. Accessible aux 87 % de Français sous certains plafonds de revenus, ce dispositif offre principalement des logements neufs dans des zones recherchées. Des contraintes existent : prix de revente plafonné et redevance mensuelle pour le terrain, mais le prêt à taux zéro reste disponible.",
+      "mots_cles": "bail réel solidaire, accession à la propriété, logement abordable",
+      "texte_integral": "",
+      "selectionne": "Non",
+      "url_source": "https://www.mercipourlinfo.fr/immobilier-logement/achat-vente/immobilier-et-si-vous-achetiez-un-logement-a-moitie-prix-grace-au-bail-reel-solidaire-brs-1150241",
+      "type_contenu": "article"
+    },
+    {
+      "semaine": "S14-2026",
+      "media": "www.lemoniteur.fr",
+      "titre": "Après les municipales, le Pôle Habitat FFB espère que le logement animera les débats de la présidentielle",
+      "date_publication": "2026-04-02",
+      "auteur": "Cyril Peter",
+      "resume": "À l'approche de la présidentielle de 2027, le Pôle Habitat FFB demande que le logement devienne une priorité centrale. La filière critique le mandat d'Emmanuel Macron, jugé sans cap clair, notamment en raison des réductions de financement public. Emmanuelle Cosse et Gil Avérous soulignent l'importance de responsabiliser les élus locaux face à la crise de l'offre de logements et d'inscrire ces enjeux au centre du débat démocratique.",
+      "mots_cles": "présidentielle 2027, logement, politique publique",
+      "texte_integral": "",
+      "selectionne": "Non",
+      "url_source": "https://www.lemoniteur.fr/immobilier/apres-les-municipales-le-pole-habitat-ffb-espere-que-le-logement-animera-les-debats-de-la-presidentielle.N3FPHN3BNZCGXKWQKMCAIF7Z5M.html",
       "type_contenu": "article"
     }
   ]

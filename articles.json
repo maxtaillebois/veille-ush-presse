@@ -162,14 +162,17 @@
       "mots_cles": [],
       "texte_integral": "Le gouvernement français prépare un plan d'électrification pour réduire la dépendance aux énergies fossiles, exacerbée par la guerre au Moyen-Orient. Le Premier ministre Sébastien Lecornu envisage d'utiliser les surplus fiscaux pour financer ce plan, qui inclut des mesures pour le transport, le logement et l'industrie. Emmanuelle Cosse, présidente de l'Union Sociale pour l'Habitat, souligne l'importance d'accélérer la transition énergétique dans le parc social. Itw de cette dernière.",
       "selectionne": false,
-      "url_source": "",
-      "type_contenu": "audiovisuel",
+      "url_source": "https://luqi.fr/luqiLatest/diffusion/budget/a2t2p000000YwvIAAS/panorama/1286662?idRm=60000000260109952",
+      "type_contenu": "audio",
       "themes_ush": [
         "Mouvement Hlm",
         "Mouvement Hlm – L’Union sociale pour l’habitat"
       ],
       "media_type": "RADIO",
-      "id_coupure": null
+      "id_coupure": null,
+      "chaine": "FRANCEINFO",
+      "emission": "LE 12 | 15",
+      "luqi_id": "60000000260109952"
     },
     {
       "semaine": "S14-2026",
@@ -231,14 +234,17 @@
       "mots_cles": [],
       "texte_integral": "Le ministre de la Ville et du Logement, Vincent Jeanbrun, propose de traiter les locataires mauvais payeurs comme des squatters pour faciliter les expulsions. Il souligne l'importance de l'électrification pour réduire la dépendance aux énergies fossiles. Un plan est en cours pour remplacer les systèmes de chauffage au gaz par des solutions électriques, notamment dans les logements sociaux. Itw de celui-ci.",
       "selectionne": false,
-      "url_source": "",
-      "type_contenu": "audiovisuel",
+      "url_source": "https://luqi.fr/luqiLatest/diffusion/budget/a2t2p000000YwvIAAS/panorama/1285453?idRm=60000000260109384",
+      "type_contenu": "video",
       "themes_ush": [
         "Politique du logement et de la ville",
         "SECTEUR IMMOBILIER"
       ],
       "media_type": "TV",
-      "id_coupure": null
+      "id_coupure": null,
+      "chaine": "RMC STORY",
+      "emission": "APOLLINE MATIN | RMC STORY",
+      "luqi_id": "60000000260109384"
     },
     {
       "semaine": "S14-2026",
@@ -275,14 +281,17 @@
       "mots_cles": [],
       "texte_integral": "En France, les expulsions locatives atteignent un niveau record avec plus de 30 000 familles concernées en 2025, sous l'effet de l'inflation et de la hausse du coût du logement. Christophe Robert, délégué général de la fondation pour le logement dénonce un recul des politiques de prévention depuis 2023. Il critique aussi Vincent Jeanbrun, Ministre du Logement, jugé insuffisamment engagé face à l'urgence sociale.",
       "selectionne": false,
-      "url_source": "",
-      "type_contenu": "audiovisuel",
+      "url_source": "https://luqi.fr/luqiLatest/diffusion/budget/a2t2p000000YwvIAAS/panorama/1285453?idRm=60000000260108143",
+      "type_contenu": "audio",
       "themes_ush": [
         "SECTEUR IMMOBILIER",
         "Acteurs du logement et partenaires"
       ],
       "media_type": "RADIO",
-      "id_coupure": null
+      "id_coupure": null,
+      "chaine": "FRANCEINFO",
+      "emission": "LE 9H30 | 12",
+      "luqi_id": "60000000260108143"
     },
     {
       "semaine": "S14-2026",

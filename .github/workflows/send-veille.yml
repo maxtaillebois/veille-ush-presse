@@ -1,0 +1,91 @@
+name: Générer PDF et envoyer la veille presse USH
+
+on:
+  push:
+    branches: [main]
+    paths: ['selection.json']
+  workflow_dispatch:
+
+jobs:
+  generate-and-send:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install reportlab pypdf
+
+      - name: Lire la sélection et mettre à jour articles.json
+        run: |
+          python3 - <<'PYEOF'
+          import json
+
+          with open('selection.json', 'r') as f:
+              selection = json.load(f)
+
+          with open('articles.json', 'r') as f:
+              data = json.load(f)
+
+          selected_titles = selection.get('selected_titles', [])
+
+          for art in data['articles']:
+              art['selectionne'] = art['titre'] in selected_titles
+
+          selected = []
+          for titre in selected_titles:
+              for art in data['articles']:
+                  if art['titre'] == titre:
+                      selected.append(art)
+                      break
+
+          non_selected = [a for a in data['articles'] if not a.get('selectionne', False)]
+          data['articles'] = selected + non_selected
+
+          with open('articles.json', 'w') as f:
+              json.dump(data, f, ensure_ascii=False, indent=2)
+
+          print(f"Articles sélectionnés : {len(selected)}")
+          for a in selected:
+              print(f"  - {a['titre']}")
+          PYEOF
+
+      - name: Générer le PDF
+        run: python generate_pdf.py
+
+      - name: Lire les destinataires depuis selection.json
+        id: dest
+        run: |
+          python3 << 'PYEOF'
+          import json, os
+          with open('selection.json') as f:
+              s = json.load(f)
+          mail_to = s.get('destinataire_email', '')
+          mail_cc = s.get('cc_emails', '').replace(';', ',').strip()
+          with open(os.environ['GITHUB_OUTPUT'], 'a') as out:
+              out.write(f'mail_to={mail_to}\n')
+              out.write(f'mail_cc={mail_cc}\n')
+          PYEOF
+
+      - name: Envoyer l'email
+        env:
+          GMAIL_USER: ${{ secrets.GMAIL_USER }}
+          GMAIL_APP_PWD: ${{ secrets.GMAIL_APP_PWD }}
+          MAIL_TO: ${{ steps.dest.outputs.mail_to || secrets.MAIL_TO }}
+          MAIL_CC: ${{ steps.dest.outputs.mail_cc || secrets.MAIL_CC }}
+        run: python send_email.py
+
+      - name: Nettoyage post-envoi
+        run: |
+          rm -f selection.json Veille_Presse_USH_*.pdf
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --cached --quiet || git commit -m "Nettoyage post-envoi veille presse"
+          git push

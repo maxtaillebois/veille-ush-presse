@@ -594,17 +594,38 @@ def build_content(output_path, semaine, articles):
         if url_source:
             type_contenu = art.get('type_contenu', 'article')
             if type_contenu == 'audio':
-                btn_label = "🎧  Écouter l'émission  →"
+                btn_label = "Écouter l'émission"
             elif type_contenu == 'video':
-                btn_label = "▶  Voir l'émission  →"
+                btn_label = "Voir l'émission"
             else:
-                btn_label = "🔗  Lire l'article en ligne  →"
-            btn_html = (
-                f'<a href="{url_source}" color="#97C33D">'
-                f'<b>{btn_label}</b></a>'
+                btn_label = "Lire l'article source"
+            btn_para = Paragraph(
+                f'<a href="{url_source}" color="#FFFFFF">{btn_label}</a>',
+                styles['ArticleButton']
             )
+            # Mesurer la largeur du texte pour un bouton compact
+            from reportlab.pdfbase.pdfmetrics import stringWidth
+            text_w = stringWidth(btn_label, styles['ArticleButton'].fontName, styles['ArticleButton'].fontSize)
+            btn_w = text_w + 24  # padding gauche + droite
+            btn_table = Table([[btn_para]], colWidths=[btn_w])
+            btn_table.setStyle(TableStyle([
+                ('BACKGROUND', (0, 0), (-1, -1), HexColor('#3d6b1e')),
+                ('TOPPADDING', (0, 0), (-1, -1), 6),
+                ('BOTTOMPADDING', (0, 0), (-1, -1), 6),
+                ('LEFTPADDING', (0, 0), (-1, -1), 12),
+                ('RIGHTPADDING', (0, 0), (-1, -1), 12),
+                ('ROUNDEDCORNERS', [4, 4, 4, 4]),
+            ]))
+            # Wrapper pour aligner à gauche
+            outer = Table([[btn_table, '']], colWidths=[btn_w + 24, W - 40*mm - btn_w - 24])
+            outer.setStyle(TableStyle([
+                ('LEFTPADDING', (0, 0), (-1, -1), 0),
+                ('RIGHTPADDING', (0, 0), (-1, -1), 0),
+                ('TOPPADDING', (0, 0), (-1, -1), 0),
+                ('BOTTOMPADDING', (0, 0), (-1, -1), 0),
+            ]))
             story.append(Spacer(1, 2*mm))
-            story.append(Paragraph(btn_html, styles['ArticleSource']))
+            story.append(outer)
 
         art_line = Table([['']], colWidths=[W - 40*mm])
         art_line.setStyle(TableStyle([('LINEBELOW', (0, 0), (-1, -1), 1, C_VERT_PALE)]))

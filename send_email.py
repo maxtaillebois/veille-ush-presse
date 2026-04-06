@@ -34,10 +34,10 @@ def format_date_fr(date_str):
 
 
 def format_date_short(date_str):
-    """Formate une date en JJ/MM/AAAA."""
+    """Formate une date en 'jour mois année' (ex: 1 avril 2026)."""
     try:
         d = datetime.strptime(date_str, '%Y-%m-%d')
-        return f"{d.day:02d}/{d.month:02d}/{d.year}"
+        return f"{d.day} {MOIS_FR[d.month]} {d.year}"
     except:
         return date_str
 
@@ -72,7 +72,7 @@ def build_email_body(articles):
         date_pub = format_date_short(art.get('date_publication', ''))
         lines.append(
             f'<p style="margin: 6px 0;">'
-            f'{media} | <em>{titre}</em> | {date_pub}'
+            f'<strong>{media}</strong> | <em>{titre}</em> | {date_pub}'
             f'</p>'
         )
 

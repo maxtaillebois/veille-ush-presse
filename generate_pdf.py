@@ -135,7 +135,7 @@ def _clean_text(text, titre='', auteur=''):
     """Supprime le bruit du texte LuQi."""
 
     # Supprimer les crédits photo au début (© ... jusqu'à la première phrase)
-    text = re.sub(r'^©[^\.\!]{0,150}[\.\!]?\s*', '', text)
+    text = re.sub(r'^©[^\.\!]{0,300}[\.\!]?\s*', '', text)
     # Variante : "Photo NR, ..." ou "(Photo ...)"
     text = re.sub(r'^\(Photo[^\)]{0,80}\)\s*', '', text)
 

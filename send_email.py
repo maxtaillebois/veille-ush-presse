@@ -43,15 +43,21 @@ def format_date_short(date_str):
 
 
 def clean_media_name(media):
-    """Nettoie le nom du média : supprime www./http(s)://, puis title case."""
+    """Nettoie le nom du média : supprime www./http(s)://, puis title case sauf si URL."""
     if not media:
         return ''
     import re
     name = media.strip()
-    # Si c'est une URL ou commence par www., nettoyer
+    # Détecter si c'est une URL (contient un point suivi d'une extension type .fr, .com, .org…)
+    is_url = bool(re.search(r'^(https?://|www\.)', name, flags=re.IGNORECASE)) or \
+             bool(re.search(r'\.\w{2,4}$', name))  # se termine par .fr, .com, etc.
+    # Supprimer www. et http(s)://
     name = re.sub(r'^https?://', '', name, flags=re.IGNORECASE)
     name = re.sub(r'^www\.', '', name, flags=re.IGNORECASE)
-    # Title case avec mots courts en minuscules
+    # Si c'est une URL, tout en minuscules
+    if is_url:
+        return name.lower()
+    # Sinon, title case avec mots courts en minuscules
     words = name.lower().split()
     small_words = {'de', 'du', 'le', 'la', 'les', 'des', 'et', 'en', 'au', 'aux', 'à'}
     result = []

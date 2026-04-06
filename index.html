@@ -503,16 +503,24 @@
         .article-fulltext {
             display: none;
             margin-top: 12px;
-            padding: 16px;
+            padding: 20px 24px;
             background: #fafafa;
             border: 1px solid var(--border);
+            border-left: 3px solid var(--ush-pale);
             border-radius: 6px;
             font-size: 14px;
             color: var(--text-dark);
-            line-height: 1.7;
-            white-space: pre-wrap;
-            max-height: 500px;
+            line-height: 1.8;
+            max-height: 600px;
             overflow-y: auto;
+        }
+
+        .article-fulltext p {
+            margin-bottom: 12px;
+        }
+
+        .article-fulltext p:last-child {
+            margin-bottom: 0;
         }
 
         .article-fulltext.visible {
@@ -948,12 +956,15 @@
 
                 let fulltextHtml = '';
                 if (fulltext && fulltext !== '—' && fulltext.length > 0) {
+                    // Formater le texte en paragraphes HTML
+                    const paragraphs = fulltext.split(/\n{2,}|\n/).filter(p => p.trim().length > 0);
+                    const formattedText = paragraphs.map(p => `<p>${p.trim()}</p>`).join('');
                     fulltextHtml = `
                         <div class="article-section">
                             <button class="article-fulltext-toggle" onclick="toggleFulltext(this)">
                                 <span class="arrow">▶</span> Lire l'article complet
                             </button>
-                            <div class="article-fulltext">${fulltext}</div>
+                            <div class="article-fulltext">${formattedText}</div>
                         </div>
                     `;
                 }

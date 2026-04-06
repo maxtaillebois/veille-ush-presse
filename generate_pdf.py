@@ -68,6 +68,102 @@ MOIS_FR = [
     'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre'
 ]
 
+import re
+
+def smart_split_text(texte):
+    """
+    Découpe intelligemment un texte d'article en blocs typés (paragraphe ou intertitre).
+
+    Le texte LuQi arrive souvent en un seul bloc sans retours à la ligne.
+    Cette fonction :
+    1. Essaie d'abord de splitter par \n (si le texte a des sauts de ligne)
+    2. Sinon, découpe par phrases et regroupe en paragraphes de ~3 phrases
+    3. Détecte les intertitres : segments courts (<90 chars) sans point final,
+       qui ne sont pas des citations (pas de guillemets «»)
+    """
+    # Si le texte contient des \n, les utiliser comme base
+    raw_blocks = [b.strip() for b in texte.split('\n') if b.strip()]
+
+    # Si on n'a qu'un seul bloc (texte LuQi typique), découper par phrases
+    if len(raw_blocks) == 1:
+        raw_blocks = _split_into_segments(raw_blocks[0])
+
+    # Typer chaque bloc : intertitre ou paragraphe
+    result = []
+    for block in raw_blocks:
+        if _is_subtitle(block):
+            result.append({'type': 'subtitle', 'text': block})
+        else:
+            result.append({'type': 'paragraph', 'text': block})
+
+    return result
+
+
+def _split_into_segments(text):
+    """
+    Découpe un texte continu en segments logiques.
+    Repère les frontières de phrases (point + espace + majuscule) et regroupe
+    par paquets de ~3 phrases, en isolant les segments courts (intertitres probables).
+    """
+    # Découper en phrases individuelles
+    # Pattern : fin de phrase (. ou !) suivie d'un espace et d'une majuscule ou guillemet
+    sentences = re.split(r'(?<=[\.\!\?])\s+(?=[A-ZÀÂÉÈÊËÏÎÔÙÛÜÇ«\"])', text)
+
+    if len(sentences) <= 1:
+        return [text]
+
+    segments = []
+    current_group = []
+
+    for sentence in sentences:
+        sentence = sentence.strip()
+        if not sentence:
+            continue
+
+        # Si c'est un segment court sans point final → probable intertitre
+        # On le sépare et on flush le groupe courant
+        if _is_subtitle(sentence):
+            if current_group:
+                segments.append(' '.join(current_group))
+                current_group = []
+            segments.append(sentence)
+        else:
+            current_group.append(sentence)
+            # Regrouper par paquets de 3 phrases pour aérer
+            if len(current_group) >= 3:
+                segments.append(' '.join(current_group))
+                current_group = []
+
+    if current_group:
+        segments.append(' '.join(current_group))
+
+    return segments
+
+
+def _is_subtitle(text):
+    """
+    Détermine si un segment est un intertitre.
+    Critères : court (< 90 chars), ne finit pas par un point,
+    ne commence pas par un guillemet (ce serait une citation).
+    """
+    text = text.strip()
+    if len(text) > 90:
+        return False
+    if len(text) < 5:
+        return False
+    # Les citations ne sont pas des intertitres
+    if text.startswith('«') or text.startswith('"') or text.startswith('\''):
+        return False
+    # Doit ne PAS se terminer par un point ou point d'exclamation
+    # Les ? sont autorisés (intertitres interrogatifs : "Quelles conditions ?")
+    if text.endswith('.') or text.endswith('!') or text.endswith('»'):
+        return False
+    # Vérification supplémentaire : pas trop de mots (un intertitre est concis)
+    if len(text.split()) > 15:
+        return False
+    return True
+
+
 def load_articles(json_path):
     with open(json_path, 'r', encoding='utf-8') as f:
         data = json.load(f)
@@ -344,11 +440,16 @@ def build_content(output_path, semaine, articles):
             story.append(Paragraph(kw_text, styles['ArticleKeywords']))
 
         if texte:
-            paragraphs = [p.strip() for p in texte.split('\n') if p.strip()]
-            for p in paragraphs:
-                p_safe = p.replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;')
-                story.append(Paragraph(p_safe, styles['ArticleBody']))
-                story.append(Spacer(1, 1.5*mm))
+            blocks = smart_split_text(texte)
+            for block in blocks:
+                text_safe = block['text'].replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;')
+                if block['type'] == 'subtitle':
+                    story.append(Spacer(1, 4*mm))
+                    story.append(Paragraph(f'<b>{text_safe}</b>', styles['ArticleBody']))
+                    story.append(Spacer(1, 2*mm))
+                else:
+                    story.append(Paragraph(text_safe, styles['ArticleBody']))
+                    story.append(Spacer(1, 2.5*mm))
 
         if url_source:
             story.append(Spacer(1, 3*mm))

@@ -70,47 +70,119 @@ MOIS_FR = [
 
 import re
 
-def smart_split_text(texte):
+
+def smart_split_text(texte, article_titre='', article_auteur=''):
     """
-    Découpe intelligemment un texte d'article en blocs typés (paragraphe ou intertitre).
+    Découpe un texte d'article LuQi en blocs typés pour le PDF.
 
-    Le texte LuQi arrive souvent en un seul bloc sans retours à la ligne.
-    Cette fonction :
-    1. Essaie d'abord de splitter par \n (si le texte a des sauts de ligne)
-    2. Sinon, découpe par phrases et regroupe en paragraphes de ~3 phrases
-    3. Détecte les intertitres : segments courts (<90 chars) sans point final,
-       qui ne sont pas des citations (pas de guillemets «»)
+    Le texte LuQi arrive en un seul bloc continu, souvent pollué par :
+    - Le titre de l'article répété au début
+    - Des crédits photo (© ...)
+    - Un sommaire web (liste de questions/intertitres empilés)
+    - Le nom de l'auteur à la fin
+
+    Le traitement :
+    1. Nettoie le texte (supprime bruit)
+    2. Découpe en phrases
+    3. Détecte les intertitres (segments courts, sans verbe conjugué typique)
+    4. Supprime les blocs de sommaire (intertitres consécutifs sans contenu)
+    5. Regroupe les phrases en paragraphes de 3 phrases pour aérer la lecture
     """
-    # Si le texte contient des \n, les utiliser comme base
-    raw_blocks = [b.strip() for b in texte.split('\n') if b.strip()]
+    text = texte.strip()
+    if not text:
+        return []
 
-    # Si on n'a qu'un seul bloc (texte LuQi typique), découper par phrases
-    if len(raw_blocks) == 1:
-        raw_blocks = _split_into_segments(raw_blocks[0])
+    # --- Normalisation : supprimer césures et sauts de ligne parasites ---
+    # Césure en fin de ligne : "de-\nmande" → "demande"
+    text = re.sub(r'-\s*\n\s*', '', text)
+    # Doubles sauts de ligne → marqueur de paragraphe
+    text = text.replace('\n\n', '§§PARA§§')
+    # Simples sauts de ligne → espace (lignes continues dans la même phrase)
+    text = text.replace('\n', ' ')
+    # Restaurer les vrais paragraphes
+    text = text.replace('§§PARA§§', '\n')
+    # Nettoyer les espaces multiples
+    text = re.sub(r'  +', ' ', text)
 
-    # Typer chaque bloc : intertitre ou paragraphe
-    result = []
+    # --- Nettoyage ---
+    text = _clean_text(text, article_titre, article_auteur)
+
+    # --- Découpe en phrases ---
+    # Si le texte a des \n (vrais paragraphes), les utiliser comme base
+    raw_blocks = [b.strip() for b in text.split('\n') if b.strip()]
+
+    # Si un seul bloc ou blocs trop gros, redécouper par phrases
+    if len(raw_blocks) == 1 or max(len(b) for b in raw_blocks) > 700:
+        # Fusionner et redécouper proprement
+        full_text = ' '.join(raw_blocks)
+        raw_blocks = _split_sentences(full_text)
+
+    # --- Typage et filtrage ---
+    typed_blocks = []
     for block in raw_blocks:
         if _is_subtitle(block):
-            result.append({'type': 'subtitle', 'text': block})
+            typed_blocks.append({'type': 'subtitle', 'text': block})
         else:
-            result.append({'type': 'paragraph', 'text': block})
+            typed_blocks.append({'type': 'paragraph', 'text': block})
 
-    return result
+    # --- Suppression des sommaires (intertitres consécutifs) ---
+    typed_blocks = _remove_toc_blocks(typed_blocks)
+
+    return typed_blocks
 
 
-def _split_into_segments(text):
+def _clean_text(text, titre='', auteur=''):
+    """Supprime le bruit du texte LuQi."""
+
+    # Supprimer les crédits photo au début (© ... jusqu'à la première phrase)
+    text = re.sub(r'^©[^\.\!]{0,150}[\.\!]?\s*', '', text)
+    # Variante : "Photo NR, ..." ou "(Photo ...)"
+    text = re.sub(r'^\(Photo[^\)]{0,80}\)\s*', '', text)
+
+    # Supprimer le titre de l'article s'il est répété au début du texte
+    if titre and len(titre) > 10:
+        # Chercher le titre exact dans les 200 premiers caractères
+        titre_lower = titre.lower()
+        text_start_lower = text[:250].lower()
+        pos = text_start_lower.find(titre_lower)
+        if pos >= 0:
+            text = text[pos + len(titre):].strip()
+
+    # Supprimer les indications de lieu en début (ex: "centre-val de loire ")
+    text = re.sub(r'^[a-zà-ÿ\s\-]{5,40}(?=[A-ZÀÂÉÈÊËÏÎÔÙÛÜÇ])', '', text)
+
+    # Supprimer les crédits photo entre parenthèses
+    text = re.sub(r'\(Photo[^\)]{0,80}\)', '', text)
+
+    # Supprimer le nom de l'auteur seul à la fin
+    if auteur and len(auteur) > 3:
+        auteur_escaped = re.escape(auteur)
+        text = re.sub(r'\s*' + auteur_escaped + r'\s*$', '', text)
+
+    # Supprimer "Sommaire" suivi d'une liste de titres de sections
+    text = re.sub(r'Sommaire\s+', '', text, count=1)
+
+    # Supprimer un nom propre isolé à la toute fin (1-3 mots, que des majuscules initiales)
+    # Ex: "Emmanuelle Cosse", "Mathieu G.", "Christine Berkovicius"
+    text = re.sub(r'\s+[A-ZÀÂÉÈÊËÏÎÔÙÛÜÇ][a-zà-ÿ]+(?:\s+[A-ZÀÂÉÈÊËÏÎÔÙÛÜÇ][\.\w]*){0,2}\s*$', '', text)
+
+    return text.strip()
+
+
+def _split_sentences(text):
     """
-    Découpe un texte continu en segments logiques.
-    Repère les frontières de phrases (point + espace + majuscule) et regroupe
-    par paquets de ~3 phrases, en isolant les segments courts (intertitres probables).
+    Découpe un texte continu en phrases, puis regroupe par paquets
+    de 3 phrases pour créer des paragraphes lisibles.
+    Isole les intertitres détectés.
     """
-    # Découper en phrases individuelles
-    # Pattern : fin de phrase (. ou !) suivie d'un espace et d'une majuscule ou guillemet
-    sentences = re.split(r'(?<=[\.\!\?])\s+(?=[A-ZÀÂÉÈÊËÏÎÔÙÛÜÇ«\"])', text)
+    # Découper en phrases : fin de phrase (. ! ? ») suivie d'espace + majuscule/guillemet
+    sentences = re.split(
+        r'(?<=[\.\!\?»])\s+(?=[A-ZÀÂÉÈÊËÏÎÔÙÛÜÇ«\""])',
+        text
+    )
 
     if len(sentences) <= 1:
-        return [text]
+        return _force_split(text, 500)
 
     segments = []
     current_group = []
@@ -120,8 +192,6 @@ def _split_into_segments(text):
         if not sentence:
             continue
 
-        # Si c'est un segment court sans point final → probable intertitre
-        # On le sépare et on flush le groupe courant
         if _is_subtitle(sentence):
             if current_group:
                 segments.append(' '.join(current_group))
@@ -129,7 +199,6 @@ def _split_into_segments(text):
             segments.append(sentence)
         else:
             current_group.append(sentence)
-            # Regrouper par paquets de 3 phrases pour aérer
             if len(current_group) >= 3:
                 segments.append(' '.join(current_group))
                 current_group = []
@@ -137,31 +206,110 @@ def _split_into_segments(text):
     if current_group:
         segments.append(' '.join(current_group))
 
+    # Post-traitement : si un paragraphe est trop long (>700 chars),
+    # le redécouper (cas des textes OCR avec peu de frontières de phrases)
+    final = []
+    for seg in segments:
+        if len(seg) > 700 and not _is_subtitle(seg):
+            final.extend(_force_split(seg, 450))
+        else:
+            final.append(seg)
+
+    return final
+
+
+def _force_split(text, max_chars=500):
+    """
+    Dernier recours : découpe un texte tous les ~max_chars caractères
+    en cherchant la fin de phrase la plus proche.
+    """
+    if len(text) <= max_chars:
+        return [text]
+
+    segments = []
+    remaining = text
+
+    while len(remaining) > max_chars:
+        # Chercher le dernier point suivi d'un espace dans la zone max_chars
+        cut_zone = remaining[:max_chars + 100]
+        last_period = -1
+        for m in re.finditer(r'[\.\!\?»]\s', cut_zone):
+            last_period = m.end()
+
+        if last_period > 100:  # assez de texte avant la coupure
+            segments.append(remaining[:last_period].strip())
+            remaining = remaining[last_period:].strip()
+        else:
+            # Pas de fin de phrase trouvée, couper à l'espace le plus proche
+            space_pos = remaining.rfind(' ', 0, max_chars)
+            if space_pos > 100:
+                segments.append(remaining[:space_pos].strip())
+                remaining = remaining[space_pos:].strip()
+            else:
+                segments.append(remaining[:max_chars].strip())
+                remaining = remaining[max_chars:].strip()
+
+    if remaining.strip():
+        segments.append(remaining.strip())
+
     return segments
 
 
 def _is_subtitle(text):
     """
-    Détermine si un segment est un intertitre.
-    Critères : court (< 90 chars), ne finit pas par un point,
-    ne commence pas par un guillemet (ce serait une citation).
+    Un intertitre est un segment court qui sert de titre de section.
+    Critères stricts pour éviter les faux positifs.
     """
     text = text.strip()
-    if len(text) > 90:
+    if len(text) > 80 or len(text) < 5:
         return False
-    if len(text) < 5:
+    # Pas une citation
+    if text[0] in ('«', '"', "'", '—', '–'):
         return False
-    # Les citations ne sont pas des intertitres
-    if text.startswith('«') or text.startswith('"') or text.startswith('\''):
+    # Ne finit PAS par un point ou des guillemets fermants
+    # Les ? sont OK (intertitres interrogatifs)
+    if text.endswith('.') or text.endswith('!') or text.endswith('»') or text.endswith('"'):
         return False
-    # Doit ne PAS se terminer par un point ou point d'exclamation
-    # Les ? sont autorisés (intertitres interrogatifs : "Quelles conditions ?")
-    if text.endswith('.') or text.endswith('!') or text.endswith('»'):
+    # Maximum 12 mots
+    if len(text.split()) > 12:
         return False
-    # Vérification supplémentaire : pas trop de mots (un intertitre est concis)
-    if len(text.split()) > 15:
+    # Doit contenir au moins une majuscule (sinon c'est juste un fragment)
+    if not any(c.isupper() for c in text):
+        return False
+    # Un ou deux mots seulement = probablement un nom propre, pas un intertitre
+    if len(text.split()) <= 2 and not text.endswith('?'):
         return False
     return True
+
+
+def _remove_toc_blocks(blocks):
+    """
+    Supprime les blocs de type 'sommaire' : quand 2+ intertitres se suivent
+    sans paragraphe entre eux, c'est le sommaire de l'article web.
+    On les retire car les vrais intertitres apparaîtront plus loin avec leur contenu.
+    """
+    if len(blocks) <= 2:
+        return blocks
+
+    # Identifier les groupes d'intertitres consécutifs
+    to_remove = set()
+    i = 0
+    while i < len(blocks):
+        if blocks[i]['type'] == 'subtitle':
+            # Compter combien d'intertitres se suivent
+            j = i
+            while j < len(blocks) and blocks[j]['type'] == 'subtitle':
+                j += 1
+            consecutive = j - i
+            # 2+ intertitres consécutifs = sommaire → supprimer
+            if consecutive >= 2:
+                for k in range(i, j):
+                    to_remove.add(k)
+            i = j
+        else:
+            i += 1
+
+    return [b for idx, b in enumerate(blocks) if idx not in to_remove]
 
 
 def load_articles(json_path):
@@ -440,7 +588,7 @@ def build_content(output_path, semaine, articles):
             story.append(Paragraph(kw_text, styles['ArticleKeywords']))
 
         if texte:
-            blocks = smart_split_text(texte)
+            blocks = smart_split_text(texte, article_titre=titre, article_auteur=auteur)
             for block in blocks:
                 text_safe = block['text'].replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;')
                 if block['type'] == 'subtitle':

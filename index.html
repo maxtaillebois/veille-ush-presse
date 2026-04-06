@@ -851,6 +851,168 @@
         }
 
         // ============================================
+        // MISE EN FORME DU TEXTE INTÉGRAL
+        // ============================================
+
+        function formatArticleText(text, articleTitle, articleAuthor) {
+            if (!text) return '';
+
+            // --- Normalisation : césures et sauts de ligne ---
+            let t = text.replace(/-\s*\n\s*/g, '');       // césures "de-\nmande" → "demande"
+            t = t.replace(/\n\n+/g, '§§PARA§§');           // doubles sauts → marqueur
+            t = t.replace(/\n/g, ' ');                      // simples sauts → espace
+            t = t.replace(/§§PARA§§/g, '\n');               // restaurer vrais paragraphes
+            t = t.replace(/  +/g, ' ');                     // espaces multiples
+
+            // --- Nettoyage du bruit LuQi ---
+            // Crédits photo
+            t = t.replace(/^©[^\.!]{0,150}[\.!]?\s*/i, '');
+            t = t.replace(/\(Photo[^\)]{0,80}\)/g, '');
+            // Titre répété au début
+            if (articleTitle && articleTitle.length > 10) {
+                const pos = t.substring(0, 250).toLowerCase().indexOf(articleTitle.toLowerCase());
+                if (pos >= 0) t = t.substring(pos + articleTitle.length).trim();
+            }
+            // Lieu en minuscules au début
+            t = t.replace(/^[a-zà-ÿ\s\-]{5,40}(?=[A-ZÀÂÉÈÊËÏÎÔÙÛÜÇ])/, '');
+            // "Sommaire" en début
+            t = t.replace(/^Sommaire\s+/i, '');
+            // Nom auteur isolé en fin
+            if (articleAuthor && articleAuthor.length > 3) {
+                const re = new RegExp('\\s*' + articleAuthor.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '\\s*$');
+                t = t.replace(re, '');
+            }
+            t = t.trim();
+
+            // --- Découpe en phrases ---
+            let rawBlocks = t.split('\n').map(b => b.trim()).filter(Boolean);
+
+            // Si un seul bloc ou blocs trop longs → redécouper par phrases
+            const maxLen = Math.max(...rawBlocks.map(b => b.length));
+            if (rawBlocks.length === 1 || maxLen > 700) {
+                const fullText = rawBlocks.join(' ');
+                rawBlocks = splitSentences(fullText);
+            }
+
+            // --- Typage : paragraphe ou intertitre ---
+            let blocks = rawBlocks.map(b => ({
+                type: isSubtitle(b) ? 'subtitle' : 'paragraph',
+                text: b
+            }));
+
+            // --- Supprimer sommaires (2+ intertitres consécutifs) ---
+            blocks = removeTocBlocks(blocks);
+
+            // --- Rendu HTML ---
+            return blocks.map(b => {
+                if (b.type === 'subtitle') {
+                    return `<p style="font-weight:bold; margin-top:1.2em; margin-bottom:0.4em;">${b.text}</p>`;
+                }
+                return `<p>${b.text}</p>`;
+            }).join('');
+        }
+
+        function splitSentences(text) {
+            // Découper par fins de phrases (. ! ? ») suivies d'espace + majuscule
+            const sentences = text.split(/(?<=[\.\!\?»])\s+(?=[A-ZÀÂÉÈÊËÏÎÔÙÛÜÇ«"""])/);
+            if (sentences.length <= 1) return forceSplit(text, 500);
+
+            const segments = [];
+            let group = [];
+
+            for (const sentence of sentences) {
+                const s = sentence.trim();
+                if (!s) continue;
+
+                if (isSubtitle(s)) {
+                    if (group.length > 0) {
+                        segments.push(group.join(' '));
+                        group = [];
+                    }
+                    segments.push(s);
+                } else {
+                    group.push(s);
+                    if (group.length >= 3) {
+                        segments.push(group.join(' '));
+                        group = [];
+                    }
+                }
+            }
+            if (group.length > 0) segments.push(group.join(' '));
+
+            // Post-traitement : redécouper les paragraphes trop longs
+            const final = [];
+            for (const seg of segments) {
+                if (seg.length > 700 && !isSubtitle(seg)) {
+                    final.push(...forceSplit(seg, 450));
+                } else {
+                    final.push(seg);
+                }
+            }
+            return final;
+        }
+
+        function forceSplit(text, maxChars) {
+            if (text.length <= maxChars) return [text];
+            const segments = [];
+            let remaining = text;
+
+            while (remaining.length > maxChars) {
+                const zone = remaining.substring(0, maxChars + 100);
+                let lastPeriod = -1;
+                const re = /[\.\!\?»]\s/g;
+                let match;
+                while ((match = re.exec(zone)) !== null) lastPeriod = match.index + match[0].length;
+
+                if (lastPeriod > 100) {
+                    segments.push(remaining.substring(0, lastPeriod).trim());
+                    remaining = remaining.substring(lastPeriod).trim();
+                } else {
+                    const sp = remaining.lastIndexOf(' ', maxChars);
+                    if (sp > 100) {
+                        segments.push(remaining.substring(0, sp).trim());
+                        remaining = remaining.substring(sp).trim();
+                    } else {
+                        segments.push(remaining.substring(0, maxChars).trim());
+                        remaining = remaining.substring(maxChars).trim();
+                    }
+                }
+            }
+            if (remaining.trim()) segments.push(remaining.trim());
+            return segments;
+        }
+
+        function isSubtitle(text) {
+            const t = text.trim();
+            if (t.length > 80 || t.length < 5) return false;
+            if ('«"\'—–'.includes(t[0])) return false;
+            if (t.endsWith('.') || t.endsWith('!') || t.endsWith('»') || t.endsWith('"')) return false;
+            if (t.split(/\s+/).length > 12) return false;
+            if (t.split(/\s+/).length <= 2 && !t.endsWith('?')) return false;
+            if (!/[A-ZÀÂÉÈÊËÏÎÔÙÛÜÇ]/.test(t)) return false;
+            return true;
+        }
+
+        function removeTocBlocks(blocks) {
+            if (blocks.length <= 2) return blocks;
+            const toRemove = new Set();
+            let i = 0;
+            while (i < blocks.length) {
+                if (blocks[i].type === 'subtitle') {
+                    let j = i;
+                    while (j < blocks.length && blocks[j].type === 'subtitle') j++;
+                    if (j - i >= 2) {
+                        for (let k = i; k < j; k++) toRemove.add(k);
+                    }
+                    i = j;
+                } else {
+                    i++;
+                }
+            }
+            return blocks.filter((_, idx) => !toRemove.has(idx));
+        }
+
+        // ============================================
         // DATA LOADING (fetch JSON depuis GitHub Pages)
         // ============================================
         function loadArticles() {
@@ -995,9 +1157,7 @@
 
                 let fulltextHtml = '';
                 if (fulltext && fulltext !== '—' && fulltext.length > 0) {
-                    // Formater le texte en paragraphes HTML
-                    const paragraphs = fulltext.split(/\n{2,}|\n/).filter(p => p.trim().length > 0);
-                    const formattedText = paragraphs.map(p => `<p>${p.trim()}</p>`).join('');
+                    const formattedText = formatArticleText(fulltext, title, author);
                     fulltextHtml = `
                         <div class="article-section">
                             <button class="article-fulltext-toggle" onclick="toggleFulltext(this)">

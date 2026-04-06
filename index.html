@@ -680,10 +680,6 @@
 
         <!-- TOOLBAR -->
         <div class="toolbar">
-            <label for="weekFilter">Filtrer par semaine:</label>
-            <select id="weekFilter">
-                <option value="">Toutes les semaines</option>
-            </select>
             <button class="btn btn-primary" id="refreshBtn">
                 🔄 Actualiser
             </button>
@@ -852,7 +848,6 @@
 
                     articles.forEach((a, idx) => a.order = idx);
 
-                    populateWeekFilter();
                     filterAndRender();
                     updateStats();
                 })
@@ -874,36 +869,8 @@
         // ============================================
         // UI RENDERING
         // ============================================
-        function populateWeekFilter() {
-            const weeks = new Set();
-            articles.forEach(a => {
-                const w = getCol(a, 'semaine');
-                if (w && w !== '—') weeks.add(w);
-            });
-
-            const weekArray = Array.from(weeks).sort().reverse();
-            const select = document.getElementById('weekFilter');
-            const currentValue = select.value;
-
-            select.innerHTML = '<option value="">Toutes les semaines</option>';
-            weekArray.forEach(w => {
-                const opt = document.createElement('option');
-                opt.value = w;
-                opt.textContent = w;
-                select.appendChild(opt);
-            });
-
-            select.value = currentValue;
-            select.addEventListener('change', filterAndRender);
-        }
-
         function filterAndRender() {
-            const week = document.getElementById('weekFilter').value;
-            if (week) {
-                displayedArticles = articles.filter(a => getCol(a, 'semaine') === week);
-            } else {
-                displayedArticles = [...articles];
-            }
+            displayedArticles = [...articles];
             renderArticles();
         }
 
@@ -1110,7 +1077,7 @@
                 return;
             }
 
-            const week = document.getElementById('weekFilter').value || 'S' + new Date().getWeek() + '-' + new Date().getFullYear();
+            const week = (articles.length > 0 && getCol(articles[0], 'semaine')) || '';
 
             const payload = {
                 destinataire_email: email,

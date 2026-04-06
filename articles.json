@@ -1,0 +1,19 @@
+{
+  "semaine": "S14-2026",
+  "date_generation": "2026-04-06",
+  "articles": [
+    {
+      "semaine": "S14-2026",
+      "media": "www.lyonpoleimmo.com",
+      "titre": "Test - article de vérification",
+      "date_publication": "2026-04-03",
+      "auteur": "Test",
+      "resume": "Ceci est un article de test pour vérifier que le push GitHub fonctionne.",
+      "mots_cles": "test, vérification, github",
+      "texte_integral": "",
+      "selectionne": "Non",
+      "url_source": "",
+      "type_contenu": "article"
+    }
+  ]
+}

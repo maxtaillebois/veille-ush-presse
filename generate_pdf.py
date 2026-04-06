@@ -594,34 +594,17 @@ def build_content(output_path, semaine, articles):
         if url_source:
             type_contenu = art.get('type_contenu', 'article')
             if type_contenu == 'audio':
-                btn_label = "Écouter l'émission"
+                btn_label = "🎧  Écouter l'émission  →"
             elif type_contenu == 'video':
-                btn_label = "Voir l'émission"
+                btn_label = "▶  Voir l'émission  →"
             else:
-                btn_label = "Lire l'article en ligne"
-            btn_para = Paragraph(
-                f'<a href="{url_source}" color="#FFFFFF">{btn_label}  →</a>',
-                styles['ArticleButton']
+                btn_label = "🔗  Lire l'article en ligne  →"
+            btn_html = (
+                f'<a href="{url_source}" color="#97C33D">'
+                f'<b>{btn_label}</b></a>'
             )
-            btn_table = Table([[btn_para]], colWidths=[None])
-            btn_table.setStyle(TableStyle([
-                ('BACKGROUND', (0, 0), (-1, -1), C_VERT),
-                ('TOPPADDING', (0, 0), (-1, -1), 5),
-                ('BOTTOMPADDING', (0, 0), (-1, -1), 5),
-                ('LEFTPADDING', (0, 0), (-1, -1), 12),
-                ('RIGHTPADDING', (0, 0), (-1, -1), 12),
-                ('ROUNDEDCORNERS', [3, 3, 3, 3]),
-            ]))
-            # Wrap in outer table to left-align (not full width)
-            outer = Table([[btn_table]], colWidths=[W - 40*mm])
-            outer.setStyle(TableStyle([
-                ('ALIGN', (0, 0), (-1, -1), 'LEFT'),
-                ('TOPPADDING', (0, 0), (-1, -1), 4),
-                ('BOTTOMPADDING', (0, 0), (-1, -1), 2),
-                ('LEFTPADDING', (0, 0), (-1, -1), 0),
-                ('RIGHTPADDING', (0, 0), (-1, -1), 0),
-            ]))
-            story.append(outer)
+            story.append(Spacer(1, 2*mm))
+            story.append(Paragraph(btn_html, styles['ArticleSource']))
 
         art_line = Table([['']], colWidths=[W - 40*mm])
         art_line.setStyle(TableStyle([('LINEBELOW', (0, 0), (-1, -1), 1, C_VERT_PALE)]))

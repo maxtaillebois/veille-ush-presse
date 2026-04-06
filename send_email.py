@@ -33,29 +33,50 @@ def format_date_fr(date_str):
         return date_str
 
 
+def format_date_short(date_str):
+    """Formate une date en JJ/MM/AAAA."""
+    try:
+        d = datetime.strptime(date_str, '%Y-%m-%d')
+        return f"{d.day:02d}/{d.month:02d}/{d.year}"
+    except:
+        return date_str
+
+
+def title_case_media(media):
+    """Met le média en minuscules avec majuscules aux bons endroits."""
+    if not media:
+        return ''
+    # Mettre en title case (première lettre de chaque mot en majuscule)
+    # Sauf pour les mots courts comme 'de', 'du', 'le', 'la', 'les', 'des', 'et'
+    words = media.lower().split()
+    small_words = {'de', 'du', 'le', 'la', 'les', 'des', 'et', 'en', 'au', 'aux', 'à'}
+    result = []
+    for i, w in enumerate(words):
+        if i == 0 or w not in small_words:
+            result.append(w.capitalize())
+        else:
+            result.append(w)
+    return ' '.join(result)
+
+
 def build_email_body(articles):
-    """Construit le corps HTML de l'email avec les titres des articles sélectionnés."""
+    """Construit le corps HTML de l'email — format basique, noir."""
     lines = []
-    lines.append('<div style="font-family: Helvetica, Arial, sans-serif; color: #515459; max-width: 600px;">')
+    lines.append('<div style="font-family: Helvetica, Arial, sans-serif; color: #000000; max-width: 600px;">')
     lines.append('<p>Bonjour,</p>')
     lines.append('<p>Voici la sélection de la veille presse USH de cette semaine :</p>')
-    lines.append('<ul style="padding-left: 20px;">')
 
     for art in articles:
         titre = art.get('titre', 'Sans titre')
-        media = art.get('media', '')
-        date_pub = format_date_fr(art.get('date_publication', ''))
+        media = title_case_media(art.get('media', ''))
+        date_pub = format_date_short(art.get('date_publication', ''))
         lines.append(
-            f'<li style="margin-bottom: 8px;">'
-            f'<strong>{titre}</strong>'
-            f'<br/><span style="color: #97C33D; font-size: 13px;">{media}</span>'
-            f' — <span style="color: #A8A9AB; font-size: 12px;">{date_pub}</span>'
-            f'</li>'
+            f'<p style="margin: 6px 0;">'
+            f'{media} | <em>{titre}</em> | {date_pub}'
+            f'</p>'
         )
 
-    lines.append('</ul>')
     lines.append('<p>Le PDF complet est en pièce jointe.</p>')
-    lines.append('<p style="color: #A8A9AB; font-size: 12px; margin-top: 30px;">— Procivis · Le premier acteur coopératif du logement</p>')
     lines.append('</div>')
     return '\n'.join(lines)
 

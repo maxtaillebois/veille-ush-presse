@@ -772,11 +772,27 @@
         // ============================================
         const CONFIG = {
             ARTICLES_URL: 'https://maxtaillebois.github.io/veille-ush-presse/articles.json',
-            N8N_WEBHOOK_URL: 'N8N_WEBHOOK_URL_HERE',
-            DEFAULT_DEST_EMAIL: '',
+            GITHUB_REPO: 'maxtaillebois/veille-ush-presse',
+            DEFAULT_DEST_EMAIL: 'stephanie@papiersdesoi.fr',
             DEFAULT_DEST_NOM: '',
-            DEFAULT_CC_EMAILS: '',
+            DEFAULT_CC_EMAILS: 'maxime.taillebois@procivis.fr; aurelie.hennetier@procivis.fr',
         };
+
+        // Token GitHub stocké en mémoire (session navigateur uniquement)
+        let githubToken = null;
+
+        function getGitHubToken() {
+            if (githubToken) return githubToken;
+            const token = prompt(
+                'Clé GitHub (nécessaire pour envoyer la sélection) :\n\n' +
+                'Cette clé est conservée uniquement le temps de votre session navigateur.'
+            );
+            if (token && token.trim().length > 10) {
+                githubToken = token.trim();
+                return githubToken;
+            }
+            return null;
+        }
 
         // ============================================
         // STATE
@@ -1106,8 +1122,49 @@
         });
 
         // ============================================
-        // SEND FUNCTIONALITY
+        // SEND FUNCTIONALITY (via GitHub Actions)
         // ============================================
+
+        // Pousse un fichier sur GitHub via l'API Contents
+        async function pushFileToGitHub(path, content, message, token) {
+            const apiUrl = `https://api.github.com/repos/${CONFIG.GITHUB_REPO}/contents/${path}`;
+
+            // Vérifier si le fichier existe déjà (pour récupérer le sha)
+            let sha = null;
+            try {
+                const getResp = await fetch(apiUrl, {
+                    headers: { 'Authorization': `token ${token}` }
+                });
+                if (getResp.ok) {
+                    const data = await getResp.json();
+                    sha = data.sha;
+                }
+            } catch (e) {
+                // Fichier n'existe pas, on crée
+            }
+
+            const body = {
+                message: message,
+                content: btoa(unescape(encodeURIComponent(content))),
+            };
+            if (sha) body.sha = sha;
+
+            const resp = await fetch(apiUrl, {
+                method: 'PUT',
+                headers: {
+                    'Authorization': `token ${CONFIG.GITHUB_TOKEN}`,
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(body)
+            });
+
+            if (!resp.ok) {
+                const err = await resp.json();
+                throw new Error(err.message || 'Erreur GitHub API');
+            }
+            return await resp.json();
+        }
+
         document.getElementById('sendBtn').addEventListener('click', async () => {
             const email = document.getElementById('destEmail').value.trim();
             const nom = document.getElementById('destNom').value.trim();
@@ -1124,48 +1181,50 @@
                 return;
             }
 
-            const week = (articles.length > 0 && getCol(articles[0], 'semaine')) || '';
+            // Demander le token GitHub si pas encore saisi
+            const token = getGitHubToken();
+            if (!token) {
+                showFeedback('Clé GitHub requise pour envoyer.', 'error');
+                return;
+            }
 
-            const payload = {
+            // Désactiver le bouton pendant l'envoi
+            const sendBtn = document.getElementById('sendBtn');
+            sendBtn.disabled = true;
+            sendBtn.textContent = '⏳ Envoi en cours...';
+
+            // Créer le fichier de sélection
+            const selectionPayload = {
+                selected_titles: selected.map(a => getCol(a, 'titre')),
                 destinataire_email: email,
                 destinataire_nom: nom,
                 cc_emails: cc,
-                semaine: week,
-                articles: selected.map(a => ({
-                    media: getCol(a, 'media', 'média'),
-                    titre: getCol(a, 'titre'),
-                    date_publication: getCol(a, 'date_publication', 'date publication'),
-                    auteur: getCol(a, 'auteur'),
-                    resume: getCol(a, 'resume', 'résumé'),
-                    mots_cles: getCol(a, 'mots_cles', 'mots-clés'),
-                    url_source: getCol(a, 'url_source'),
-                    type_contenu: getCol(a, 'type_contenu') || 'article',
-                    texte_integral: getCol(a, 'texte_integral', 'texte intégral')
-                }))
+                timestamp: new Date().toISOString()
             };
 
             try {
-                const resp = await fetch(CONFIG.N8N_WEBHOOK_URL, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
-                });
+                await pushFileToGitHub(
+                    'selection.json',
+                    JSON.stringify(selectionPayload, null, 2),
+                    `Sélection veille presse — ${selected.length} article(s)`,
+                    token
+                );
 
-                if (resp.ok) {
-                    showFeedback(`✓ Email envoyé à ${email} avec ${selected.length} article(s)`, 'success');
-                    // Reset to defaults (don't clear if defaults are set)
-                    document.getElementById('destEmail').value = CONFIG.DEFAULT_DEST_EMAIL || '';
-                    document.getElementById('destNom').value = CONFIG.DEFAULT_DEST_NOM || '';
-                    document.getElementById('ccEmails').value = CONFIG.DEFAULT_CC_EMAILS || '';
-                    displayedArticles.forEach(a => a.selected = false);
-                    renderArticles();
-                    updateSelectionUI();
-                } else {
-                    showFeedback('Erreur lors de l\'envoi. Vérifiez l\'URL du webhook.', 'error');
-                }
+                showFeedback(
+                    `✓ Sélection envoyée ! Le PDF sera généré et envoyé automatiquement à ${email} dans quelques minutes.`,
+                    'success'
+                );
+
+                displayedArticles.forEach(a => a.selected = false);
+                renderArticles();
+                updateSelectionUI();
+
             } catch (err) {
                 console.error(err);
-                showFeedback('Erreur réseau: ' + err.message, 'error');
+                showFeedback('Erreur : ' + err.message, 'error');
+            } finally {
+                sendBtn.disabled = false;
+                sendBtn.textContent = '✉️ Envoyer';
             }
         });
 

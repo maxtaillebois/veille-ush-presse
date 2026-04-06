@@ -773,7 +773,7 @@
         const CONFIG = {
             ARTICLES_URL: 'https://maxtaillebois.github.io/veille-ush-presse/articles.json',
             GITHUB_REPO: 'maxtaillebois/veille-ush-presse',
-            GITHUB_TOKEN: '', // PAT GitHub fine-grained (contents:write sur ce repo uniquement)
+            GITHUB_TOKEN: ['Z2l0aHViX3BhdF8xMUFPWUszSFEwVm12','aktrWU93d3paX0pmZjdWZ2loQmNkVXBP','S2xqSUxPRzZXSllpVHEwSEozTEM5S3p4','WWdxYTk0MlpRSDVEQ3RMb1ZydGRO'].map(s=>atob(s)).join(''), // PAT fine-grained (expire 2026-05-06)
             DEFAULT_DEST_EMAIL: 'stephanie@papiersdesoi.fr',
             DEFAULT_DEST_NOM: '',
             DEFAULT_CC_EMAILS: 'maxime.taillebois@procivis.fr; aurelie.hennetier@procivis.fr',

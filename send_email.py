@@ -42,13 +42,17 @@ def format_date_short(date_str):
         return date_str
 
 
-def title_case_media(media):
-    """Met le média en minuscules avec majuscules aux bons endroits."""
+def clean_media_name(media):
+    """Nettoie le nom du média : supprime www./http(s)://, puis title case."""
     if not media:
         return ''
-    # Mettre en title case (première lettre de chaque mot en majuscule)
-    # Sauf pour les mots courts comme 'de', 'du', 'le', 'la', 'les', 'des', 'et'
-    words = media.lower().split()
+    import re
+    name = media.strip()
+    # Si c'est une URL ou commence par www., nettoyer
+    name = re.sub(r'^https?://', '', name, flags=re.IGNORECASE)
+    name = re.sub(r'^www\.', '', name, flags=re.IGNORECASE)
+    # Title case avec mots courts en minuscules
+    words = name.lower().split()
     small_words = {'de', 'du', 'le', 'la', 'les', 'des', 'et', 'en', 'au', 'aux', 'à'}
     result = []
     for i, w in enumerate(words):
@@ -65,17 +69,19 @@ def build_email_body(articles):
     lines.append('<div style="font-family: Helvetica, Arial, sans-serif; color: #000000; max-width: 600px;">')
     lines.append('<p>Bonjour,</p>')
     lines.append('<p>Voici la sélection de la veille presse USH de cette semaine :</p>')
+    lines.append('<ul style="padding-left: 20px;">')
 
     for art in articles:
         titre = art.get('titre', 'Sans titre')
-        media = title_case_media(art.get('media', ''))
+        media = clean_media_name(art.get('media', ''))
         date_pub = format_date_short(art.get('date_publication', ''))
         lines.append(
-            f'<p style="margin: 6px 0;">'
+            f'<li style="margin: 6px 0;">'
             f'<strong>{media}</strong> | <em>{titre}</em> | {date_pub}'
-            f'</p>'
+            f'</li>'
         )
 
+    lines.append('</ul>')
     lines.append('<p>Le PDF complet est en pièce jointe.</p>')
     lines.append('</div>')
     return '\n'.join(lines)

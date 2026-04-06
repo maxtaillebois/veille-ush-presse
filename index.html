@@ -892,6 +892,7 @@
         function populateDayFilter() {
             const days = new Map();
             const dayNames = ['dimanche', 'lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi'];
+            const monthNames = ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre'];
 
             articles.forEach(a => {
                 const dateStr = getCol(a, 'date_publication');
@@ -900,7 +901,7 @@
                 if (isNaN(d.getTime())) return;
                 const key = dateStr;
                 if (!days.has(key)) {
-                    const label = dayNames[d.getDay()] + ' ' + d.getDate() + '/' + String(d.getMonth() + 1).padStart(2, '0');
+                    const label = dayNames[d.getDay()] + ' ' + d.getDate() + ' ' + monthNames[d.getMonth()];
                     days.set(key, { label: label.charAt(0).toUpperCase() + label.slice(1), date: d });
                 }
             });

@@ -773,19 +773,21 @@
         const CONFIG = {
             ARTICLES_URL: 'https://maxtaillebois.github.io/veille-ush-presse/articles.json',
             GITHUB_REPO: 'maxtaillebois/veille-ush-presse',
+            GITHUB_TOKEN: '', // PAT GitHub fine-grained (contents:write sur ce repo uniquement)
             DEFAULT_DEST_EMAIL: 'stephanie@papiersdesoi.fr',
             DEFAULT_DEST_NOM: '',
             DEFAULT_CC_EMAILS: 'maxime.taillebois@procivis.fr; aurelie.hennetier@procivis.fr',
         };
 
-        // Token GitHub stocké en mémoire (session navigateur uniquement)
-        let githubToken = null;
+        // Token GitHub : CONFIG ou saisie manuelle (conservé en session)
+        let githubToken = CONFIG.GITHUB_TOKEN || null;
 
         function getGitHubToken() {
             if (githubToken) return githubToken;
             const token = prompt(
                 'Clé GitHub (nécessaire pour envoyer la sélection) :\n\n' +
-                'Cette clé est conservée uniquement le temps de votre session navigateur.'
+                'Cette clé est conservée uniquement le temps de votre session navigateur.\n' +
+                'Pour ne plus voir ce message, demandez à Claude de configurer la clé dans le CONFIG.'
             );
             if (token && token.trim().length > 10) {
                 githubToken = token.trim();
@@ -1312,7 +1314,7 @@
             const resp = await fetch(apiUrl, {
                 method: 'PUT',
                 headers: {
-                    'Authorization': `token ${CONFIG.GITHUB_TOKEN}`,
+                    'Authorization': `token ${token}`,
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify(body)

@@ -17,7 +17,7 @@ from reportlab.lib.pagesizes import A4
 from reportlab.lib.units import mm
 from reportlab.lib.colors import HexColor
 from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
-from reportlab.lib.enums import TA_JUSTIFY
+from reportlab.lib.enums import TA_JUSTIFY, TA_LEFT
 from reportlab.pdfgen import canvas
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
@@ -475,6 +475,12 @@ def get_styles():
         fontName=body_font, fontSize=9, textColor=C_VERT,
         spaceBefore=12, spaceAfter=0, leading=13
     ))
+    styles.add(ParagraphStyle(
+        'ArticleButton', parent=styles['Normal'],
+        fontName=body_bold, fontSize=9, textColor=C_WHITE,
+        spaceBefore=0, spaceAfter=0, leading=13,
+        alignment=TA_LEFT
+    ))
     return styles
 
 
@@ -584,6 +590,39 @@ def build_content(output_path, semaine, articles):
             meta_line += f" — {emission}"
         story.append(Paragraph(meta_line, styles['ArticleMeta']))
 
+        # Bouton cliquable vers la source
+        if url_source:
+            type_contenu = art.get('type_contenu', 'article')
+            if type_contenu == 'audio':
+                btn_label = "Écouter l'émission"
+            elif type_contenu == 'video':
+                btn_label = "Voir l'émission"
+            else:
+                btn_label = "Lire l'article en ligne"
+            btn_para = Paragraph(
+                f'<a href="{url_source}" color="#FFFFFF">{btn_label}  →</a>',
+                styles['ArticleButton']
+            )
+            btn_table = Table([[btn_para]], colWidths=[None])
+            btn_table.setStyle(TableStyle([
+                ('BACKGROUND', (0, 0), (-1, -1), C_VERT),
+                ('TOPPADDING', (0, 0), (-1, -1), 5),
+                ('BOTTOMPADDING', (0, 0), (-1, -1), 5),
+                ('LEFTPADDING', (0, 0), (-1, -1), 12),
+                ('RIGHTPADDING', (0, 0), (-1, -1), 12),
+                ('ROUNDEDCORNERS', [3, 3, 3, 3]),
+            ]))
+            # Wrap in outer table to left-align (not full width)
+            outer = Table([[btn_table]], colWidths=[W - 40*mm])
+            outer.setStyle(TableStyle([
+                ('ALIGN', (0, 0), (-1, -1), 'LEFT'),
+                ('TOPPADDING', (0, 0), (-1, -1), 4),
+                ('BOTTOMPADDING', (0, 0), (-1, -1), 2),
+                ('LEFTPADDING', (0, 0), (-1, -1), 0),
+                ('RIGHTPADDING', (0, 0), (-1, -1), 0),
+            ]))
+            story.append(outer)
+
         art_line = Table([['']], colWidths=[W - 40*mm])
         art_line.setStyle(TableStyle([('LINEBELOW', (0, 0), (-1, -1), 1, C_VERT_PALE)]))
         story.append(art_line)
@@ -604,18 +643,6 @@ def build_content(output_path, semaine, articles):
                 else:
                     story.append(Paragraph(text_safe, styles['ArticleBody']))
                     story.append(Spacer(1, 2.5*mm))
-
-        if url_source:
-            story.append(Spacer(1, 3*mm))
-            type_contenu = art.get('type_contenu', 'article')
-            if type_contenu == 'audio':
-                link_label = "Écouter l'émission →"
-            elif type_contenu == 'video':
-                link_label = "Voir la vidéo →"
-            else:
-                link_label = "Lire l'article source →"
-            source_text = f'<a href="{url_source}" color="#97C33D">{link_label}</a>'
-            story.append(Paragraph(source_text, styles['ArticleSource']))
 
         if idx < len(articles) - 1:
             story.append(PageBreak())

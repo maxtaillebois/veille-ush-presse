@@ -196,23 +196,44 @@
 
         .stat-card {
             background: white;
-            padding: 20px;
+            padding: 12px 16px;
             border-radius: 8px;
             border-left: 4px solid var(--ush-medium);
             box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .stat-card-filter {
+            flex-grow: 1;
+        }
+
+        .stat-card-filter select {
+            padding: 6px 12px;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            font-size: 14px;
+            color: var(--text-dark);
+            background: white;
+            cursor: pointer;
+        }
+
+        .stat-card-filter select:hover {
+            border-color: var(--ush-light);
         }
 
         .stat-label {
-            font-size: 12px;
+            font-size: 11px;
             color: var(--text-light);
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            margin-bottom: 8px;
             font-weight: 600;
+            white-space: nowrap;
         }
 
         .stat-value {
-            font-size: 28px;
+            font-size: 22px;
             font-weight: 700;
             color: var(--ush-dark);
         }
@@ -695,13 +716,11 @@
                 <div class="stat-label">Sources médias</div>
                 <div class="stat-value" id="statMedias">0</div>
             </div>
-            <div class="stat-card">
-                <div class="stat-label">Articles avec mots-clés</div>
-                <div class="stat-value" id="statKeywords">0</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-label">Articles avec texte complet</div>
-                <div class="stat-value" id="statFulltext">0</div>
+            <div class="stat-card stat-card-filter">
+                <div class="stat-label">Filtrer par jour</div>
+                <select id="dayFilter">
+                    <option value="">Tous les jours</option>
+                </select>
             </div>
         </div>
 
@@ -848,6 +867,7 @@
 
                     articles.forEach((a, idx) => a.order = idx);
 
+                    populateDayFilter();
                     filterAndRender();
                     updateStats();
                 })
@@ -869,8 +889,43 @@
         // ============================================
         // UI RENDERING
         // ============================================
+        function populateDayFilter() {
+            const days = new Map();
+            const dayNames = ['dimanche', 'lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi'];
+
+            articles.forEach(a => {
+                const dateStr = getCol(a, 'date_publication');
+                if (!dateStr) return;
+                const d = new Date(dateStr);
+                if (isNaN(d.getTime())) return;
+                const key = dateStr;
+                if (!days.has(key)) {
+                    const label = dayNames[d.getDay()] + ' ' + d.getDate() + '/' + String(d.getMonth() + 1).padStart(2, '0');
+                    days.set(key, { label: label.charAt(0).toUpperCase() + label.slice(1), date: d });
+                }
+            });
+
+            const sorted = Array.from(days.entries()).sort((a, b) => b[1].date - a[1].date);
+            const select = document.getElementById('dayFilter');
+            select.innerHTML = '<option value="">Tous les jours</option>';
+            sorted.forEach(([key, val]) => {
+                const opt = document.createElement('option');
+                opt.value = key;
+                opt.textContent = val.label;
+                select.appendChild(opt);
+            });
+
+            select.removeEventListener('change', filterAndRender);
+            select.addEventListener('change', filterAndRender);
+        }
+
         function filterAndRender() {
-            displayedArticles = [...articles];
+            const day = document.getElementById('dayFilter').value;
+            if (day) {
+                displayedArticles = articles.filter(a => getCol(a, 'date_publication') === day);
+            } else {
+                displayedArticles = [...articles];
+            }
             renderArticles();
         }
 
@@ -1031,22 +1086,13 @@
 
         function updateStats() {
             const mediaSet = new Set();
-            let keywordCount = 0;
-            let fulltextCount = 0;
-
             articles.forEach(a => {
                 const media = getCol(a, 'media', 'média');
                 if (media) mediaSet.add(media);
-                const kw = getCol(a, 'mots_cles', 'mots-clés');
-                if (kw && kw !== '—') keywordCount++;
-                const fulltext = getCol(a, 'texte_integral', 'texte intégral');
-                if (fulltext && fulltext !== '—' && fulltext.length > 0) fulltextCount++;
             });
 
             document.getElementById('statArticles').textContent = articles.length;
             document.getElementById('statMedias').textContent = mediaSet.size;
-            document.getElementById('statKeywords').textContent = keywordCount;
-            document.getElementById('statFulltext').textContent = fulltextCount;
         }
 
         // ============================================

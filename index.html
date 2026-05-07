@@ -1046,7 +1046,9 @@
                         Object.keys(a).forEach(k => {
                             obj[k.toLowerCase().trim()] = a[k] !== null ? String(a[k]) : '';
                         });
-                        obj.selected = false;
+                        // Respecter la présélection automatique du JSON (champ "selectionne")
+                        // Claude marque selectionne:true sur 3 articles à chaque génération
+                        obj.selected = (a.selectionne === true || a.selectionne === 'true');
                         return obj;
                     });
 

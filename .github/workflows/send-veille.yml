@@ -75,10 +75,12 @@ jobs:
 
       - name: Envoyer l'email
         env:
-          GMAIL_USER: ${{ secrets.GMAIL_USER }}
-          GMAIL_APP_PWD: ${{ secrets.GMAIL_APP_PWD }}
-          MAIL_TO: ${{ steps.dest.outputs.mail_to || secrets.MAIL_TO }}
-          MAIL_CC: ${{ steps.dest.outputs.mail_cc || secrets.MAIL_CC }}
+          GRAPH_TENANT_ID: ${{ secrets.GRAPH_TENANT_ID }}
+          GRAPH_CLIENT_ID: ${{ secrets.GRAPH_CLIENT_ID }}
+          GRAPH_CLIENT_SECRET: ${{ secrets.GRAPH_CLIENT_SECRET }}
+          MAIL_FROM: maxime.taillebois@procivis.fr
+          MAIL_TO: ${{ steps.dest.outputs.mail_to }}
+          MAIL_CC: ${{ steps.dest.outputs.mail_cc }}
         run: python send_email.py
 
       - name: Nettoyage post-envoi

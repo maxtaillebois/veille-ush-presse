@@ -8,6 +8,20 @@ notifier Maxime. La sélection finale et l'envoi du PDF (Phase 2) restent **manu
 Le script `veille_ush.py` fait toute la mécanique ; ton rôle d'agent est l'**analyse
 éditoriale** (étape 3). Voir `DEPLOIEMENT_VEILLE_USH.md` pour le détail du système.
 
+## ⚠️ EXÉCUTION SANS INTERRUPTION — À LIRE EN PREMIER
+
+Cette routine doit aller **jusqu'au bout en une seule traite**. Tu ne rends la main
+(ne termines ton tour) que lorsque `push` ET `mail-recap` ont été exécutés avec succès,
+ou en cas d'échec bloquant explicite.
+
+- L'analyse éditoriale (étape 3) est **longue** : il peut y avoir 15 à 30 articles à
+  traiter. C'est normal et attendu — traite-les **tous**, par lots si besoin, mais ne
+  t'arrête pas en cours de route et ne demande aucune confirmation.
+- Après `collect` et la lecture de `raw_articles.json`, **enchaîne immédiatement**
+  l'analyse, l'écriture de `enriched_articles.json`, puis `build`, `push`, `mail-recap`.
+- Ne considère jamais « lire un fichier » ou « collecter » comme une fin de tâche : ce
+  ne sont que des étapes intermédiaires.
+
 ## Variables de routine attendues
 `VUSH_TENANT`, `VUSH_CLIENT_ID`, `VUSH_CLIENT_SECRET` (app Graph « n8n Outlook »),
 `VUSH_MAILBOX` (boîte à lire), `VUSH_GH_PAT` (PAT GitHub), `VUSH_RECAP_TO` (optionnel).

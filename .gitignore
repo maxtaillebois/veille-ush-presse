@@ -1,0 +1,4 @@
+# Fichiers intermédiaires de la collecte (Phase 1) — jamais versionnés
+raw_articles.json
+enriched_articles.json
+__pycache__/

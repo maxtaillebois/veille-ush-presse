@@ -782,7 +782,7 @@
         <!-- HERO HEADER -->
         <div class="hero">
             <h1>📰 Veille presse USH</h1>
-            <p>Articles analysés par IA — la sélection de la semaine</p>
+            <p>Articles analysés par IA — sélectionnez, consultez et partagez</p>
         </div>
 
         <!-- TOOLBAR -->
@@ -791,7 +791,6 @@
                 🔄 Actualiser
             </button>
         </div>
-        <div class="feedback" id="feedback"></div>
 
         <!-- STATS BAR -->
         <div class="stats-bar">
@@ -819,9 +818,44 @@
         </div>
 
         <div class="articles-section">
+            <div class="select-all-row">
+                <input type="checkbox" id="selectAllCheckbox">
+                <label for="selectAllCheckbox">Sélectionner tous les articles</label>
+            </div>
+
             <div class="article-list" id="articleList"></div>
         </div>
 
+        <!-- SEND SECTION -->
+        <div class="send-section">
+            <h2>✉️ Envoyer la sélection par mail</h2>
+
+            <div class="feedback" id="feedback"></div>
+
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="destEmail">Email destinataire *</label>
+                    <input type="email" id="destEmail" placeholder="nom@exemple.fr" required>
+                </div>
+                <div class="form-group">
+                    <label for="destNom">Nom destinataire</label>
+                    <input type="text" id="destNom" placeholder="Jean Dupont">
+                </div>
+                <div class="form-group">
+                    <label for="ccEmails">Emails en copie (séparés par ;)</label>
+                    <input type="text" id="ccEmails" placeholder="email1@exemple.fr; email2@exemple.fr">
+                </div>
+            </div>
+
+            <div class="send-action-bar">
+                <div class="selection-counter">
+                    <strong id="selectionCount">0</strong> article(s) sélectionné(s)
+                </div>
+                <button class="btn btn-primary" id="sendBtn">
+                    ✉️ Envoyer
+                </button>
+            </div>
+        </div>
     </div>
 
     <script type="text/javascript">
@@ -830,6 +864,12 @@
         // ============================================
         const CONFIG = {
             ARTICLES_URL: 'https://maxtaillebois.github.io/veille-ush-presse/articles.json',
+            // URL du relais Cloudflare — détient le token GitHub côté serveur.
+            // À renseigner une fois le relais déployé. Aucun secret dans cette page.
+            RELAY_URL: 'https://RELAIS-A-RENSEIGNER.workers.dev',
+            DEFAULT_DEST_EMAIL: 'stephanie@papiersdesoi.fr',
+            DEFAULT_DEST_NOM: '',
+            DEFAULT_CC_EMAILS: 'aurelie.hennetier@procivis.fr',
         };
 
         // ============================================
@@ -1140,10 +1180,10 @@
 
             list.querySelectorAll('.preselection-item').forEach(el => {
                 el.addEventListener('click', () => {
-                    const target = articles[parseInt(el.dataset.idx, 10)];
-                    const i = displayedArticles.indexOf(target);
-                    const cards = document.querySelectorAll('.article-item');
-                    if (i >= 0 && cards[i]) cards[i].scrollIntoView({behavior: 'smooth', block: 'center'});
+                    const targetIdx = parseInt(el.dataset.idx, 10);
+                    const target = articles[targetIdx];
+                    const cb = Array.from(document.querySelectorAll('.article-checkbox')).find((c, i) => displayedArticles[i] === target);
+                    if (cb) cb.scrollIntoView({behavior: 'smooth', block: 'center'});
                 });
             });
         }
@@ -1252,6 +1292,12 @@
                     <div class="article-item ${typeContenu !== 'article' ? 'article-item-' + typeContenu : ''}">
                         <div class="article-controls">
                             <div class="article-order-badge">${idx + 1}</div>
+                            <input type="checkbox" class="article-checkbox" data-index="${idx}" ${article.selected ? 'checked' : ''}>
+                            <label class="article-checkbox-label" for="cb-${idx}">Garder cet article</label>
+                            <div class="reorder-buttons">
+                                <button class="btn-reorder btn-up" data-index="${idx}" ${idx === 0 ? 'disabled' : ''}>▲</button>
+                                <button class="btn-reorder btn-down" data-index="${idx}" ${idx === displayedArticles.length - 1 ? 'disabled' : ''}>▼</button>
+                            </div>
                         </div>
                         <div class="article-content">
                             <div class="article-title">
@@ -1282,6 +1328,41 @@
                 list.appendChild(elem.firstElementChild);
             });
 
+            attachArticleHandlers();
+            updateSelectionUI();
+        }
+
+        function attachArticleHandlers() {
+            document.querySelectorAll('.article-checkbox').forEach(cb => {
+                cb.addEventListener('change', (e) => {
+                    const idx = parseInt(e.target.dataset.index);
+                    displayedArticles[idx].selected = e.target.checked;
+                    renderPreselectionPanel();
+                    updateSelectionUI();
+                });
+            });
+
+            document.querySelectorAll('.btn-up').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const idx = parseInt(e.target.dataset.index);
+                    if (idx > 0) {
+                        [displayedArticles[idx - 1], displayedArticles[idx]] = [displayedArticles[idx], displayedArticles[idx - 1]];
+                        renderArticles();
+                        updateSelectionUI();
+                    }
+                });
+            });
+
+            document.querySelectorAll('.btn-down').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const idx = parseInt(e.target.dataset.index);
+                    if (idx < displayedArticles.length - 1) {
+                        [displayedArticles[idx], displayedArticles[idx + 1]] = [displayedArticles[idx + 1], displayedArticles[idx]];
+                        renderArticles();
+                        updateSelectionUI();
+                    }
+                });
+            });
         }
 
         function toggleFulltext(btn) {
@@ -1296,6 +1377,16 @@
             textNode.textContent = isOpen ? ' Voir l\'article complet' : ' Masquer l\'article';
         }
 
+        function updateSelectionUI() {
+            const count = displayedArticles.filter(a => a.selected).length;
+            document.getElementById('selectionCount').textContent = count;
+
+            const allSelected = displayedArticles.length > 0 && displayedArticles.every(a => a.selected);
+            const anySelected = displayedArticles.some(a => a.selected);
+            document.getElementById('selectAllCheckbox').checked = allSelected;
+            document.getElementById('selectAllCheckbox').indeterminate = !allSelected && anySelected;
+        }
+
         function updateStats() {
             const mediaSet = new Set();
             articles.forEach(a => {
@@ -1308,8 +1399,84 @@
         }
 
         // ============================================
+        // SELECT ALL
+        // ============================================
+        document.getElementById('selectAllCheckbox').addEventListener('change', (e) => {
+            displayedArticles.forEach(a => a.selected = e.target.checked);
+            renderArticles();
+            updateSelectionUI();
+        });
+
+        // ============================================
+        // ENVOI (via le relais — aucun secret dans cette page)
+        // ============================================
+
+        document.getElementById('sendBtn').addEventListener('click', async () => {
+            const email = document.getElementById('destEmail').value.trim();
+            const nom = document.getElementById('destNom').value.trim();
+            const cc = document.getElementById('ccEmails').value.trim();
+
+            if (!email) {
+                showFeedback('Veuillez entrer une adresse email', 'error');
+                return;
+            }
+
+            const selected = displayedArticles.filter(a => a.selected);
+            if (selected.length === 0) {
+                showFeedback('Aucun article sélectionné', 'error');
+                return;
+            }
+
+            const sendBtn = document.getElementById('sendBtn');
+            sendBtn.disabled = true;
+            sendBtn.textContent = '⏳ Envoi en cours...';
+
+            const selectionPayload = {
+                selected_titles: selected.map(a => getCol(a, 'titre')),
+                destinataire_email: email,
+                destinataire_nom: nom,
+                cc_emails: cc,
+                timestamp: new Date().toISOString()
+            };
+
+            try {
+                const resp = await fetch(CONFIG.RELAY_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(selectionPayload)
+                });
+                if (!resp.ok) {
+                    const txt = await resp.text();
+                    throw new Error(`${resp.status} — ${txt.slice(0, 200)}`);
+                }
+
+                showFeedback(
+                    `✓ Sélection envoyée ! Le PDF sera généré et envoyé à ${email} dans quelques minutes.`,
+                    'success'
+                );
+
+                displayedArticles.forEach(a => a.selected = false);
+                renderArticles();
+                updateSelectionUI();
+
+            } catch (err) {
+                console.error(err);
+                showFeedback('Erreur : ' + err.message, 'error');
+            } finally {
+                sendBtn.disabled = false;
+                sendBtn.textContent = '✉️ Envoyer';
+            }
+        });
+
+        // ============================================
         // INITIALIZATION
         // ============================================
+        // Pre-fill form with CONFIG defaults
+        if (CONFIG.DEFAULT_DEST_EMAIL) document.getElementById('destEmail').value = CONFIG.DEFAULT_DEST_EMAIL;
+        if (CONFIG.DEFAULT_DEST_NOM) document.getElementById('destNom').value = CONFIG.DEFAULT_DEST_NOM;
+        if (CONFIG.DEFAULT_CC_EMAILS) document.getElementById('ccEmails').value = CONFIG.DEFAULT_CC_EMAILS;
+
+        // Bouton rafraîchir
         document.getElementById('refreshBtn').addEventListener('click', loadArticles);
 
         // Chargement initial

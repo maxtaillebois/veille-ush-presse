@@ -2,7 +2,7 @@
 """
 Envoi email - Veille Presse USH
 Envoie le PDF en pièce jointe via Microsoft Graph, depuis la boîte pro Outlook.
-Lancé par l'agent (Phase 2, à la demande) après génération du PDF — voir PHASE2.md.
+Lancé par GitHub Actions après génération du PDF.
 
 Variables d'environnement requises :
   GRAPH_TENANT_ID      : tenant Azure AD (app « n8n Outlook »)

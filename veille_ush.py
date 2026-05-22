@@ -4,11 +4,11 @@ Collecte hebdomadaire — Veille presse USH (Phase 1)
 Routine distante Claude Code, vendredi 09:00 Europe/Paris.
 
 Sous-commandes :
-  netcheck             Teste la connectivité réseau sortante (à lancer en premier)
-  collect              Outlook (Graph) -> panoramas LuQi -> raw_articles.json
-  build ENRICHED.json  Valide l'analyse de l'agent -> articles.json (final)
-  push                 Commit + push articles.json sur GitHub
-  mail-recap           Envoie le récap par mail (Graph) à Maxime
+  netcheck   Teste la connectivité réseau sortante (à lancer en premier)
+  collect    Outlook (Graph) -> panoramas LuQi -> raw_articles.json
+  build      Fusionne raw_articles.json + analyse.json (agent) -> articles.json
+  push       Commit + push articles.json sur GitHub
+  mail-recap Envoie le récap par mail (Graph) à Maxime
 
 Tout le HTTP sortant passe par `curl` (piège n°12 de la doc : requests/urllib
 peuvent être bloqués par le sandbox ; curl est validé).
@@ -320,33 +320,46 @@ def cmd_collect():
 # build
 # --------------------------------------------------------------------------
 
-def cmd_build(enriched_path):
-    if not os.path.exists(enriched_path):
-        fail(f"Fichier introuvable : {enriched_path}")
-    with open(enriched_path, 'r', encoding='utf-8') as f:
-        data = json.load(f)
-    articles = data.get('articles') or []
-    if not articles:
-        fail("Le fichier enrichi ne contient aucun article.")
+def cmd_build():
+    """Fusionne raw_articles.json (base) + analyse.json (overlay agent) -> articles.json."""
+    if not os.path.exists(RAW_PATH):
+        fail("raw_articles.json absent — lancer `collect` avant `build`.")
+    analyse_path = os.path.join(REPO_DIR, "analyse.json")
+    if not os.path.exists(analyse_path):
+        fail("analyse.json absent — l'agent doit l'écrire (voir COLLECTE.md, étapes 3-4).")
 
+    with open(RAW_PATH, 'r', encoding='utf-8') as f:
+        articles = json.load(f).get('articles') or []
+    with open(analyse_path, 'r', encoding='utf-8') as f:
+        overlay = json.load(f).get('articles') or []
+    if not articles:
+        fail("raw_articles.json ne contient aucun article.")
+
+    omap = {str(o.get('id_coupure', '')): o for o in overlay}
     iso = date.today().isocalendar()
     semaine = f"S{iso[1]}-{iso[0]}"
 
     errors = []
     for i, a in enumerate(articles, 1):
         a['semaine'] = semaine
-        if not (a.get('resume') or '').strip():
-            errors.append(f"article {i} ({a.get('titre','?')[:40]}) : résumé vide")
-        mc = a.get('mots_cles') or []
-        if len(mc) < 3:
-            errors.append(f"article {i} ({a.get('titre','?')[:40]}) : {len(mc)} mot(s)-clé(s) (< 3)")
+        titre = a.get('titre', '?')[:40]
+        o = omap.get(str(a.get('id_coupure', '')))
+        if o is None:
+            errors.append(f"article {i} ({titre}) : absent de analyse.json")
+            continue
+        a['resume'] = (o.get('resume') or '').strip()
+        a['mots_cles'] = o.get('mots_cles') or []
+        a['selectionne'] = bool(o.get('selectionne', False))
+        if not a['resume']:
+            errors.append(f"article {i} ({titre}) : résumé vide")
+        if len(a['mots_cles']) < 3:
+            errors.append(f"article {i} ({titre}) : {len(a['mots_cles'])} mot(s)-clé(s) (< 3)")
         if not (a.get('texte_integral') or '').strip():
-            errors.append(f"article {i} ({a.get('titre','?')[:40]}) : texte intégral vide")
-        a['selectionne'] = bool(a.get('selectionne', False))
+            errors.append(f"article {i} ({titre}) : texte intégral vide")
     if errors:
         for e in errors:
             print(f"  CONTRÔLE QUALITÉ KO : {e}", file=sys.stderr)
-        fail(f"{len(errors)} problème(s) de contrôle qualité — corriger {enriched_path}.")
+        fail(f"{len(errors)} problème(s) de contrôle qualité — corriger analyse.json.")
 
     articles.sort(key=lambda a: a.get('date_publication', ''), reverse=True)
     nb_sel = sum(1 for a in articles if a['selectionne'])
@@ -466,7 +479,7 @@ def cmd_mail_recap():
 
 # --------------------------------------------------------------------------
 
-USAGE = "Usage : veille_ush.py [netcheck|collect|build ENRICHED.json|push|mail-recap]"
+USAGE = "Usage : veille_ush.py [netcheck|collect|build|push|mail-recap]"
 
 
 def main():
@@ -478,9 +491,7 @@ def main():
     elif cmd == "collect":
         cmd_collect()
     elif cmd == "build":
-        if len(sys.argv) < 3:
-            fail("build : préciser le fichier enrichi. " + USAGE)
-        cmd_build(sys.argv[2])
+        cmd_build()
     elif cmd == "push":
         cmd_push()
     elif cmd == "mail-recap":

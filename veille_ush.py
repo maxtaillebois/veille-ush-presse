@@ -405,7 +405,7 @@ def cmd_push():
         return
     _git(["commit", "-m", f"Veille presse USH — {semaine}"])
     _git(["pull", "--rebase", "origin", "main"])
-    _git(["push", "origin", "main"])
+    _git(["push", "origin", "HEAD:main"])
     print(f"articles.json poussé sur GitHub ({semaine}). Page : {PAGE_URL}")
 
 

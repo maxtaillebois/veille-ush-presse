@@ -406,6 +406,11 @@ def cmd_push():
     _git(["commit", "-m", f"Veille presse USH — {semaine}"])
     _git(["pull", "--rebase", "origin", "main"])
     _git(["push", "origin", "HEAD:main"])
+
+    local_sha = _git(["rev-parse", "HEAD"]).stdout.strip()
+    remote = _git(["ls-remote", "origin", "refs/heads/main"]).stdout.split()[0]
+    if local_sha != remote:
+        fail(f"push origin/main KO : local={local_sha[:7]} remote={remote[:7]}")
     print(f"articles.json poussé sur GitHub ({semaine}). Page : {PAGE_URL}")
 
 

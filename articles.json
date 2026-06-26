@@ -62,6 +62,35 @@
     },
     {
       "semaine": "S26-2026",
+      "media": "AFP - AGENCE FRANCE-PRESSE",
+      "titre": "En pleine canicule, le gouvernement présente un projet de loi accusé de \"sauver les bouilloires thermiques\"",
+      "date_publication": "2026-06-24",
+      "auteur": "",
+      "resume": "Le projet de loi Relance logement, présenté le 24 juin en Conseil des ministres, autorise temporairement la location de 700 000 passoires thermiques sous condition de travaux, suscitant les critiques de la CNL et de Greenpeace en pleine canicule. Emmanuelle Cosse (USH) juge le texte « nécessaire mais insuffisant ».",
+      "mots_cles": [
+        "Relance logement",
+        "passoires thermiques",
+        "ANRU 3",
+        "Emmanuelle Cosse",
+        "Vincent Jeanbrun"
+      ],
+      "texte_integral": "24/06/2026 15:03:11 GMT En pleine canicule, le gouvernement présente un projet de loi accusé de ”sauver les bouilloires thermiques” Le ministre du Logement Vincent Jeanbrun a présenté mercredi en Conseil des ministres son projet de loi visant à augmenter l'offre de logements, notamment en permettant la location de ceux mal isolés, une mesure accusée de vouloir \"sauver les bouilloires thermiques\", en pleine canicule. Pour répondre à \"l'urgence\" de la crise du logement, devenue \"une véritable bombe sociale\", le ministre compte, avec ce texte, \"répondre aux besoins des quartiers les plus fragiles\" avec un troisième programme de renouvellement urbain, \"construire plus vite et mieux\", \"rénover plus efficacement\" et \"faire confiance aux maires\", a-t-il déclaré à l'issue du Conseil des ministres. II propose de permettre de louer les 700.000 logements considérés comme des passoires énergétiques, à condition que le propriétaire s'engage à faire des travaux via la signature d'un contrat avec une entreprise et le versement d'un acompte. \"Pendant que la France étouffe (...), Vincent Jeanbrun a trouvé sa priorité: sauver les bouilloires thermiques\", les logements inadaptés aux fortes chaleurs, accuse la Confédération nationale du logement (CNL), proche du Parti communiste, qui défend les locataires HLM. Le \"comble du cynisme\", pour Greenpeace. \"Des centaines de milliers de locataires, pour la plupart modestes, souffrent de la canicule dans des logements insalubres, surchauffés et invivables mais le gouvernement, déjà responsable de leur situation, choisit de reporter des travaux qui pourraient améliorer leur vie quotidienne\", accuse Nicolas Nace, chargé de campagne transition énergétique au sein de l'ONG. \"L'objectif c'est bel et bien que ces logements soient rénovés\", a défendu Vincent Jeanbrun. \"Si on ne permet pas au propriétaire d'avoir les ressources pour faire les travaux, probablement qu'il ne les fera jamais\". - \"Nécessaire mais insuffisant\" Le texte, annoncé en avril à Marseille par le Premier ministre Sébastien Lecornu et Vincent Jeanbrun, sera enrichi d'amendements sur l'adaptation des logements aux fortes chaleurs, notamment pour faciliter le vote en copropriété de travaux de pose de volets ou stores.\n\n\"II va falloir maintenant que cette question\" de l'adaptation aux canicules \"soit au coeur de nos préoccupations, y compris dans les normes et les exigences architecturales et environnementales\", a assuré le ministre du Logement. D'autres mesures sont en réflexion et seront débattues par les parlementaires. Vincent Jeanbrun souhaite notamment faire évoluer les règles de préservation du patrimoine, qui peuvent empêcher la pose de volets, et mieux former les conseillers en rénovation énergétique pour que le confort d'été soit systématiquement pris en compte dans les dossiers de subventions MaPrimeRénov' pour des rénovations énergétiques globales de logements. Selon une étude de la société de conseil Pouget Consultants et l'Alliance des industriels des solutions électriques et numériques du bâtiment (Ignes), un logement sur deux serait \"insuffisamment adapté\" aux canicules et se transforme en bouilloire thermique lors des vagues de chaleur. Le projet de loi prévoit aussi de renforcer le dispositif d'incitation à l'investissement locatif, le \"statut du bailleur privé\" ou \"dispositif Jeanbrun\", en abaissant le seuil de travaux requis lors de l'achat d'un logement ancien. Une procédure d'urbanisme simplifiée est créée pour construire des logements plus vite et des pouvoirs supplémentaires sont donnés aux maires, sur la base du volontariat: la gestion des aides MaPrimeRénov', ainsi que le droit de proposer des candidats pour l'attribution d'un logement social, ou de s'opposer à l'octroi d'un logement à un ménage condamné pour trouble à l'ordre public. Pour Emmanuelle Cosse, présidente de l'Union sociale pour l'habitat (USH), qui fédère les bailleurs sociaux, \"ce texte de loi est nécessaire mais ne sera pas suffisant\" pour régler la crise du logement. Elle salue un \"réengagement du gouvernement sur la question du logement\" et une meilleure coopération avec le secteur, mais reste vigilante sur l'enveloppe prévue pour le troisième programme de renouvellement urbain et certaines compétences confiées aux maires. Le texte devrait être examiné à la rentrée en séance à l'Assemblée nationale, avant d'arriver au Sénat à l'automne. Le ministère espère une adoption avant la fin de l'année.",
+      "selectionne": true,
+      "url_source": "https://luqi.fr/luqiLatest/diffusion/budget/a2t2p000000YwvIAAS/panorama/1354435?idRm=10000000071845464",
+      "type_contenu": "article",
+      "chaine": "",
+      "emission": "",
+      "themes_ush": [
+        "Politique du logement et de la ville",
+        "Mouvement Hlm",
+        "Vie des régions, actualités des organismes et des collectivités locales",
+        "Mouvement Hlm – L’Union sociale pour l’habitat"
+      ],
+      "media_type": "PRESSE",
+      "id_coupure": "10000000071845464"
+    },
+    {
+      "semaine": "S26-2026",
       "media": "France 5",
       "titre": "C ce soir, le débat",
       "date_publication": "2026-06-24",
@@ -198,35 +227,6 @@
       ],
       "media_type": "RADIO",
       "id_coupure": "60000000260199688"
-    },
-    {
-      "semaine": "S26-2026",
-      "media": "AFP - AGENCE FRANCE-PRESSE",
-      "titre": "En pleine canicule, le gouvernement présente un projet de loi accusé de \"sauver les bouilloires thermiques\"",
-      "date_publication": "2026-06-24",
-      "auteur": "",
-      "resume": "Le projet de loi Relance logement, présenté le 24 juin en Conseil des ministres, autorise temporairement la location de 700 000 passoires thermiques sous condition de travaux, suscitant les critiques de la CNL et de Greenpeace en pleine canicule. Emmanuelle Cosse (USH) juge le texte « nécessaire mais insuffisant ».",
-      "mots_cles": [
-        "Relance logement",
-        "passoires thermiques",
-        "ANRU 3",
-        "Emmanuelle Cosse",
-        "Vincent Jeanbrun"
-      ],
-      "texte_integral": "24/06/2026 15:03:11 GMT En pleine canicule, le gouvernement présente un projet de loi accusé de ”sauver les bouilloires thermiques” Le ministre du Logement Vincent Jeanbrun a présenté mercredi en Conseil des ministres son projet de loi visant à augmenter l'offre de logements, notamment en permettant la location de ceux mal isolés, une mesure accusée de vouloir \"sauver les bouilloires thermiques\", en pleine canicule. Pour répondre à \"l'urgence\" de la crise du logement, devenue \"une véritable bombe sociale\", le ministre compte, avec ce texte, \"répondre aux besoins des quartiers les plus fragiles\" avec un troisième programme de renouvellement urbain, \"construire plus vite et mieux\", \"rénover plus efficacement\" et \"faire confiance aux maires\", a-t-il déclaré à l'issue du Conseil des ministres. II propose de permettre de louer les 700.000 logements considérés comme des passoires énergétiques, à condition que le propriétaire s'engage à faire des travaux via la signature d'un contrat avec une entreprise et le versement d'un acompte. \"Pendant que la France étouffe (...), Vincent Jeanbrun a trouvé sa priorité: sauver les bouilloires thermiques\", les logements inadaptés aux fortes chaleurs, accuse la Confédération nationale du logement (CNL), proche du Parti communiste, qui défend les locataires HLM. Le \"comble du cynisme\", pour Greenpeace. \"Des centaines de milliers de locataires, pour la plupart modestes, souffrent de la canicule dans des logements insalubres, surchauffés et invivables mais le gouvernement, déjà responsable de leur situation, choisit de reporter des travaux qui pourraient améliorer leur vie quotidienne\", accuse Nicolas Nace, chargé de campagne transition énergétique au sein de l'ONG. \"L'objectif c'est bel et bien que ces logements soient rénovés\", a défendu Vincent Jeanbrun. \"Si on ne permet pas au propriétaire d'avoir les ressources pour faire les travaux, probablement qu'il ne les fera jamais\". - \"Nécessaire mais insuffisant\" Le texte, annoncé en avril à Marseille par le Premier ministre Sébastien Lecornu et Vincent Jeanbrun, sera enrichi d'amendements sur l'adaptation des logements aux fortes chaleurs, notamment pour faciliter le vote en copropriété de travaux de pose de volets ou stores.\n\n\"II va falloir maintenant que cette question\" de l'adaptation aux canicules \"soit au coeur de nos préoccupations, y compris dans les normes et les exigences architecturales et environnementales\", a assuré le ministre du Logement. D'autres mesures sont en réflexion et seront débattues par les parlementaires. Vincent Jeanbrun souhaite notamment faire évoluer les règles de préservation du patrimoine, qui peuvent empêcher la pose de volets, et mieux former les conseillers en rénovation énergétique pour que le confort d'été soit systématiquement pris en compte dans les dossiers de subventions MaPrimeRénov' pour des rénovations énergétiques globales de logements. Selon une étude de la société de conseil Pouget Consultants et l'Alliance des industriels des solutions électriques et numériques du bâtiment (Ignes), un logement sur deux serait \"insuffisamment adapté\" aux canicules et se transforme en bouilloire thermique lors des vagues de chaleur. Le projet de loi prévoit aussi de renforcer le dispositif d'incitation à l'investissement locatif, le \"statut du bailleur privé\" ou \"dispositif Jeanbrun\", en abaissant le seuil de travaux requis lors de l'achat d'un logement ancien. Une procédure d'urbanisme simplifiée est créée pour construire des logements plus vite et des pouvoirs supplémentaires sont donnés aux maires, sur la base du volontariat: la gestion des aides MaPrimeRénov', ainsi que le droit de proposer des candidats pour l'attribution d'un logement social, ou de s'opposer à l'octroi d'un logement à un ménage condamné pour trouble à l'ordre public. Pour Emmanuelle Cosse, présidente de l'Union sociale pour l'habitat (USH), qui fédère les bailleurs sociaux, \"ce texte de loi est nécessaire mais ne sera pas suffisant\" pour régler la crise du logement. Elle salue un \"réengagement du gouvernement sur la question du logement\" et une meilleure coopération avec le secteur, mais reste vigilante sur l'enveloppe prévue pour le troisième programme de renouvellement urbain et certaines compétences confiées aux maires. Le texte devrait être examiné à la rentrée en séance à l'Assemblée nationale, avant d'arriver au Sénat à l'automne. Le ministère espère une adoption avant la fin de l'année.",
-      "selectionne": true,
-      "url_source": "https://luqi.fr/luqiLatest/diffusion/budget/a2t2p000000YwvIAAS/panorama/1354435?idRm=10000000071845464",
-      "type_contenu": "article",
-      "chaine": "",
-      "emission": "",
-      "themes_ush": [
-        "Politique du logement et de la ville",
-        "Mouvement Hlm",
-        "Vie des régions, actualités des organismes et des collectivités locales",
-        "Mouvement Hlm – L’Union sociale pour l’habitat"
-      ],
-      "media_type": "PRESSE",
-      "id_coupure": "10000000071845464"
     },
     {
       "semaine": "S26-2026",

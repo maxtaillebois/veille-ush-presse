@@ -58,33 +58,6 @@
     },
     {
       "semaine": "S27-2026",
-      "media": "Ici RCFM",
-      "titre": "6h/8h - Matinamora",
-      "date_publication": "2026-07-02",
-      "auteur": "",
-      "resume": "Le gouvernement supprime les aides individuelles MaPrimeRénov' pour cibler les rénovations globales. Emmanuelle Cosse, présidente de l'Union sociale de l'habitat, dénonce un mauvais signal budgétaire envoyé aux Français qui va baisser la dynamique des travaux face au froid et à la chaleur.",
-      "mots_cles": [
-        "MaPrimeRénov'",
-        "Emmanuelle Cosse",
-        "USH",
-        "rénovation énergétique",
-        "budget"
-      ],
-      "texte_integral": "Le gouvernement supprime les aides individuelles MaPrimeRénov' pour cibler les rénovations globales. Emmanuelle Cosse, présidente de l'Union sociale de l'habitat, dénonce un mauvais signal budgétaire envoyé aux Français qui va baisser la dynamique des travaux face au froid et à la chaleur.",
-      "selectionne": false,
-      "url_source": "https://luqi.fr/luqiLatest/diffusion/budget/a2t2p000000YwvIAAS/panorama/1360828?idRm=60000000260207619",
-      "type_contenu": "audio",
-      "chaine": "ICI RCFM",
-      "emission": "6H/8H - MATINAMORA",
-      "themes_ush": [
-        "Mouvement Hlm",
-        "Mouvement Hlm – L’Union sociale pour l’habitat"
-      ],
-      "media_type": "RADIO",
-      "id_coupure": "60000000260207619"
-    },
-    {
-      "semaine": "S27-2026",
       "media": "L'OPINION",
       "titre": "La canicule met à l'épreuve le DPE",
       "date_publication": "2026-07-02",
@@ -109,6 +82,33 @@
       ],
       "media_type": "PRESSE",
       "id_coupure": "36000000000338647"
+    },
+    {
+      "semaine": "S27-2026",
+      "media": "Ici RCFM",
+      "titre": "6h/8h - Matinamora",
+      "date_publication": "2026-07-02",
+      "auteur": "",
+      "resume": "Le gouvernement supprime les aides individuelles MaPrimeRénov' pour cibler les rénovations globales. Emmanuelle Cosse, présidente de l'Union sociale de l'habitat, dénonce un mauvais signal budgétaire envoyé aux Français qui va baisser la dynamique des travaux face au froid et à la chaleur.",
+      "mots_cles": [
+        "MaPrimeRénov'",
+        "Emmanuelle Cosse",
+        "USH",
+        "rénovation énergétique",
+        "budget"
+      ],
+      "texte_integral": "Le gouvernement supprime les aides individuelles MaPrimeRénov' pour cibler les rénovations globales. Emmanuelle Cosse, présidente de l'Union sociale de l'habitat, dénonce un mauvais signal budgétaire envoyé aux Français qui va baisser la dynamique des travaux face au froid et à la chaleur.",
+      "selectionne": false,
+      "url_source": "https://luqi.fr/luqiLatest/diffusion/budget/a2t2p000000YwvIAAS/panorama/1360828?idRm=60000000260207619",
+      "type_contenu": "audio",
+      "chaine": "ICI RCFM",
+      "emission": "6H/8H - MATINAMORA",
+      "themes_ush": [
+        "Mouvement Hlm",
+        "Mouvement Hlm – L’Union sociale pour l’habitat"
+      ],
+      "media_type": "RADIO",
+      "id_coupure": "60000000260207619"
     },
     {
       "semaine": "S27-2026",

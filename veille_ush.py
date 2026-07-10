@@ -137,23 +137,26 @@ def graph_get(token, url, params=None):
     return curl_json(args, ctx="Graph GET")
 
 
+PANORAMA_SENDER = "sender@s.luqi.fr"
+
+
 def fetch_panorama_emails(token, mailbox, days=7):
-    """Retourne les mails panorama USH des `days` derniers jours."""
+    """Retourne les mails panorama LuQi des `days` derniers jours.
+
+    Identifiés par l'expéditeur (sender@s.luqi.fr) : le sujet varie d'un jour
+    à l'autre (« PANORAMA DE PRESSE », parfois « ... DE L'USH ») et n'est pas
+    un identifiant fiable.
+    """
     since = (datetime.now(timezone.utc) - timedelta(days=days)).strftime("%Y-%m-%dT%H:%M:%SZ")
     data = graph_get(token, f"{GRAPH}/users/{mailbox}/messages", {
-        "$filter": f"receivedDateTime ge {since}",
+        "$filter": f"receivedDateTime ge {since} and from/emailAddress/address eq '{PANORAMA_SENDER}'",
         "$orderby": "receivedDateTime desc",
         "$select": "id,subject,from,receivedDateTime,body",
         "$top": "200",
     })
     if "value" not in data:
         fail(f"lecture boîte {mailbox} : {data.get('error', data)}")
-    mails = []
-    for m in data["value"]:
-        subj = (m.get("subject") or "").upper()
-        if "PANORAMA" in subj and "USH" in subj:
-            mails.append(m)
-    return mails
+    return data["value"]
 
 
 # --------------------------------------------------------------------------

@@ -4,6 +4,84 @@
   "articles": [
     {
       "semaine": "S31-2026",
+      "media": "AFP - AGENCE FRANCE-PRESSE ECONOMIQUE",
+      "titre": "Logement neuf: légère baisse des permis de construire accordés en juin",
+      "date_publication": "2026-07-28",
+      "auteur": "",
+      "resume": "Le nombre de permis de construire de logements a reculé de 4,8 % en juin après un rebond en mai, selon le ministère du Logement. Depuis janvier, 192 100 logements ont été autorisés (+4,2 % sur un an) et les mises en chantier ont bondi de près de 30 % au premier semestre 2026.",
+      "mots_cles": [
+        "permis de construire",
+        "mises en chantier",
+        "SDES",
+        "construction neuve",
+        "logement neuf"
+      ],
+      "texte_integral": "28/07/2026 09:48:37 GMT Logement neuf: légère baisse des permis de construire accordés en juin Le nombre de permis de construire accordés en juin pour des logements a légèrement baissé de 4,8% après un rebond en mai, tandis que les ouvertures de chantiers ont bondi au premier semestre, selon des données provisoires publiées mardi par le ministère de la Ville et du Logement. \"Ce léger recul intervient après un net rebond en mai (+17,0%), qui faisait suite à deux fortes évolutions en mars et en avril qui se compensaient quasiment (+30% et -29,5%)\", indique le Service des données et études statistiques (SDES) du gouvernement, qui corrige ses données mensuelles des variations saisonnières et des jours ouvrables. \"Le repli modéré observé en juin s'explique par une baisse des autorisations des logements collectifs et des logements individuels\", ajoute le SDES. Depuis le début de l'année, 192.100 logements ont été autorisés à la construction, en hausse de 4,2% par rapport au premier semestre de 2025. En juin, 30.906 logements ont été autorisés à la construction, dont 11.765 maisons individuelles (-6,1% sur un mois) et 19.141 logements collectifs (-3,9% sur un mois). En cumulé de juillet 2025 à juin 2026, 376.241 logements ont été autorisés à la construction, \"soit 8,0% de moins que la moyenne des cinq années précédentes\", selon le SDES. Du côté des ouvertures de chantier, qui traduisent le nombre de logements réellement en construction, 25.666 habitations ont commencé à être bâties en juin, un niveau quasiment stable (-0,1 %) par rapport à mai. Au cours des six premiers mois de l'année 2026, 157.191 logements ont été mis en chantier, un bond de près de 30% par rapport au premier semestre de 2025. Le SDES souligne que ces données sont provisoires, le taux de collecte des informations étant partiel. Le nombre de logements mis en chantier en mai a d'ailleurs été revu nettement à la baisse à 25.700, ce qui porte la variation par rapport à avril à -2,8%. La construction neuve est confrontée à une grave crise depuis trois ans, du fait de l'augmentation des coûts de construction, de la hausse des taux d'intérêt qui a bloqué les projets d'achat immobilier de nombreux ménages et de la fin de mesures de soutien à l'investissement locatif.\n\nLe Sénat a adopté en juin le projet de loi du gouvernement visant à construire 400.000 logements neufs par an, via des mesures de simplification et une incitation fiscale à l'investissement locatif.",
+      "selectionne": true,
+      "url_source": "https://luqi.fr/luqiLatest/diffusion/budget/a2t2p000000YwvIAAS/panorama/1382863?idRm=36000000000353450",
+      "type_contenu": "article",
+      "chaine": "",
+      "emission": "",
+      "themes_ush": [
+        "SECTEUR IMMOBILIER"
+      ],
+      "media_type": "PRESSE",
+      "id_coupure": "36000000000353450"
+    },
+    {
+      "semaine": "S31-2026",
+      "media": "LE FIGARO ECONOMIE",
+      "titre": "MaPrimeRenov' : le nombre de demandes s'écroule",
+      "date_publication": "2026-07-28",
+      "auteur": "Jorge Carasso",
+      "resume": "Les demandes de subventions MaPrimeRénov' pour une rénovation globale ont été divisées par quatre en un an : un peu plus de 20 000 dossiers déposés au premier semestre 2026 contre 95 000 un an plus tôt, selon l'Anah. Le ministère du Logement prévoit de mettre fin en septembre aux aides par geste pour se recentrer sur les rénovations globales.",
+      "mots_cles": [
+        "MaPrimeRénov'",
+        "Anah",
+        "rénovation énergétique",
+        "Valérie Mancret-Taylor",
+        "ministère du Logement"
+      ],
+      "texte_integral": "Coup de froid sur les travaux d’économie d’énergie. Le nombre de demandes de subventions aux travaux MaPrimeRénov’ pour une rénovation globale a été divisé par quatre en un an. Il y a «une dynamique de demande plus faible cette année », confirme Valérie Mancret-Taylor, directrice générale de l’Agence nationale de l’habitat (Anah), l’organisme qui distribue ces subventions. En incluant les copropriétés, un peu plus de 20 000 dossiers de rénovation énergétique ont été déposés au cours des six premiers mois de 2026, contre 95 000 au premier semestre 2025, selon l’Anah. Une conséquence du dernier coup de rabot du gouvernement, réduisant à peau de chagrin ce coup de pouce plébiscité par les Français l’an passé. Face à un trop grand nombre de demandes et de tentatives de fraude, le dispositif MaPrimeRénov’ pour les rénovations d’ampleur avait été suspendu à l’été 2025, avant de revenir en septembre avec des barèmes d’aides plus restreints. Ce qui a contribué à tarir la demande. Ensuite, l’année 2026 a commencé avec zéro nouveau dossier, en raison de l’absence de vote du budget de l’État. Cela a empêché l’ouverture des guichets jusqu’à mi-février. Ils n’ont ensuite jamais retrouvé le rythme qui était le leur l’an dernier. Cette situation pourrait perdurer. Le ministère du Logement a annoncé qu’il mettrait fin dès septembre aux aides individuelles par geste – isolation, fenêtres, pompe à chaleur… – pour se concentrer sur les aides aux rénovations globales. De quoi là aussi peser sur la demande.\nJorge Carasso",
+      "selectionne": true,
+      "url_source": "https://luqi.fr/luqiLatest/diffusion/budget/a2t2p000000YwvIAAS/panorama/1382863?idRm=36000000000353448",
+      "type_contenu": "article",
+      "chaine": "",
+      "emission": "",
+      "themes_ush": [
+        "SECTEUR IMMOBILIER"
+      ],
+      "media_type": "PRESSE",
+      "id_coupure": "36000000000353448"
+    },
+    {
+      "semaine": "S31-2026",
+      "media": "www.lesechos.fr",
+      "titre": "Canicule : quel impact sur le marché de l'immobilier ?",
+      "date_publication": "2026-07-27",
+      "auteur": "Clara Grouzis",
+      "resume": "Dans le podcast « La Story » des Echos, Pierrick Fay et ses invités évoquent l'impact des vagues de chaleur sur le marché immobilier : selon une étude Pouget Consultants pour Ignes, près de 9 logements sur 10 en France ne sont pas adaptés aux fortes chaleurs, et un sondage Ipsos montre que des Français envisagent de déménager pour fuir la chaleur.",
+      "mots_cles": [
+        "canicule",
+        "DPE",
+        "adaptation climatique",
+        "marché immobilier",
+        "Les Echos"
+      ],
+      "texte_integral": "Canicule : quel impact sur le marché de l'immobilier ? Canicule : quel impact sur le marché de l'immobilier ? Clara Grouzis Plus de la moitié des Français suffoquent dans leurs logements. Dans « La Story », le podcast d'actualité des « Echos », Pierrick Fay et ses invités évoquent l'impact des vagues de chaleur sur le marché de l'immobilier. Comment vous abonner à « La Story » ? La chaleur devrait revenir en milieu de semaine. Verra-t-on fleurir à nouveau des couvertures de survie aux fenêtres ? C'était le cas dans les villes durant les premières canicules de l'été, au mois de juin. Selon une étude Pouget Consultants pour Ignes, presque 9 logements sur 10 en France ne sont pas adaptés aux fortes chaleurs. Les événements climatiques amènent à repenser l'habitat et le DPE (diagnostic de performance énergétique) pourrait être repensé pour prendre en compte l'adaptation à la chaleur des logements. Jusqu'à présent, le froid avait été priorisé. En attendant, une partie importante des Français a souffert de la chaleur et un sondage Ipsos pour Bouygues immobilier montre que certains seraient prêts à déménager. 21 % d'entre eux envisagent de déménager hors des villes et 14 % d'aller s'installer dans une région plus fraîche. Ces données interrogent en tout cas le secteur et l'état du parc immobilier, amenant à adapter les logements, parfois de manière simple. En ville, comment préserver le patrimoine tout en améliorant les conditions de vie ? Les logements mieux adaptés à la canicule coûteront-ils plus chers ? Quelles incidences durables sur les choix des acquéreurs ces canicules successives auront-elles ? « La Story » est un podcast des « Echos » présenté par Pierrick Fay. Cet épisode a été enregistré en juillet 2026. Rédaction en chef : Clémence Lemaistre. Invités : Elsa Dicharry (journaliste aux « Echos » spécialiste de l'immobilier) et Régis Sebille (responsable des analyses de Bien'ici). Réalisation : Willy Ganne. Chargée de production et d'édition : Clara Grouzis. Musique : Théo Boulenger. Identité graphique : Upian. Photo : Xavier Francolon/Sipa. Sons : Euronews, @stephanie_machart (Instagram). Retrouvez-nous aussi gratuitement sur Apple Podcasts, Spotify, Amazon Music, Deezer, Castbox, autres applications (RSS). Les couvertures de survie se sont révélées efficaces pour remplacer volets et stores contre la chaleur, ici à Paris. Credits: Photo Xavier Francolon/Sipa",
+      "selectionne": true,
+      "url_source": "https://luqi.fr/luqiLatest/diffusion/budget/a2t2p000000YwvIAAS/panorama/1381707?idRm=50000000375763577",
+      "type_contenu": "article",
+      "chaine": "",
+      "emission": "",
+      "themes_ush": [
+        "SECTEUR IMMOBILIER"
+      ],
+      "media_type": "WEB",
+      "id_coupure": "50000000375763577"
+    },
+    {
+      "semaine": "S31-2026",
       "media": "LE PROGRES",
       "titre": "Logements sociaux: «J'espère que nous pourrons faire évoluer la loi SRU »",
       "date_publication": "2026-07-30",
@@ -43,7 +121,7 @@
         "Christophe Robert"
       ],
       "texte_integral": "En accordant notamment aux élus un droit de veto sur les attributions des logements sociaux, le projet de loi du gouvernement risque d’accentuer les difficultés du secteur.\nExaminé au Sénat début juillet, le nouveau projet de loi logement porté par le ministre Vincent Jeanbrun n’est pas à la hauteur des nombreuses attentes d’un secteur à bout de souffle. Pire, il risque d’accentuer le mallogement en se donnant pour objectif de «renforcer le rôle du maire dans les attributions de logements sociaux». Le texte propose ainsi de leur accorder un droit de veto sur les attributions, de leur déléguer celles des logements du «contingent préfectoral» ou encore de leur donner le pouvoir de classer les dossiers présentés en commission d’attribution. Cette nouvelle annonce est à contre-courant d’évolutions positives visant à lutter contre les discriminations dans les attributions. Au cours des dernières décennies, l’échelon communal a été délaissé au profit des intercommunalités qui ont été positionnées comme «chefs de file» de la compétence «habitat» tant en termes d’attributions des logements sociaux que de développement de l’offre nouvelle.\n«Préférence communale». En faisant cela, l’objectif était clair : lutter contre la ségrégation résidentielle, mais aussi contre le clientélisme électoral et ses discriminations. A l’heure où la construction de logement social est à la peine, où la liste des demandeurs HLM ne cesse de s’allonger (2,8 millions de ménages), où les ménages Dalo ont des temps d’attente de plus en plus longs et où les enquêtes pour prise illégale d’intérêt sont régulièrement ouvertes contre des élus locaux lors d’attributions suspectes, vouloir renforcer le rôle du maire semble relever de l’idéologie ou de la complaisance, bien loin des remontées du terrain, des évolutions législatives de ces dernières décennies et des connaissances universitaires sur le sujet des attributions.\nEn mai 2024, la Fondation pour le logement, aux côtés d’associations du champ du logement et d’un collectif de 132 universitaires, tirait déjà la sonnette d’alarme lors du projet de loi Kasbarian 2, qui visait, entre autres à renforcer le pouvoir du maire dans les attributions. Comme nous l’expliquions à l’époque, l’un des principaux risques réside dans l’exercice d’une «préférence communale» par les maires, consistant à favoriser dans les attributions les ménages candidats qui habitent déjà la commune ou qui entretiennent des liens étroits avec celle-ci. Bien que légitime aux yeux des élus et largement entrée dans les mœurs, cette priorité est proche de la discrimination. Le code pénal ne définit-il pas «toute distinction opérée entre les personnes physiques ou morales sur le fondement de leur origine […] de leur lieu de résidence» comme une discrimination ?\nClientèlisme. Pour les maires, l’intérêt de privilégier les habitants de la commune est double. D’abord, cette stratégie permet de ne pas se laisser imposer des populations considérées comme «indésirables», en particulier les ménages prioritaires au titre du droit au logement opposable (Dalo) ou les ménages pauvres des villes voisines. Ainsi, certains demandeurs, présentant pourtant les mêmes caractéristiques sociales et économiques se retrouvent discriminés en raison de leur lieu de résidence, hors de la commune demandée. Cette pratique bloque les parcours résidentiels de ménages pauvres souhaitant changer de commune et freine le principe de mixité sociale, pourtant pierre angulaire de la politique du logement en France.\nLe second intérêt, mieux connu, aboutit à renforcer la tentation du «clientélisme municipal», lequel peut aller jusqu’à conduire à l’échange de vote en faveur du maire contre un logement social ou une promesse de logement social. Ces pratiques discrétionnaires existent déjà mais pourraient être encore renforcées et banalisées si la législation venait à évoluer en renforçant le rôle des maires dans les attributions de logements sociaux. De plus, laisser la main libre aux maires ouvre la porte à toutes les discriminations, y compris racistes, ce qui est un risque évident au regard de la multiplication de mairies d’extrême droite sur le territoire.\nA rebours des déclarations de l’ancien maire de L’Hay-les-Roses, devenu ministre de la Ville et du Logement, nous appelons dès lors à un renforcement de l’échelon intercommunal et à la mise en place effective d’un système d’attributions par points selon les critères de priorité de la demande HLM, propre à départager les candidatures selon des critères de priorité aussi objectifs que possible. Outre les règles d’accès équitables au logement social, l’urgence est surtout de relancer la construction de logements sociaux (et notamment très sociaux) pour résorber la pénurie et éviter la mise en concurrence des ménages. • Signataires :\nHugo Botton Docteur en sociologie (CY Cergy Paris\nUniversité), Marine Bourgeois Enseignante-chercheuse en science politique, Sciences-Po GrenobleUGA, Pacte Fabien Desage Politiste, université de Lille Renaud Epstein Professeur des universités, Sciences-Po Saint-Germain-en-Laye Pierre Gilbert Sociologue et politiste, université Paris-VIII et Cresppa-CSU Hadrien Herrault Maître de conférences, université Paris-Nanterre Thomas Kirszbaum Sociologue, chercheur associé au Ceraps, université de Lille Pierre Madec Economiste, Sciences-Po.",
-      "selectionne": true,
+      "selectionne": false,
       "url_source": "https://luqi.fr/luqiLatest/diffusion/budget/a2t2p000000YwvIAAS/panorama/1384118?idRm=10000000072109882",
       "type_contenu": "article",
       "chaine": "",
@@ -53,32 +131,6 @@
       ],
       "media_type": "PRESSE",
       "id_coupure": "10000000072109882"
-    },
-    {
-      "semaine": "S31-2026",
-      "media": "AFP - AGENCE FRANCE-PRESSE ECONOMIQUE",
-      "titre": "Logement neuf: légère baisse des permis de construire accordés en juin",
-      "date_publication": "2026-07-28",
-      "auteur": "",
-      "resume": "Le nombre de permis de construire de logements a reculé de 4,8 % en juin après un rebond en mai, selon le ministère du Logement. Depuis janvier, 192 100 logements ont été autorisés (+4,2 % sur un an) et les mises en chantier ont bondi de près de 30 % au premier semestre 2026.",
-      "mots_cles": [
-        "permis de construire",
-        "mises en chantier",
-        "SDES",
-        "construction neuve",
-        "logement neuf"
-      ],
-      "texte_integral": "28/07/2026 09:48:37 GMT Logement neuf: légère baisse des permis de construire accordés en juin Le nombre de permis de construire accordés en juin pour des logements a légèrement baissé de 4,8% après un rebond en mai, tandis que les ouvertures de chantiers ont bondi au premier semestre, selon des données provisoires publiées mardi par le ministère de la Ville et du Logement. \"Ce léger recul intervient après un net rebond en mai (+17,0%), qui faisait suite à deux fortes évolutions en mars et en avril qui se compensaient quasiment (+30% et -29,5%)\", indique le Service des données et études statistiques (SDES) du gouvernement, qui corrige ses données mensuelles des variations saisonnières et des jours ouvrables. \"Le repli modéré observé en juin s'explique par une baisse des autorisations des logements collectifs et des logements individuels\", ajoute le SDES. Depuis le début de l'année, 192.100 logements ont été autorisés à la construction, en hausse de 4,2% par rapport au premier semestre de 2025. En juin, 30.906 logements ont été autorisés à la construction, dont 11.765 maisons individuelles (-6,1% sur un mois) et 19.141 logements collectifs (-3,9% sur un mois). En cumulé de juillet 2025 à juin 2026, 376.241 logements ont été autorisés à la construction, \"soit 8,0% de moins que la moyenne des cinq années précédentes\", selon le SDES. Du côté des ouvertures de chantier, qui traduisent le nombre de logements réellement en construction, 25.666 habitations ont commencé à être bâties en juin, un niveau quasiment stable (-0,1 %) par rapport à mai. Au cours des six premiers mois de l'année 2026, 157.191 logements ont été mis en chantier, un bond de près de 30% par rapport au premier semestre de 2025. Le SDES souligne que ces données sont provisoires, le taux de collecte des informations étant partiel. Le nombre de logements mis en chantier en mai a d'ailleurs été revu nettement à la baisse à 25.700, ce qui porte la variation par rapport à avril à -2,8%. La construction neuve est confrontée à une grave crise depuis trois ans, du fait de l'augmentation des coûts de construction, de la hausse des taux d'intérêt qui a bloqué les projets d'achat immobilier de nombreux ménages et de la fin de mesures de soutien à l'investissement locatif.\n\nLe Sénat a adopté en juin le projet de loi du gouvernement visant à construire 400.000 logements neufs par an, via des mesures de simplification et une incitation fiscale à l'investissement locatif.",
-      "selectionne": true,
-      "url_source": "https://luqi.fr/luqiLatest/diffusion/budget/a2t2p000000YwvIAAS/panorama/1382863?idRm=36000000000353450",
-      "type_contenu": "article",
-      "chaine": "",
-      "emission": "",
-      "themes_ush": [
-        "SECTEUR IMMOBILIER"
-      ],
-      "media_type": "PRESSE",
-      "id_coupure": "36000000000353450"
     },
     {
       "semaine": "S31-2026",
@@ -109,32 +161,6 @@
     {
       "semaine": "S31-2026",
       "media": "LE FIGARO ECONOMIE",
-      "titre": "MaPrimeRenov' : le nombre de demandes s'écroule",
-      "date_publication": "2026-07-28",
-      "auteur": "Jorge Carasso",
-      "resume": "Les demandes de subventions MaPrimeRénov' pour une rénovation globale ont été divisées par quatre en un an : un peu plus de 20 000 dossiers déposés au premier semestre 2026 contre 95 000 un an plus tôt, selon l'Anah. Le ministère du Logement prévoit de mettre fin en septembre aux aides par geste pour se recentrer sur les rénovations globales.",
-      "mots_cles": [
-        "MaPrimeRénov'",
-        "Anah",
-        "rénovation énergétique",
-        "Valérie Mancret-Taylor",
-        "ministère du Logement"
-      ],
-      "texte_integral": "Coup de froid sur les travaux d’économie d’énergie. Le nombre de demandes de subventions aux travaux MaPrimeRénov’ pour une rénovation globale a été divisé par quatre en un an. Il y a «une dynamique de demande plus faible cette année », confirme Valérie Mancret-Taylor, directrice générale de l’Agence nationale de l’habitat (Anah), l’organisme qui distribue ces subventions. En incluant les copropriétés, un peu plus de 20 000 dossiers de rénovation énergétique ont été déposés au cours des six premiers mois de 2026, contre 95 000 au premier semestre 2025, selon l’Anah. Une conséquence du dernier coup de rabot du gouvernement, réduisant à peau de chagrin ce coup de pouce plébiscité par les Français l’an passé. Face à un trop grand nombre de demandes et de tentatives de fraude, le dispositif MaPrimeRénov’ pour les rénovations d’ampleur avait été suspendu à l’été 2025, avant de revenir en septembre avec des barèmes d’aides plus restreints. Ce qui a contribué à tarir la demande. Ensuite, l’année 2026 a commencé avec zéro nouveau dossier, en raison de l’absence de vote du budget de l’État. Cela a empêché l’ouverture des guichets jusqu’à mi-février. Ils n’ont ensuite jamais retrouvé le rythme qui était le leur l’an dernier. Cette situation pourrait perdurer. Le ministère du Logement a annoncé qu’il mettrait fin dès septembre aux aides individuelles par geste – isolation, fenêtres, pompe à chaleur… – pour se concentrer sur les aides aux rénovations globales. De quoi là aussi peser sur la demande.\nJorge Carasso",
-      "selectionne": true,
-      "url_source": "https://luqi.fr/luqiLatest/diffusion/budget/a2t2p000000YwvIAAS/panorama/1382863?idRm=36000000000353448",
-      "type_contenu": "article",
-      "chaine": "",
-      "emission": "",
-      "themes_ush": [
-        "SECTEUR IMMOBILIER"
-      ],
-      "media_type": "PRESSE",
-      "id_coupure": "36000000000353448"
-    },
-    {
-      "semaine": "S31-2026",
-      "media": "LE FIGARO ECONOMIE",
       "titre": "Territoire, loyers… La création poussive de la foncière de l'État",
       "date_publication": "2026-07-28",
       "auteur": "Julie Ruiz Perez",
@@ -157,32 +183,6 @@
       ],
       "media_type": "PRESSE",
       "id_coupure": "36000000000353449"
-    },
-    {
-      "semaine": "S31-2026",
-      "media": "www.lesechos.fr",
-      "titre": "Canicule : quel impact sur le marché de l'immobilier ?",
-      "date_publication": "2026-07-27",
-      "auteur": "Clara Grouzis",
-      "resume": "Dans le podcast « La Story » des Echos, Pierrick Fay et ses invités évoquent l'impact des vagues de chaleur sur le marché immobilier : selon une étude Pouget Consultants pour Ignes, près de 9 logements sur 10 en France ne sont pas adaptés aux fortes chaleurs, et un sondage Ipsos montre que des Français envisagent de déménager pour fuir la chaleur.",
-      "mots_cles": [
-        "canicule",
-        "DPE",
-        "adaptation climatique",
-        "marché immobilier",
-        "Les Echos"
-      ],
-      "texte_integral": "Canicule : quel impact sur le marché de l'immobilier ? Canicule : quel impact sur le marché de l'immobilier ? Clara Grouzis Plus de la moitié des Français suffoquent dans leurs logements. Dans « La Story », le podcast d'actualité des « Echos », Pierrick Fay et ses invités évoquent l'impact des vagues de chaleur sur le marché de l'immobilier. Comment vous abonner à « La Story » ? La chaleur devrait revenir en milieu de semaine. Verra-t-on fleurir à nouveau des couvertures de survie aux fenêtres ? C'était le cas dans les villes durant les premières canicules de l'été, au mois de juin. Selon une étude Pouget Consultants pour Ignes, presque 9 logements sur 10 en France ne sont pas adaptés aux fortes chaleurs. Les événements climatiques amènent à repenser l'habitat et le DPE (diagnostic de performance énergétique) pourrait être repensé pour prendre en compte l'adaptation à la chaleur des logements. Jusqu'à présent, le froid avait été priorisé. En attendant, une partie importante des Français a souffert de la chaleur et un sondage Ipsos pour Bouygues immobilier montre que certains seraient prêts à déménager. 21 % d'entre eux envisagent de déménager hors des villes et 14 % d'aller s'installer dans une région plus fraîche. Ces données interrogent en tout cas le secteur et l'état du parc immobilier, amenant à adapter les logements, parfois de manière simple. En ville, comment préserver le patrimoine tout en améliorant les conditions de vie ? Les logements mieux adaptés à la canicule coûteront-ils plus chers ? Quelles incidences durables sur les choix des acquéreurs ces canicules successives auront-elles ? « La Story » est un podcast des « Echos » présenté par Pierrick Fay. Cet épisode a été enregistré en juillet 2026. Rédaction en chef : Clémence Lemaistre. Invités : Elsa Dicharry (journaliste aux « Echos » spécialiste de l'immobilier) et Régis Sebille (responsable des analyses de Bien'ici). Réalisation : Willy Ganne. Chargée de production et d'édition : Clara Grouzis. Musique : Théo Boulenger. Identité graphique : Upian. Photo : Xavier Francolon/Sipa. Sons : Euronews, @stephanie_machart (Instagram). Retrouvez-nous aussi gratuitement sur Apple Podcasts, Spotify, Amazon Music, Deezer, Castbox, autres applications (RSS). Les couvertures de survie se sont révélées efficaces pour remplacer volets et stores contre la chaleur, ici à Paris. Credits: Photo Xavier Francolon/Sipa",
-      "selectionne": false,
-      "url_source": "https://luqi.fr/luqiLatest/diffusion/budget/a2t2p000000YwvIAAS/panorama/1381707?idRm=50000000375763577",
-      "type_contenu": "article",
-      "chaine": "",
-      "emission": "",
-      "themes_ush": [
-        "SECTEUR IMMOBILIER"
-      ],
-      "media_type": "WEB",
-      "id_coupure": "50000000375763577"
     },
     {
       "semaine": "S31-2026",

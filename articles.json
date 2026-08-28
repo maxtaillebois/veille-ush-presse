@@ -4,6 +4,86 @@
   "articles": [
     {
       "semaine": "S35-2026",
+      "media": "www.lemonde.fr",
+      "titre": "La nouvelle révision du DPE va faire sortir plus de 300 000 logements du statut de « passoires thermiques »",
+      "date_publication": "2026-08-28",
+      "auteur": "Claire Ané",
+      "resume": "Un arrêté publié le 26 août abaisse à 1,7 le coefficient de conversion de l'électricité utilisé pour le DPE, faisant sortir environ 300 000 logements du statut de passoire thermique dès 2027. La mesure, saluée par certains professionnels, est critiquée par le collectif Rénovons qui dénonce un DPE « cassé » sans réduction des factures ni obligation de rénovation.",
+      "mots_cles": [
+        "DPE",
+        "passoires thermiques",
+        "collectif Rénovons",
+        "Damien Barbosa",
+        "rénovation énergétique"
+      ],
+      "texte_integral": "Un arrêté prévoit d'améliorer, à partir du 1er janvier 2027, le diagnostic de performance énergétique pour le chauffage électrique. Cela réduira le nombre de logements soumis au gel des loyers et à l'interdiction de location, et risque de ralentir l'effort de rénovation. La mesure est saluée par certains, critiquée par de nombreux autres : le gouvernement a décidé de modifier à nouveau le calcul du diagnostic de performance énergétique des bâtiments (DPE), à partir du 1er janvier 2027. L'objectif est de « soutenir l'électrification des usages », indique l'étude d'impact effectuée par le ministère du logement, que Le Monde a pu consulter. Le facteur de conversion de l'énergie finale (consommée dans le logement) en énergie primaire (dépensée pour sa production), utilisé lors du calcul du DPE, sera donc réduit pour l'électricité : un arrêté publié mercredi 26 août au Journal officiel prévoit de le ramener à 1,7, après être passé de 2,58 à 2,3 en 2021, puis à 1,9 début 2026. La Fédération des industries électriques et numériques salue, dans une note de positionnement, une « avancée positive », qui « ne place cependant toujours pas l'électricité et les énergies fossiles sur un même pied d'égalité », puisque le coefficient de conversion pour le fioul et le gaz est, par convention, fixé à 1. « Environ 300 000 résidences principales » sortiront du statut de « passoire énergétique » (classes F et G), peut-on lire dans l'étude d'impact. Les 125 000 qui appartiennent au parc locatif privé n'auront plus à se soumettre au gel des loyers. La réforme maintiendra « de l'ordre de 300 000 logements » dans le parc locatif dans les prochaines années – ils auraient sinon été interdits à la location –, « et réduira l'incitation réglementaire à rénover ces logements ». A noter que la révision du coefficient au 1er janvier 2026 devait déjà sortir 850 000 logements du statut de passoire, selon le gouvernement. « On casse le thermomètre, sans rendre les ex-passoires plus habitables ni réduire leurs factures d'énergie ! Et ceux qui y vivent auront moins accès aux aides à la rénovation », critique Damien Barbosa, coordinateur du collectif Rénovons, qui réunit associations environnementales et professionnels de l'efficacité énergétique. « On pouvait comprendre le passage au coefficient 1,9, calculé au niveau européen et déjà très incitatif à l'installation de pompes à chaleur. Mais trop de changements perturbent les clients et nuisent à la crédibilité du DPE », regrette Olivier Héaulme, président du syndicat de diagnostiqueurs immobiliers Sidiane. « Tout le monde a un peu raison » Une consultation publique n'a recueilli que 29 contributions favorables à l'abaissement du facteur de conversion, contre 78 qui y sont défavorables. Le Conseil supérieur de la construction et de l'efficacité énergétique, organe consultatif qui réunit les acteurs du secteur, a rendu un avis négatif sur le projet d'arrêté. « Le débat est complexe, car tout le monde a un peu raison. L'avantage historique qui avait été accordé aux énergies fossiles fait qu'à un même niveau d'isolation et de consommation d'énergie finale, mon logement peut être classé E s'il est chauffé au gaz mais F s'il est chauffé à l'électricité. Il y a donc une cohérence à réduire l'écart entre les facteurs de conversion, à condition de prévoir des garde-fous », analyse Andreas Rüdinger, chercheur de l'Institut du développement durable et des relations internationales. Il faudrait selon lui maintenir la pression pour isoler les logements, même s'ils sont chauffés par des pompes à chaleur performantes, et pour éviter que les chaudières à gaz et au fioul soient remplacées par des convecteurs type « grille-pain » : en effet, ceux-ci causent des pics de consommation en hiver, lesquels nécessitent de recourir aux centrales au gaz ou au charbon, rendant l'électricité beaucoup plus carbonée que quand elle est produite par les énergies renouvelables et les centrales nucléaires. Autre préconisation : faire évoluer l'écart de prix entre les énergies au même rythme que les coefficients de conversion, afin qu'un bon DPE permette, comme actuellement, de présumer de factures raisonnables. « L'été caniculaire et les centaines de Parisiens qui en sont morts montrent qu'il faut accroître l'effort de rénovation, et penser autrement », plaide Frédéric Delhommeau, directeur habitat et rénovation à l'Agence parisienne du climat. Dans l'habitat collectif, il propose de fixer des obligations de rénovation à l'échelle de l'immeuble (toit compris) ainsi que des critères de décence à l'échelle de chaque appartement : présence de double vitrage, d'occultations et de systèmes de chauffage et d'eau chaude fonctionnels. Damien Barbosa, du collectif Rénovons, mène une réflexion similaire : « Comme le DPE est moins fiable, inventons des critères objectifs, telles que des températures minimum et maximum à ne pas dépasser à l'intérieur ». A Lyon, le maire écologiste Grégory Doucet a annoncé mi-juillet que les agents de la ville chargés d'évaluer la salubrité des logements prendraient désormais en compte la « chaleur excessive ». Une première.",
+      "selectionne": true,
+      "url_source": "https://luqi.fr/luqiLatest/diffusion/budget/a2t2p000000YwvIAAS/panorama/1407903?idRm=50000000375934612",
+      "type_contenu": "article",
+      "chaine": "",
+      "emission": "",
+      "themes_ush": [
+        "SECTEUR IMMOBILIER"
+      ],
+      "media_type": "WEB",
+      "id_coupure": "50000000375934612"
+    },
+    {
+      "semaine": "S35-2026",
+      "media": "www.batiactu.com",
+      "titre": "Projet de loi de finances 2027 : le ministre veut \"donner de l'oxygène aux bailleurs sociaux\"",
+      "date_publication": "2026-08-27",
+      "auteur": "Etienne Gless",
+      "resume": "À l'université d'été du Medef, le ministre du Logement Vincent Jeanbrun a annoncé vouloir alléger les prélèvements sur les bailleurs sociaux (RLS) dans le budget 2027 pour leur « donner de l'oxygène ». Il défend le projet de loi relance logement, adopté au Sénat le 8 juillet, et évoque une « voie de passage » à l'Assemblée nationale cet automne.",
+      "mots_cles": [
+        "Vincent Jeanbrun",
+        "RLS",
+        "budget 2027",
+        "loi relance logement",
+        "Édouard Philippe"
+      ],
+      "texte_integral": "POLITIQUE DU LOGEMENT. Aux Rencontres des entrepreneurs de France (Ref) 2026, l'université d'été du Medef qui se tenait le 26 et 27 août 2026 à Paris, le candidat Édouard Philippe est venu présenter quelques orientations en faveur du logement. Et le ministre du Logement, Vincent Jeanbrun, a révélé que le budget 2027 mettrait moins à contribution les bailleurs sociaux. Vincent Jeanbrun, Edouard philippe © Etienne Gless pour Batiactu Le logement passera-t-il à la trappe dans les thèmes de campagne de l'élection présidentielle ? Non, à en croire les déclarations de certains candidats à la magistrature suprême venus participer à l'université d'été du Medef. \"Le logement a pâti de mauvaises décisions\" , a déclaré ainsi Gabriel Attal lors du débat entre sept candidats à la Réunion des entrepreneurs de France (Ref). \"La crise du logement est au cœur de la crise sociale\" , a estimé lui aussi le candidat (Horizons) Édouard Philippe, en s'invitant sur le stand du Medef Île-de-France jeudi 27 août, en présence de Vincent Jeanbrun, ministre de la Ville et du Logement. \"Au-delà même de son importance économique, la crise du logement peut être dévastatrice pour la cohésion du tissu social\", a ajouté l'ancien Premier ministre (2017-2020) et maire du Havre. \" On ne s'en sortira pas si l'on n'est pas capable de redonner une raison économique à des acteurs d'investir dans le logement, et des possibilités techniques à ceux dont c'est le métier de construire avec imagination et dans de bonnes conditions. \" Édouard Philippe plaide donc pour un effort fiscal et technique afin de construire et rénover dans de bonnes conditions. Et il compte bien préciser sa politique du logement \"le temps venu\". Changer les règles du jeu, un impératif pour construire plus Pour Vincent Jeanbrun, \"le logement doit être au cœur de la campagne présidentielle\". \"Est-ce qu'on peut construire 2 millions de logements d'ici 2030 sans changer les règles du jeu ? La réponse est non\", a insisté l'actuel ministre de la Ville et du Logement. \"C'est beaucoup trop long, complexe, cher quand on voit le coût de la construction et du foncier. Et ce n'est pas assez rentable pour un certain nombre d'investisseurs de parier sur la pierre. Certains hésitent pour une question de rentabilité économique, mais aussi de confiance avec la peur du squat et de l'impayé\". \"Il faut qu'on veille à ce que le budget 2027 soit moins gourmand dans les prélèvements sur les bailleurs sociaux -la RLS- et offre un vrai soutien à l'aide à la pierre\" , Vincent Jeanbrun Pour rappel, Vincent Jeanbrun a confié à Sylvain Grataloup, président de l'Union nationale des propriétaires immobiliers (UNPI), une mission pour redonner confiance aux propriétaires bailleurs privés. Ses propositions sont attendues pour début 2027. Un budget 2027 qui soit moins gourmand en prélèvements sur les bailleurs sociaux ? À Batiactu , le ministre a confié qu'il y avait \"une voie de passage\" pour faire adopter à l'Assemblée nationale le projet de loi relance logement du gouvernement adopté au Sénat le 8 juillet dernier. Le texte doit être examiné cet automne par les députés. Ne cachant pas que le budget 2027 serait \"extrêmement contraint\" , le ministre comptait \"donner un peu d'oxygène aux bailleurs sociaux qui ont été beaucoup mis à contribution ces dernières années. \" \"Il faut qu'on veille à ce que le budget 2027 soit moins gourmand dans les prélèvements sur les bailleurs sociaux -la RLS- et offre un vrai soutien à l'aide à la pierre. \"",
+      "selectionne": true,
+      "url_source": "https://luqi.fr/luqiLatest/diffusion/budget/a2t2p000000YwvIAAS/panorama/1407903?idRm=50000000375930475",
+      "type_contenu": "article",
+      "chaine": "",
+      "emission": "",
+      "themes_ush": [
+        "Politique du logement et de la ville",
+        "SECTEUR IMMOBILIER"
+      ],
+      "media_type": "WEB",
+      "id_coupure": "50000000375930475"
+    },
+    {
+      "semaine": "S35-2026",
+      "media": "AFP - AGENCE FRANCE-PRESSE",
+      "titre": "Dans les logements inadaptés aux canicules, des morts de chaud par milliers",
+      "date_publication": "2026-08-21",
+      "auteur": "",
+      "resume": "Santé publique France a comptabilisé 7 300 décès en excès durant les canicules de fin mai à fin juillet 2026, la mortalité à domicile ayant plus que doublé, notamment chez les habitants de logements mal isolés ou de logements sociaux sans climatisation. Des associations comme la Fondation pour le logement dénoncent les « logements bouilloires » et les inégalités face à la chaleur dans les quartiers populaires.",
+      "mots_cles": [
+        "canicule",
+        "surmortalité",
+        "Santé publique France",
+        "logements bouilloires",
+        "Fondation pour le logement"
+      ],
+      "texte_integral": "21/08/2026 10:44:59 GMT Dans les logements inadaptés aux canicules, des morts de chaud par milliers \"Morte de chaud\" alors que Josette \"aurait continué sa vie de quasi-centenaire\" dans un logement frais. C'est le constat de son médecin qui observe, comme beaucoup de praticiens, les effets des logements inadaptés aux fortes chaleur sur la santé de leurs occupants. Médecin généraliste à Carpentras (Vaucluse), \"ville la plus chaude de France\", Sébastien Adnot passe d'appartement surchauffé en appartement surchauffé lors de ses visites à domicile. Parmi les décès survenus pendant les canicules de l'été, Josette, une femme âgée qui \"s'est affaiblie doucement, malgré la présence de sa famille, des perfusions\" et d'autres soins, avant de mourir \"de chaud\", raconte à l'AFP le médecin, également secrétaire général adjoint du syndicat MG France. \"De mémoire, il faisait entre 30 et 32 degrés chez elle. Son logement social est mal isolé, pas équipé de climatisation, elle disposait juste d'un ventilateur.\" Le Dr Adnot en est sûr: \"Si elle avait été en Ehpad ou avec la climatisation, elle aurait continué sa vie de presque centenaire\". Lors de la canicule historique de fin juin, et ses pics au-dessus de 40°C, la mortalité \"toutes causes\" (qu'on ne peut pas encore attribuer avec certitude à la chaleur) a été plus de deux fois plus élevée à domicile que celle des deux années précédentes, selon Santé publique France (SpF). L'agence a comptabilisé 7.300 décès en excès pendant les fortes chaleurs survenues de fin mai jusqu'au 22 juillet, selon un bilan provisoire divulgué mercredi et voué à s'alourdir. \"Les personnes décèdent à domicile car leur logement ne les a pas protégées\", accuse Maider Olivier, chargée de plaidoyer climat à la Fondation pour le logement des défavorisés, alertant l'Etat sur les logements bouilloires et la surexposition des quartiers populaires aux canicules. - Risque multiplié par 5 Ces logements particulièrement inadaptés aux fortes chaleurs sont \"au dernier étage, petits, souvent pas traversants, sans occultations extérieures et situés en ville, dans un îlot de chaleur\", décrit Maider Olivier.\n\nLors de la canicule de 2003, qui avait causé 15.000 décès, la mortalité à domicile avait doublé, et SpF avait observé un risque mortel 4,8 fois plus élevé chez les habitants d'immeubles anciens non isolés que ceux habitant un immeuble récent ou isolé. Dans le nord-est de Paris, où François Raymond effectue ses tournées d'infirmier libéral, des habitants d'immeubles des années 1960 et 1970 ont remarqué que \"la canicule de juin a été plus supportable qu'en 2003\" en raison des travaux d'isolation réalisés ces dernières années. Le risque de décès est aussi multiplié par 4,1 pour les personnes dont la chambre se trouve sous les toits et par 1,8 pour les habitants d'îlot de chaleur urbain. A Sceaux (Hauts-de-Seine), Louisette Rivalain, 93 ans, est décédée fîn juin d'une hyperthermie après avoir été retrouvée inanimée chez elle. Son décès \"était inévitable\" selon ses voisins, mettant en cause l'absence de volets, retirés par le bailleur social pour effectuer des travaux. A la même période, Daniel Topic, 60 ans, mourrait à Vannes, dans son logement \"mansardé, non isolé, sans volet, au dernier étage\", où 45°C ont été relevés, selon son frère qui a témoigné auprès de Ouest-France. - \"Vraie inégalité\" L'Académie nationale de médecine relève de son côté que 41% des personnes décédés en août 2003 à Paris vivaient dans un logement composé d'une seule pièce et dans 12% des cas, la superficie ne dépassait pas 10m3. Des collègues infirmiers ont rapporté à Ghislaine Sicre, présidente du syndicat Convergence infirmière, des situations alarmantes dans \"des maisons bungalow ou des cabanes de pêcheurs, des habitat petits, pas isolés et pas fait pour être habités en permanence, mais des personnes y vivent parce qu'elles sont précaires\". Les études mettent aussi en évidence l'importance des antécédents médicaux et de pathologies pré-existantes dans la vulnérabilité à la canicule de 2003, ainsi que la présence de l'entourage. \"C'est l'isolement social qui tue\", estime François Raymond. Sébastien Adnot voit clairement un lien entre surmortalité et revenus modestes. \"Les patients âgés, polypathologiques, qui ont les moyens d'avoir une maison climatisée ne vont pas à l'hôpital. La canicule va toucher ceux qui n'ont pas les moyens de s'en protéger, il y a une vraie inégalité\", relève-t-il.",
+      "selectionne": true,
+      "url_source": "https://luqi.fr/luqiLatest/diffusion/budget/a2t2p000000YwvIAAS/panorama/1403280?idRm=10000000072223703",
+      "type_contenu": "article",
+      "chaine": "",
+      "emission": "",
+      "themes_ush": [
+        "Architecture, urbanisme et développement durable",
+        "SECTEUR IMMOBILIER"
+      ],
+      "media_type": "PRESSE",
+      "id_coupure": "10000000072223703"
+    },
+    {
+      "semaine": "S35-2026",
       "media": "LES ECHOS",
       "titre": "Un nouveau calcul va faire sortir 300.000 logements du statut de passoire thermique",
       "date_publication": "2026-08-29",
@@ -28,32 +108,6 @@
       ],
       "media_type": "PRESSE",
       "id_coupure": "10000000072255804"
-    },
-    {
-      "semaine": "S35-2026",
-      "media": "www.lemonde.fr",
-      "titre": "La nouvelle révision du DPE va faire sortir plus de 300 000 logements du statut de « passoires thermiques »",
-      "date_publication": "2026-08-28",
-      "auteur": "Claire Ané",
-      "resume": "Un arrêté publié le 26 août abaisse à 1,7 le coefficient de conversion de l'électricité utilisé pour le DPE, faisant sortir environ 300 000 logements du statut de passoire thermique dès 2027. La mesure, saluée par certains professionnels, est critiquée par le collectif Rénovons qui dénonce un DPE « cassé » sans réduction des factures ni obligation de rénovation.",
-      "mots_cles": [
-        "DPE",
-        "passoires thermiques",
-        "collectif Rénovons",
-        "Damien Barbosa",
-        "rénovation énergétique"
-      ],
-      "texte_integral": "Un arrêté prévoit d'améliorer, à partir du 1er janvier 2027, le diagnostic de performance énergétique pour le chauffage électrique. Cela réduira le nombre de logements soumis au gel des loyers et à l'interdiction de location, et risque de ralentir l'effort de rénovation. La mesure est saluée par certains, critiquée par de nombreux autres : le gouvernement a décidé de modifier à nouveau le calcul du diagnostic de performance énergétique des bâtiments (DPE), à partir du 1er janvier 2027. L'objectif est de « soutenir l'électrification des usages », indique l'étude d'impact effectuée par le ministère du logement, que Le Monde a pu consulter. Le facteur de conversion de l'énergie finale (consommée dans le logement) en énergie primaire (dépensée pour sa production), utilisé lors du calcul du DPE, sera donc réduit pour l'électricité : un arrêté publié mercredi 26 août au Journal officiel prévoit de le ramener à 1,7, après être passé de 2,58 à 2,3 en 2021, puis à 1,9 début 2026. La Fédération des industries électriques et numériques salue, dans une note de positionnement, une « avancée positive », qui « ne place cependant toujours pas l'électricité et les énergies fossiles sur un même pied d'égalité », puisque le coefficient de conversion pour le fioul et le gaz est, par convention, fixé à 1. « Environ 300 000 résidences principales » sortiront du statut de « passoire énergétique » (classes F et G), peut-on lire dans l'étude d'impact. Les 125 000 qui appartiennent au parc locatif privé n'auront plus à se soumettre au gel des loyers. La réforme maintiendra « de l'ordre de 300 000 logements » dans le parc locatif dans les prochaines années – ils auraient sinon été interdits à la location –, « et réduira l'incitation réglementaire à rénover ces logements ». A noter que la révision du coefficient au 1er janvier 2026 devait déjà sortir 850 000 logements du statut de passoire, selon le gouvernement. « On casse le thermomètre, sans rendre les ex-passoires plus habitables ni réduire leurs factures d'énergie ! Et ceux qui y vivent auront moins accès aux aides à la rénovation », critique Damien Barbosa, coordinateur du collectif Rénovons, qui réunit associations environnementales et professionnels de l'efficacité énergétique. « On pouvait comprendre le passage au coefficient 1,9, calculé au niveau européen et déjà très incitatif à l'installation de pompes à chaleur. Mais trop de changements perturbent les clients et nuisent à la crédibilité du DPE », regrette Olivier Héaulme, président du syndicat de diagnostiqueurs immobiliers Sidiane. « Tout le monde a un peu raison » Une consultation publique n'a recueilli que 29 contributions favorables à l'abaissement du facteur de conversion, contre 78 qui y sont défavorables. Le Conseil supérieur de la construction et de l'efficacité énergétique, organe consultatif qui réunit les acteurs du secteur, a rendu un avis négatif sur le projet d'arrêté. « Le débat est complexe, car tout le monde a un peu raison. L'avantage historique qui avait été accordé aux énergies fossiles fait qu'à un même niveau d'isolation et de consommation d'énergie finale, mon logement peut être classé E s'il est chauffé au gaz mais F s'il est chauffé à l'électricité. Il y a donc une cohérence à réduire l'écart entre les facteurs de conversion, à condition de prévoir des garde-fous », analyse Andreas Rüdinger, chercheur de l'Institut du développement durable et des relations internationales. Il faudrait selon lui maintenir la pression pour isoler les logements, même s'ils sont chauffés par des pompes à chaleur performantes, et pour éviter que les chaudières à gaz et au fioul soient remplacées par des convecteurs type « grille-pain » : en effet, ceux-ci causent des pics de consommation en hiver, lesquels nécessitent de recourir aux centrales au gaz ou au charbon, rendant l'électricité beaucoup plus carbonée que quand elle est produite par les énergies renouvelables et les centrales nucléaires. Autre préconisation : faire évoluer l'écart de prix entre les énergies au même rythme que les coefficients de conversion, afin qu'un bon DPE permette, comme actuellement, de présumer de factures raisonnables. « L'été caniculaire et les centaines de Parisiens qui en sont morts montrent qu'il faut accroître l'effort de rénovation, et penser autrement », plaide Frédéric Delhommeau, directeur habitat et rénovation à l'Agence parisienne du climat. Dans l'habitat collectif, il propose de fixer des obligations de rénovation à l'échelle de l'immeuble (toit compris) ainsi que des critères de décence à l'échelle de chaque appartement : présence de double vitrage, d'occultations et de systèmes de chauffage et d'eau chaude fonctionnels. Damien Barbosa, du collectif Rénovons, mène une réflexion similaire : « Comme le DPE est moins fiable, inventons des critères objectifs, telles que des températures minimum et maximum à ne pas dépasser à l'intérieur ». A Lyon, le maire écologiste Grégory Doucet a annoncé mi-juillet que les agents de la ville chargés d'évaluer la salubrité des logements prendraient désormais en compte la « chaleur excessive ». Une première.",
-      "selectionne": true,
-      "url_source": "https://luqi.fr/luqiLatest/diffusion/budget/a2t2p000000YwvIAAS/panorama/1407903?idRm=50000000375934612",
-      "type_contenu": "article",
-      "chaine": "",
-      "emission": "",
-      "themes_ush": [
-        "SECTEUR IMMOBILIER"
-      ],
-      "media_type": "WEB",
-      "id_coupure": "50000000375934612"
     },
     {
       "semaine": "S35-2026",
@@ -108,33 +162,6 @@
       ],
       "media_type": "PRESSE",
       "id_coupure": "10000000072233034"
-    },
-    {
-      "semaine": "S35-2026",
-      "media": "www.batiactu.com",
-      "titre": "Projet de loi de finances 2027 : le ministre veut \"donner de l'oxygène aux bailleurs sociaux\"",
-      "date_publication": "2026-08-27",
-      "auteur": "Etienne Gless",
-      "resume": "À l'université d'été du Medef, le ministre du Logement Vincent Jeanbrun a annoncé vouloir alléger les prélèvements sur les bailleurs sociaux (RLS) dans le budget 2027 pour leur « donner de l'oxygène ». Il défend le projet de loi relance logement, adopté au Sénat le 8 juillet, et évoque une « voie de passage » à l'Assemblée nationale cet automne.",
-      "mots_cles": [
-        "Vincent Jeanbrun",
-        "RLS",
-        "budget 2027",
-        "loi relance logement",
-        "Édouard Philippe"
-      ],
-      "texte_integral": "POLITIQUE DU LOGEMENT. Aux Rencontres des entrepreneurs de France (Ref) 2026, l'université d'été du Medef qui se tenait le 26 et 27 août 2026 à Paris, le candidat Édouard Philippe est venu présenter quelques orientations en faveur du logement. Et le ministre du Logement, Vincent Jeanbrun, a révélé que le budget 2027 mettrait moins à contribution les bailleurs sociaux. Vincent Jeanbrun, Edouard philippe © Etienne Gless pour Batiactu Le logement passera-t-il à la trappe dans les thèmes de campagne de l'élection présidentielle ? Non, à en croire les déclarations de certains candidats à la magistrature suprême venus participer à l'université d'été du Medef. \"Le logement a pâti de mauvaises décisions\" , a déclaré ainsi Gabriel Attal lors du débat entre sept candidats à la Réunion des entrepreneurs de France (Ref). \"La crise du logement est au cœur de la crise sociale\" , a estimé lui aussi le candidat (Horizons) Édouard Philippe, en s'invitant sur le stand du Medef Île-de-France jeudi 27 août, en présence de Vincent Jeanbrun, ministre de la Ville et du Logement. \"Au-delà même de son importance économique, la crise du logement peut être dévastatrice pour la cohésion du tissu social\", a ajouté l'ancien Premier ministre (2017-2020) et maire du Havre. \" On ne s'en sortira pas si l'on n'est pas capable de redonner une raison économique à des acteurs d'investir dans le logement, et des possibilités techniques à ceux dont c'est le métier de construire avec imagination et dans de bonnes conditions. \" Édouard Philippe plaide donc pour un effort fiscal et technique afin de construire et rénover dans de bonnes conditions. Et il compte bien préciser sa politique du logement \"le temps venu\". Changer les règles du jeu, un impératif pour construire plus Pour Vincent Jeanbrun, \"le logement doit être au cœur de la campagne présidentielle\". \"Est-ce qu'on peut construire 2 millions de logements d'ici 2030 sans changer les règles du jeu ? La réponse est non\", a insisté l'actuel ministre de la Ville et du Logement. \"C'est beaucoup trop long, complexe, cher quand on voit le coût de la construction et du foncier. Et ce n'est pas assez rentable pour un certain nombre d'investisseurs de parier sur la pierre. Certains hésitent pour une question de rentabilité économique, mais aussi de confiance avec la peur du squat et de l'impayé\". \"Il faut qu'on veille à ce que le budget 2027 soit moins gourmand dans les prélèvements sur les bailleurs sociaux -la RLS- et offre un vrai soutien à l'aide à la pierre\" , Vincent Jeanbrun Pour rappel, Vincent Jeanbrun a confié à Sylvain Grataloup, président de l'Union nationale des propriétaires immobiliers (UNPI), une mission pour redonner confiance aux propriétaires bailleurs privés. Ses propositions sont attendues pour début 2027. Un budget 2027 qui soit moins gourmand en prélèvements sur les bailleurs sociaux ? À Batiactu , le ministre a confié qu'il y avait \"une voie de passage\" pour faire adopter à l'Assemblée nationale le projet de loi relance logement du gouvernement adopté au Sénat le 8 juillet dernier. Le texte doit être examiné cet automne par les députés. Ne cachant pas que le budget 2027 serait \"extrêmement contraint\" , le ministre comptait \"donner un peu d'oxygène aux bailleurs sociaux qui ont été beaucoup mis à contribution ces dernières années. \" \"Il faut qu'on veille à ce que le budget 2027 soit moins gourmand dans les prélèvements sur les bailleurs sociaux -la RLS- et offre un vrai soutien à l'aide à la pierre. \"",
-      "selectionne": true,
-      "url_source": "https://luqi.fr/luqiLatest/diffusion/budget/a2t2p000000YwvIAAS/panorama/1407903?idRm=50000000375930475",
-      "type_contenu": "article",
-      "chaine": "",
-      "emission": "",
-      "themes_ush": [
-        "Politique du logement et de la ville",
-        "SECTEUR IMMOBILIER"
-      ],
-      "media_type": "WEB",
-      "id_coupure": "50000000375930475"
     },
     {
       "semaine": "S35-2026",
@@ -487,33 +514,6 @@
       ],
       "media_type": "WEB",
       "id_coupure": "50000000375896354"
-    },
-    {
-      "semaine": "S35-2026",
-      "media": "AFP - AGENCE FRANCE-PRESSE",
-      "titre": "Dans les logements inadaptés aux canicules, des morts de chaud par milliers",
-      "date_publication": "2026-08-21",
-      "auteur": "",
-      "resume": "Santé publique France a comptabilisé 7 300 décès en excès durant les canicules de fin mai à fin juillet 2026, la mortalité à domicile ayant plus que doublé, notamment chez les habitants de logements mal isolés ou de logements sociaux sans climatisation. Des associations comme la Fondation pour le logement dénoncent les « logements bouilloires » et les inégalités face à la chaleur dans les quartiers populaires.",
-      "mots_cles": [
-        "canicule",
-        "surmortalité",
-        "Santé publique France",
-        "logements bouilloires",
-        "Fondation pour le logement"
-      ],
-      "texte_integral": "21/08/2026 10:44:59 GMT Dans les logements inadaptés aux canicules, des morts de chaud par milliers \"Morte de chaud\" alors que Josette \"aurait continué sa vie de quasi-centenaire\" dans un logement frais. C'est le constat de son médecin qui observe, comme beaucoup de praticiens, les effets des logements inadaptés aux fortes chaleur sur la santé de leurs occupants. Médecin généraliste à Carpentras (Vaucluse), \"ville la plus chaude de France\", Sébastien Adnot passe d'appartement surchauffé en appartement surchauffé lors de ses visites à domicile. Parmi les décès survenus pendant les canicules de l'été, Josette, une femme âgée qui \"s'est affaiblie doucement, malgré la présence de sa famille, des perfusions\" et d'autres soins, avant de mourir \"de chaud\", raconte à l'AFP le médecin, également secrétaire général adjoint du syndicat MG France. \"De mémoire, il faisait entre 30 et 32 degrés chez elle. Son logement social est mal isolé, pas équipé de climatisation, elle disposait juste d'un ventilateur.\" Le Dr Adnot en est sûr: \"Si elle avait été en Ehpad ou avec la climatisation, elle aurait continué sa vie de presque centenaire\". Lors de la canicule historique de fin juin, et ses pics au-dessus de 40°C, la mortalité \"toutes causes\" (qu'on ne peut pas encore attribuer avec certitude à la chaleur) a été plus de deux fois plus élevée à domicile que celle des deux années précédentes, selon Santé publique France (SpF). L'agence a comptabilisé 7.300 décès en excès pendant les fortes chaleurs survenues de fin mai jusqu'au 22 juillet, selon un bilan provisoire divulgué mercredi et voué à s'alourdir. \"Les personnes décèdent à domicile car leur logement ne les a pas protégées\", accuse Maider Olivier, chargée de plaidoyer climat à la Fondation pour le logement des défavorisés, alertant l'Etat sur les logements bouilloires et la surexposition des quartiers populaires aux canicules. - Risque multiplié par 5 Ces logements particulièrement inadaptés aux fortes chaleurs sont \"au dernier étage, petits, souvent pas traversants, sans occultations extérieures et situés en ville, dans un îlot de chaleur\", décrit Maider Olivier.\n\nLors de la canicule de 2003, qui avait causé 15.000 décès, la mortalité à domicile avait doublé, et SpF avait observé un risque mortel 4,8 fois plus élevé chez les habitants d'immeubles anciens non isolés que ceux habitant un immeuble récent ou isolé. Dans le nord-est de Paris, où François Raymond effectue ses tournées d'infirmier libéral, des habitants d'immeubles des années 1960 et 1970 ont remarqué que \"la canicule de juin a été plus supportable qu'en 2003\" en raison des travaux d'isolation réalisés ces dernières années. Le risque de décès est aussi multiplié par 4,1 pour les personnes dont la chambre se trouve sous les toits et par 1,8 pour les habitants d'îlot de chaleur urbain. A Sceaux (Hauts-de-Seine), Louisette Rivalain, 93 ans, est décédée fîn juin d'une hyperthermie après avoir été retrouvée inanimée chez elle. Son décès \"était inévitable\" selon ses voisins, mettant en cause l'absence de volets, retirés par le bailleur social pour effectuer des travaux. A la même période, Daniel Topic, 60 ans, mourrait à Vannes, dans son logement \"mansardé, non isolé, sans volet, au dernier étage\", où 45°C ont été relevés, selon son frère qui a témoigné auprès de Ouest-France. - \"Vraie inégalité\" L'Académie nationale de médecine relève de son côté que 41% des personnes décédés en août 2003 à Paris vivaient dans un logement composé d'une seule pièce et dans 12% des cas, la superficie ne dépassait pas 10m3. Des collègues infirmiers ont rapporté à Ghislaine Sicre, présidente du syndicat Convergence infirmière, des situations alarmantes dans \"des maisons bungalow ou des cabanes de pêcheurs, des habitat petits, pas isolés et pas fait pour être habités en permanence, mais des personnes y vivent parce qu'elles sont précaires\". Les études mettent aussi en évidence l'importance des antécédents médicaux et de pathologies pré-existantes dans la vulnérabilité à la canicule de 2003, ainsi que la présence de l'entourage. \"C'est l'isolement social qui tue\", estime François Raymond. Sébastien Adnot voit clairement un lien entre surmortalité et revenus modestes. \"Les patients âgés, polypathologiques, qui ont les moyens d'avoir une maison climatisée ne vont pas à l'hôpital. La canicule va toucher ceux qui n'ont pas les moyens de s'en protéger, il y a une vraie inégalité\", relève-t-il.",
-      "selectionne": true,
-      "url_source": "https://luqi.fr/luqiLatest/diffusion/budget/a2t2p000000YwvIAAS/panorama/1403280?idRm=10000000072223703",
-      "type_contenu": "article",
-      "chaine": "",
-      "emission": "",
-      "themes_ush": [
-        "Architecture, urbanisme et développement durable",
-        "SECTEUR IMMOBILIER"
-      ],
-      "media_type": "PRESSE",
-      "id_coupure": "10000000072223703"
     }
   ]
 }

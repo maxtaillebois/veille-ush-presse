@@ -4,6 +4,84 @@
   "articles": [
     {
       "semaine": "S42-2026",
+      "media": "LES ECHOS",
+      "titre": "Encadrement des loyers : la sévère mise en  garde de la Cour des comptes",
+      "date_publication": "2026-10-15",
+      "auteur": "Elsa Dicharry",
+      "resume": "La Cour des comptes juge l'encadrement des loyers efficace à court terme pour limiter la hausse, mais pointe des biais méthodologiques et des difficultés juridiques. Rapport remis à la commission des Finances de l'Assemblée, alors que l'expérimentation touche Paris, Lille, Lyon, Bordeaux.",
+      "mots_cles": [
+        "encadrement des loyers",
+        "Cour des comptes",
+        "expérimentation",
+        "Paris"
+      ],
+      "texte_integral": "« Encadrement des loyers : la sévère mise en garde de la Cour des comptes »\n\nIMMOBILIER - Elsa Dicharry\n\nL’encadrement des loyers - notamment mis en place à Paris, Lille, Lyon, Bordeaux, Biarritz ou Grenoble - semble sans grande surprise avoir permis, à court terme, de limiter la hausse des loyers dans les villes où il a été instauré. Toutefois, le tableau est moins rose qu’il n’y paraît, car cette mesure positive souffre de biais méthodologiques et de difficultés juridiques. C’est le constat dressé par la Cour des comptes dans un rapport remis mercredi à la commission des Finances de l’Assemblée nationale.\n\nUn rapport qui tombe à pic, alors que l’expérimentation de l’encadrement des loyers doit prendre fin le 24 novembre prochain, et que les sénateurs doivent se prononcer la semaine prochaine sur une proposition de loi visant à le proroger. Ce texte avait été adopté en décembre 2018 en première lecture à une large majorité par les députés.\n\n« Fondements statistiques fragiles »\n\nLa mise en œuvre de l’encadrement des loyers repose sur des fondements statistiques fragiles, constate la Cour des comptes. D’abord parce que la représentativité des données utilisées par les observatoires locaux des loyers pour fixer les loyers médians servant de référence au plafonnement n’est «pas garantie». Ensuite parce que la méthodologie employée – qui compare des catégories de logements non homogènes – conduit à sous-estimer les loyers de marché des petits logements, notamment des studios, et à surestimer ceux des grands. Enfin parce que dans l’agglomération parisienne, il est complexe de prendre en compte les diversités locales.\n\nMais ce n’est pas tout : l’encadrement des loyers est aussi marqué par «une insécurité juridique persistante». Les propriétaires bailleurs sont autorisés à appliquer un complément de loyer dans les communes où l’encadrement est en vigueur, à condition que leur bien présente des caractéristiques particulières : une terrasse, une vue sur la tour Eiffel, etc. Toutefois, la définition législative des conditions permettant d’appliquer ce complément de loyer est imprécise, et «a donné lieu à une jurisprudence abondante et hétérogène».\nUn point d'ailleurs, intégré dans la proposition de loi bientôt examinée au Sénat, concernant le encadrement des loyers dans les zones tendues, se cumule par ailleurs avec un autre encadrement fondé sur l'indice de référence des loyers (IRL), qui détermine la hausse annuelle maximale autorisée, en tenant compte de l'inflation. Or, « leur combinaison peut soulever des difficultés lorsqu'une révision liée à l'IRL en cours de bail conduit à dépasser le loyer plafond », poursuit le rapport.\n\nEnfin, les arrêtés préfectoraux mettant en place l'encadrement des loyers ont suscité de nombreux contentieux devant la justice administrative. Et les trois voies de recours distinctes pour les locataires qui s'estiment lésés par leurs propriétaires - devant la commission départementale de conciliation, devant le juge et devant l'autorité préfectorale - ajoutent à la confusion.\n\nA tout cela s'ajoute une mauvaise connaissance du parc locatif privé et la suppression de la taxe d'habitation sur les résidences principales a conduit à une perte importante d'informations en la matière, souligne l'institution.\n\nLa Cour des comptes propose donc deux scénarios.\n\nSoit l'expérimentation de l'encadrement des loyers est prolongée - à période constante, sans y intégrer de nouvelles communes, afin de faciliter une future évaluation. Mais il faudra dans ce cas fiabiliser les données, améliorer les méthodes de calcul et clarifier le cadre juridique.\n\nSoit l'expérimentation est stoppée, mais le mécanisme de l'IRL est renforcé. Pour plus d'efficacité, le rapport propose d'améliorer l'information des locataires et de prévoir des sanctions en cas de non-respect de l'évolution de l'IRL.\n\nLa balle est désormais dans le camp des responsables politiques.\n\n(Fin du texte)\n\nL'encadrement des loyers, mis en place dans les grandes villes comme ici à Lyon, souffre, selon la Cour des comptes, de biais méthodologiques et de difficultés juridiques. (Crédit : Gilles Rolle pour Réalités)",
+      "selectionne": true,
+      "url_source": "https://luqi.fr/luqiLatest/diffusion/budget/a2t2p000000YwvIAAS/panorama/1451374?idRm=10000000072641098",
+      "type_contenu": "article",
+      "chaine": "",
+      "emission": "",
+      "themes_ush": [
+        "Politique du logement et de la ville",
+        "SECTEUR IMMOBILIER"
+      ],
+      "media_type": "PRESSE",
+      "id_coupure": "10000000072641098"
+    },
+    {
+      "semaine": "S42-2026",
+      "media": "AFP - AGENCE FRANCE-PRESSE",
+      "titre": "Le rabot de 350 millions d'euros de MaPrimeRénov' acté par l'Agence nationale de l'habitat",
+      "date_publication": "2026-10-14",
+      "auteur": "",
+      "resume": "L'Anah acte une baisse de 351 M€ du budget MaPrimeRénov' 2026, ramené de 4,38 à 4,01 Md€, répercutant le gel de crédits décidé par le gouvernement en juin.",
+      "mots_cles": [
+        "MaPrimeRénov'",
+        "Anah",
+        "gel de crédits",
+        "rénovation énergétique"
+      ],
+      "texte_integral": "14/10/2026 17:39:22 GMT Le rabot de 350 millions d'euros de MaPrimeRénov' acté par l'Agence nationale de l'habitat L'Agence nationale de l'habitat (Anah) a acté mercredi une baisse de 351 millions d'euros du budget des aides à la rénovation énergétique MaPrimeRénov' en 2026, en répercussion du gel de crédits décidé par le gouvernement en juin, selon une délibération consultée par l'AFP. Alors que l'Anah disposait initialement d'une enveloppe de 4,38 milliards d'euros pour distribuer ses différentes subventions, ce budget retombe à 4,01 milliards d'euros après les \"surgels budgétaires appliqués à l'établissement\" par l'Etat, selon la délibération adoptée mercredi par le conseil d'administration de l'agence. Afin d'éviter un dérapage du déficit public face aux effets de la guerre au Moyen-Orient, le gouvernement a annoncé en juin une série d'économies, portant sur plusieurs milliards d'euros dans la plupart des ministères. Au sein de l'Anah, c'est MaPrimeRénov' qui fait les frais de ce coup de rabot: le \"parcours accompagné\" qui désigne les rénovations globales de logements perd 255 millions d'euros de budget, les subventions pour la rénovation de copropriété reculent de 50 millions d'euros. Cela se traduit par une baisse du nombre de logements qui seront entièrement rénovées en 2026 de 14.241. Concernant le \"parcours par geste\" pour les travaux réalisés de façon isolée, le budget baisse de 46 millions d'euros, soit une baisse de 40.000 dossiers de subvention de travaux. Ce choix s'explique en outre par la décision du gouvernement de réduire la liste des travaux éligibles aux subventions pour les recentrer sur l'installation de pompes à chaleur. Dans un communiqué de presse, le conseil d'administration de l'Anah indique seulement avoir \"pris acte des évolutions intervenues au 1er septembre et au 1er octobre dernier en matière de rénovation énergétique par geste, en particulier le transfert des financements correspondants vers les certificats d'économie d'énergie (CEE)\", ce qui correspond au recentrage des subventions \"par geste\". Pour Jacques Baudrier, adjoint (PCF) chargé du logement à la mairie de Paris, la baisse de budget de MaPrimeRénov' représente un \"recul lamentable\" de l'Etat, qui \"brise une dynamique alors que les besoins n'ont jamais autant augmenté et qu'il s'agit du plus grand chantier historique du début du 21e siècle\".\n\nDésormais membre du conseil d'administration, il s'inquiète encore plus pour 2027, qui s'annonce \"pire\" étant donné la baisse de 200 millions d'euros de la dotation de l'Anah proposé par le gouvernement dans son projet de budget présenté début octobre. Jacques Baudrier plaide pour la création d'une nouvelle recette dédiée à la rénovation énergétique et pour permettre à l'Anah d'emprunter sur les marchés financiers.",
+      "selectionne": true,
+      "url_source": "https://luqi.fr/luqiLatest/diffusion/budget/a2t2p000000YwvIAAS/panorama/1451374?idRm=10000000072641180",
+      "type_contenu": "article",
+      "chaine": "",
+      "emission": "",
+      "themes_ush": [
+        "Acteurs du logement et partenaires",
+        "SECTEUR IMMOBILIER"
+      ],
+      "media_type": "PRESSE",
+      "id_coupure": "10000000072641180"
+    },
+    {
+      "semaine": "S42-2026",
+      "media": "LE MONITEUR.FR LA MATINALE (NEWSLETTER)",
+      "titre": "Présidentielle : les bailleurs sociaux ne veulent pas de Marine Le Pen mais se préparent à devoir travailler davantage avec le Rassemblement national",
+      "date_publication": "2026-10-14",
+      "auteur": "Cyril Peter",
+      "resume": "Au Congrès HLM de Bordeaux, Emmanuelle Cosse (USH) a défendu l'accueil des étrangers en situation régulière dans le parc social. Les bailleurs rejettent Marine Le Pen mais se préparent à travailler davantage avec le RN en cas de victoire à la présidentielle.",
+      "mots_cles": [
+        "Emmanuelle Cosse",
+        "Marine Le Pen",
+        "présidentielle",
+        "Congrès HLM"
+      ],
+      "texte_integral": "Présidentielle : les bailleurs sociaux ne veulent pas de Marine Le Pen mais se préparent à devoir travailler davantage avec le Rassemblement national Cyril Peter October 13,2026 « Le logement social loge les étrangers en situation régulière qui, comme les Français, paient des cotisations sociales, des impôts, épargnent et participent à l'économie de notre pays. » Applaudissements. Au Congrès HLM de Bordeaux le mois demier, Emmanuelle Cosse, présidente de l'Union sociale pour l'habitat (USH), la confédération des bailleurs sociaux qui organise l'événement, a donné le ton devant les acteurs du secteur qui voient d'un mauvais œil l'arrivée au pouvoirde Marine Le Pen, la candidate du Rassemblement national à l'élection présidentielle, favorite des sondages. Dans son discours dédié au logement prononcé à Hénin-Beaumont (Pas-de-Calais) le 13 septembre, puis très commenté dans la presse généraliste, « Marine Le Pen a présenté un programme d'extrême-droite qui désigne des boucs-émissaires :\n\nles étrangers », selon Emmanuelle Cosse. Une référence à la priorité nationale qui serait donnée aux ménages français dans l'attente d'un logement social, en cas de victoire du RN au printemps prochain. À lire aussr • En campagne à Batimat : Marine Le Pen veut « libérer la construction de ses normes » et présente son dispositif « 100% rénov'» Parmi les bailleurs, d'autres voix s'élèvent contre le RN. « Notre rôle estd'attribuerdes logements en fonction des ressources, des besoins et de la situation des ménages, et pas de la nationalité », appuie Michel Ménard, président de la fédération des Offices publics de l'habitat (OPH), parailleurs président socialiste du département de Loire-Atlantique. « Au sein de nos différentes familles, il y a un consensus pour affirmer que les valeurs du logement social sont încompatibles avec la priorité nationale », souligne Vincent Lourier, directeurde la fédération des coopératives HLM. Chiffres à l'appui, l'USH assure que les étrangers ne sont pas favorisés malgré une surreprésentation liée à leurs revenus et non leur nationalité. En 2025, le taux d'attribution de logements sociauxs'est élevé à 12% chez les ménages issus de l'Union européenne, 13% chez les extracommunautaires et 14% chez les demandeurs français, selon l'USH. Parailleurs, les étrangers représententactuellement 15% des locataires du parc social, pour une part d'environ 7% dans la population nationale, estime la confédération des organismes HLM. « La loi SRU, un acquis de la République » Autre mesure phare du RN qui crispe les professionnels du secteur : la suppression de la loi SRU. Adoptée en 2000 pour stimuler la construction HLM etfavoriser la mîxité sociale, cette loi oblige 2 208 communes à disposerde 20% ou 25% de logements conventionnés dans leur parc de résidences principales. Plus de la moitié d'entre elles sont déficitaires. « La loi SRU a permis de produire un million de logements sociaux là où ils manquaient », a déclaré Emmanuelle, en ouverture du Congrès HLM. « Nous défendrons la loi SRU, un acquis de la République qui a instauré une solidarité entre les territoires », annonce Vincent Lourier.\n\nLa bataille des idées est déclarée. « Le partî a bien identifié les préoccupations des Français en jouant sur les peurs, observe Valérie Fournier, présidente de la fédération des Entreprises sociales pour l'habitat (ESH). Mais il propose des solutions contradictoires : construire des logements sociaux mais supprimer la loi SRU, protéger terres agricoles mais supprimer le ZAN... Notre devoir, nous, bailleurs sociaux, est de démontrer que nous sommes utiles à la société, que nous logeons la caissière, l'infirmière... des gens indispensables où qu'on soit, y compris dans les territoîres en déprise où le discours de Marine Le Pen peut séduire. » À lire auss • Présidentielle 2027 : les propositions des principauxcandidats pour sortirde la crise du loaement De son côté, Vincent Lourier, pour les coopératives HLM, se prépare à l'éventualité d'une victoire du RN à la présidentielle des 18 avril et2 mai 2027 puis auxlégislatives dont la date n'est pas fixée : « Nous sommes républicains. Nous travaillerons avec la nouvelle majorité du Parlement dans l'intérêtdes locataires etdes accédants. » Même son de cloche chez Polylogis : « Nous travaillons déjà avec des municipalités dirigées par le RN, nous travaillons avec tout le monde », explique Cédric Loret, directeur général délégué du groupe qui fait partie de la famille des ESH. A une échelle plus globale incluant le marché privé, le programme du RN ne convainc pas les bailleurs sociaux. « Supprimer le ZAN et les contraintes liées au DPE : je ne suis pas sûr que cela permettre aux Français de se loger décemment », tacle Vincent Lourier. Le RNne porte « aucune solution sur la spéculation foncière » qui contribue à renchérir le prixdes logements ni même sur « l'accès à la propriété et l'encadrementdes loyers, deuxsujets en lien avec le pouvoird'achat », liste Emmanuelle Cosse. C'est pourtant l'une des principales préoccupations des électeurs.",
+      "selectionne": true,
+      "url_source": "https://luqi.fr/luqiLatest/diffusion/budget/a2t2p000000YwvIAAS/panorama/1450221?idRm=10000000072633897",
+      "type_contenu": "article",
+      "chaine": "",
+      "emission": "",
+      "themes_ush": [
+        "Mouvement Hlm",
+        "Mouvement Hlm – L’Union sociale pour l’habitat"
+      ],
+      "media_type": "PRESSE",
+      "id_coupure": "10000000072633897"
+    },
+    {
+      "semaine": "S42-2026",
       "media": "CHALLENGES",
       "titre": "Le prochain Budget sacrifie le logement",
       "date_publication": "2026-10-21",
@@ -82,32 +160,6 @@
     },
     {
       "semaine": "S42-2026",
-      "media": "LES ECHOS",
-      "titre": "Encadrement des loyers : la sévère mise en  garde de la Cour des comptes",
-      "date_publication": "2026-10-15",
-      "auteur": "Elsa Dicharry",
-      "resume": "La Cour des comptes juge l'encadrement des loyers efficace à court terme pour limiter la hausse, mais pointe des biais méthodologiques et des difficultés juridiques. Rapport remis à la commission des Finances de l'Assemblée, alors que l'expérimentation touche Paris, Lille, Lyon, Bordeaux.",
-      "mots_cles": [
-        "encadrement des loyers",
-        "Cour des comptes",
-        "expérimentation",
-        "Paris"
-      ],
-      "texte_integral": "« Encadrement des loyers : la sévère mise en garde de la Cour des comptes »\n\nIMMOBILIER - Elsa Dicharry\n\nL’encadrement des loyers - notamment mis en place à Paris, Lille, Lyon, Bordeaux, Biarritz ou Grenoble - semble sans grande surprise avoir permis, à court terme, de limiter la hausse des loyers dans les villes où il a été instauré. Toutefois, le tableau est moins rose qu’il n’y paraît, car cette mesure positive souffre de biais méthodologiques et de difficultés juridiques. C’est le constat dressé par la Cour des comptes dans un rapport remis mercredi à la commission des Finances de l’Assemblée nationale.\n\nUn rapport qui tombe à pic, alors que l’expérimentation de l’encadrement des loyers doit prendre fin le 24 novembre prochain, et que les sénateurs doivent se prononcer la semaine prochaine sur une proposition de loi visant à le proroger. Ce texte avait été adopté en décembre 2018 en première lecture à une large majorité par les députés.\n\n« Fondements statistiques fragiles »\n\nLa mise en œuvre de l’encadrement des loyers repose sur des fondements statistiques fragiles, constate la Cour des comptes. D’abord parce que la représentativité des données utilisées par les observatoires locaux des loyers pour fixer les loyers médians servant de référence au plafonnement n’est «pas garantie». Ensuite parce que la méthodologie employée – qui compare des catégories de logements non homogènes – conduit à sous-estimer les loyers de marché des petits logements, notamment des studios, et à surestimer ceux des grands. Enfin parce que dans l’agglomération parisienne, il est complexe de prendre en compte les diversités locales.\n\nMais ce n’est pas tout : l’encadrement des loyers est aussi marqué par «une insécurité juridique persistante». Les propriétaires bailleurs sont autorisés à appliquer un complément de loyer dans les communes où l’encadrement est en vigueur, à condition que leur bien présente des caractéristiques particulières : une terrasse, une vue sur la tour Eiffel, etc. Toutefois, la définition législative des conditions permettant d’appliquer ce complément de loyer est imprécise, et «a donné lieu à une jurisprudence abondante et hétérogène».\nUn point d'ailleurs, intégré dans la proposition de loi bientôt examinée au Sénat, concernant le encadrement des loyers dans les zones tendues, se cumule par ailleurs avec un autre encadrement fondé sur l'indice de référence des loyers (IRL), qui détermine la hausse annuelle maximale autorisée, en tenant compte de l'inflation. Or, « leur combinaison peut soulever des difficultés lorsqu'une révision liée à l'IRL en cours de bail conduit à dépasser le loyer plafond », poursuit le rapport.\n\nEnfin, les arrêtés préfectoraux mettant en place l'encadrement des loyers ont suscité de nombreux contentieux devant la justice administrative. Et les trois voies de recours distinctes pour les locataires qui s'estiment lésés par leurs propriétaires - devant la commission départementale de conciliation, devant le juge et devant l'autorité préfectorale - ajoutent à la confusion.\n\nA tout cela s'ajoute une mauvaise connaissance du parc locatif privé et la suppression de la taxe d'habitation sur les résidences principales a conduit à une perte importante d'informations en la matière, souligne l'institution.\n\nLa Cour des comptes propose donc deux scénarios.\n\nSoit l'expérimentation de l'encadrement des loyers est prolongée - à période constante, sans y intégrer de nouvelles communes, afin de faciliter une future évaluation. Mais il faudra dans ce cas fiabiliser les données, améliorer les méthodes de calcul et clarifier le cadre juridique.\n\nSoit l'expérimentation est stoppée, mais le mécanisme de l'IRL est renforcé. Pour plus d'efficacité, le rapport propose d'améliorer l'information des locataires et de prévoir des sanctions en cas de non-respect de l'évolution de l'IRL.\n\nLa balle est désormais dans le camp des responsables politiques.\n\n(Fin du texte)\n\nL'encadrement des loyers, mis en place dans les grandes villes comme ici à Lyon, souffre, selon la Cour des comptes, de biais méthodologiques et de difficultés juridiques. (Crédit : Gilles Rolle pour Réalités)",
-      "selectionne": true,
-      "url_source": "https://luqi.fr/luqiLatest/diffusion/budget/a2t2p000000YwvIAAS/panorama/1451374?idRm=10000000072641098",
-      "type_contenu": "article",
-      "chaine": "",
-      "emission": "",
-      "themes_ush": [
-        "Politique du logement et de la ville",
-        "SECTEUR IMMOBILIER"
-      ],
-      "media_type": "PRESSE",
-      "id_coupure": "10000000072641098"
-    },
-    {
-      "semaine": "S42-2026",
       "media": "LE POINT",
       "titre": "Plan Jeanbrun : l'État sauvera-t-il le marché ?",
       "date_publication": "2026-10-15",
@@ -131,32 +183,6 @@
       ],
       "media_type": "PRESSE",
       "id_coupure": "10000000072639185"
-    },
-    {
-      "semaine": "S42-2026",
-      "media": "AFP - AGENCE FRANCE-PRESSE",
-      "titre": "Le rabot de 350 millions d'euros de MaPrimeRénov' acté par l'Agence nationale de l'habitat",
-      "date_publication": "2026-10-14",
-      "auteur": "",
-      "resume": "L'Anah acte une baisse de 351 M€ du budget MaPrimeRénov' 2026, ramené de 4,38 à 4,01 Md€, répercutant le gel de crédits décidé par le gouvernement en juin.",
-      "mots_cles": [
-        "MaPrimeRénov'",
-        "Anah",
-        "gel de crédits",
-        "rénovation énergétique"
-      ],
-      "texte_integral": "14/10/2026 17:39:22 GMT Le rabot de 350 millions d'euros de MaPrimeRénov' acté par l'Agence nationale de l'habitat L'Agence nationale de l'habitat (Anah) a acté mercredi une baisse de 351 millions d'euros du budget des aides à la rénovation énergétique MaPrimeRénov' en 2026, en répercussion du gel de crédits décidé par le gouvernement en juin, selon une délibération consultée par l'AFP. Alors que l'Anah disposait initialement d'une enveloppe de 4,38 milliards d'euros pour distribuer ses différentes subventions, ce budget retombe à 4,01 milliards d'euros après les \"surgels budgétaires appliqués à l'établissement\" par l'Etat, selon la délibération adoptée mercredi par le conseil d'administration de l'agence. Afin d'éviter un dérapage du déficit public face aux effets de la guerre au Moyen-Orient, le gouvernement a annoncé en juin une série d'économies, portant sur plusieurs milliards d'euros dans la plupart des ministères. Au sein de l'Anah, c'est MaPrimeRénov' qui fait les frais de ce coup de rabot: le \"parcours accompagné\" qui désigne les rénovations globales de logements perd 255 millions d'euros de budget, les subventions pour la rénovation de copropriété reculent de 50 millions d'euros. Cela se traduit par une baisse du nombre de logements qui seront entièrement rénovées en 2026 de 14.241. Concernant le \"parcours par geste\" pour les travaux réalisés de façon isolée, le budget baisse de 46 millions d'euros, soit une baisse de 40.000 dossiers de subvention de travaux. Ce choix s'explique en outre par la décision du gouvernement de réduire la liste des travaux éligibles aux subventions pour les recentrer sur l'installation de pompes à chaleur. Dans un communiqué de presse, le conseil d'administration de l'Anah indique seulement avoir \"pris acte des évolutions intervenues au 1er septembre et au 1er octobre dernier en matière de rénovation énergétique par geste, en particulier le transfert des financements correspondants vers les certificats d'économie d'énergie (CEE)\", ce qui correspond au recentrage des subventions \"par geste\". Pour Jacques Baudrier, adjoint (PCF) chargé du logement à la mairie de Paris, la baisse de budget de MaPrimeRénov' représente un \"recul lamentable\" de l'Etat, qui \"brise une dynamique alors que les besoins n'ont jamais autant augmenté et qu'il s'agit du plus grand chantier historique du début du 21e siècle\".\n\nDésormais membre du conseil d'administration, il s'inquiète encore plus pour 2027, qui s'annonce \"pire\" étant donné la baisse de 200 millions d'euros de la dotation de l'Anah proposé par le gouvernement dans son projet de budget présenté début octobre. Jacques Baudrier plaide pour la création d'une nouvelle recette dédiée à la rénovation énergétique et pour permettre à l'Anah d'emprunter sur les marchés financiers.",
-      "selectionne": true,
-      "url_source": "https://luqi.fr/luqiLatest/diffusion/budget/a2t2p000000YwvIAAS/panorama/1451374?idRm=10000000072641180",
-      "type_contenu": "article",
-      "chaine": "",
-      "emission": "",
-      "themes_ush": [
-        "Acteurs du logement et partenaires",
-        "SECTEUR IMMOBILIER"
-      ],
-      "media_type": "PRESSE",
-      "id_coupure": "10000000072641180"
     },
     {
       "semaine": "S42-2026",
@@ -208,32 +234,6 @@
       ],
       "media_type": "WEB",
       "id_coupure": "50000000376316729"
-    },
-    {
-      "semaine": "S42-2026",
-      "media": "LE MONITEUR.FR LA MATINALE (NEWSLETTER)",
-      "titre": "Présidentielle : les bailleurs sociaux ne veulent pas de Marine Le Pen mais se préparent à devoir travailler davantage avec le Rassemblement national",
-      "date_publication": "2026-10-14",
-      "auteur": "Cyril Peter",
-      "resume": "Au Congrès HLM de Bordeaux, Emmanuelle Cosse (USH) a défendu l'accueil des étrangers en situation régulière dans le parc social. Les bailleurs rejettent Marine Le Pen mais se préparent à travailler davantage avec le RN en cas de victoire à la présidentielle.",
-      "mots_cles": [
-        "Emmanuelle Cosse",
-        "Marine Le Pen",
-        "présidentielle",
-        "Congrès HLM"
-      ],
-      "texte_integral": "Présidentielle : les bailleurs sociaux ne veulent pas de Marine Le Pen mais se préparent à devoir travailler davantage avec le Rassemblement national Cyril Peter October 13,2026 « Le logement social loge les étrangers en situation régulière qui, comme les Français, paient des cotisations sociales, des impôts, épargnent et participent à l'économie de notre pays. » Applaudissements. Au Congrès HLM de Bordeaux le mois demier, Emmanuelle Cosse, présidente de l'Union sociale pour l'habitat (USH), la confédération des bailleurs sociaux qui organise l'événement, a donné le ton devant les acteurs du secteur qui voient d'un mauvais œil l'arrivée au pouvoirde Marine Le Pen, la candidate du Rassemblement national à l'élection présidentielle, favorite des sondages. Dans son discours dédié au logement prononcé à Hénin-Beaumont (Pas-de-Calais) le 13 septembre, puis très commenté dans la presse généraliste, « Marine Le Pen a présenté un programme d'extrême-droite qui désigne des boucs-émissaires :\n\nles étrangers », selon Emmanuelle Cosse. Une référence à la priorité nationale qui serait donnée aux ménages français dans l'attente d'un logement social, en cas de victoire du RN au printemps prochain. À lire aussr • En campagne à Batimat : Marine Le Pen veut « libérer la construction de ses normes » et présente son dispositif « 100% rénov'» Parmi les bailleurs, d'autres voix s'élèvent contre le RN. « Notre rôle estd'attribuerdes logements en fonction des ressources, des besoins et de la situation des ménages, et pas de la nationalité », appuie Michel Ménard, président de la fédération des Offices publics de l'habitat (OPH), parailleurs président socialiste du département de Loire-Atlantique. « Au sein de nos différentes familles, il y a un consensus pour affirmer que les valeurs du logement social sont încompatibles avec la priorité nationale », souligne Vincent Lourier, directeurde la fédération des coopératives HLM. Chiffres à l'appui, l'USH assure que les étrangers ne sont pas favorisés malgré une surreprésentation liée à leurs revenus et non leur nationalité. En 2025, le taux d'attribution de logements sociauxs'est élevé à 12% chez les ménages issus de l'Union européenne, 13% chez les extracommunautaires et 14% chez les demandeurs français, selon l'USH. Parailleurs, les étrangers représententactuellement 15% des locataires du parc social, pour une part d'environ 7% dans la population nationale, estime la confédération des organismes HLM. « La loi SRU, un acquis de la République » Autre mesure phare du RN qui crispe les professionnels du secteur : la suppression de la loi SRU. Adoptée en 2000 pour stimuler la construction HLM etfavoriser la mîxité sociale, cette loi oblige 2 208 communes à disposerde 20% ou 25% de logements conventionnés dans leur parc de résidences principales. Plus de la moitié d'entre elles sont déficitaires. « La loi SRU a permis de produire un million de logements sociaux là où ils manquaient », a déclaré Emmanuelle, en ouverture du Congrès HLM. « Nous défendrons la loi SRU, un acquis de la République qui a instauré une solidarité entre les territoires », annonce Vincent Lourier.\n\nLa bataille des idées est déclarée. « Le partî a bien identifié les préoccupations des Français en jouant sur les peurs, observe Valérie Fournier, présidente de la fédération des Entreprises sociales pour l'habitat (ESH). Mais il propose des solutions contradictoires : construire des logements sociaux mais supprimer la loi SRU, protéger terres agricoles mais supprimer le ZAN... Notre devoir, nous, bailleurs sociaux, est de démontrer que nous sommes utiles à la société, que nous logeons la caissière, l'infirmière... des gens indispensables où qu'on soit, y compris dans les territoîres en déprise où le discours de Marine Le Pen peut séduire. » À lire auss • Présidentielle 2027 : les propositions des principauxcandidats pour sortirde la crise du loaement De son côté, Vincent Lourier, pour les coopératives HLM, se prépare à l'éventualité d'une victoire du RN à la présidentielle des 18 avril et2 mai 2027 puis auxlégislatives dont la date n'est pas fixée : « Nous sommes républicains. Nous travaillerons avec la nouvelle majorité du Parlement dans l'intérêtdes locataires etdes accédants. » Même son de cloche chez Polylogis : « Nous travaillons déjà avec des municipalités dirigées par le RN, nous travaillons avec tout le monde », explique Cédric Loret, directeur général délégué du groupe qui fait partie de la famille des ESH. A une échelle plus globale incluant le marché privé, le programme du RN ne convainc pas les bailleurs sociaux. « Supprimer le ZAN et les contraintes liées au DPE : je ne suis pas sûr que cela permettre aux Français de se loger décemment », tacle Vincent Lourier. Le RNne porte « aucune solution sur la spéculation foncière » qui contribue à renchérir le prixdes logements ni même sur « l'accès à la propriété et l'encadrementdes loyers, deuxsujets en lien avec le pouvoird'achat », liste Emmanuelle Cosse. C'est pourtant l'une des principales préoccupations des électeurs.",
-      "selectionne": true,
-      "url_source": "https://luqi.fr/luqiLatest/diffusion/budget/a2t2p000000YwvIAAS/panorama/1450221?idRm=10000000072633897",
-      "type_contenu": "article",
-      "chaine": "",
-      "emission": "",
-      "themes_ush": [
-        "Mouvement Hlm",
-        "Mouvement Hlm – L’Union sociale pour l’habitat"
-      ],
-      "media_type": "PRESSE",
-      "id_coupure": "10000000072633897"
     },
     {
       "semaine": "S42-2026",

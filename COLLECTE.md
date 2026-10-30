@@ -23,7 +23,7 @@ ou en cas d'échec bloquant explicite.
 
 ## Variables de routine attendues
 `VUSH_TENANT`, `VUSH_CLIENT_ID`, `VUSH_CLIENT_SECRET` (app Graph « n8n Outlook »),
-`VUSH_MAILBOX` (boîte à lire), `VUSH_GH_PAT` (PAT GitHub), `VUSH_RECAP_TO` (optionnel).
+`VUSH_MAILBOX` (boîte à lire), `VUSH_GH_PAT` (PAT GitHub), `VUSH_RECAP_TO` (optionnel — liste séparée par des virgules ; si elle n'est pas définie, le script utilise `RECAP_TO_DEFAULT` : Maxime + Aurélie + Stéphanie).
 
 ---
 
@@ -100,7 +100,7 @@ N'oublie aucun article : `build` échoue si un `id_coupure` manque.
 ```bash
 python3 veille_ush.py build        # fusionne raw + analyse -> articles.json (valide la QC)
 python3 veille_ush.py push          # commit + push GitHub
-python3 veille_ush.py mail-recap    # mail récap à Maxime
+python3 veille_ush.py mail-recap    # mail récap aux 3 destinataires (voir RECAP_TO_DEFAULT)
 ```
 
 `build` refuse de continuer si la QC échoue (résumé vide, < 3 mots-clés, article

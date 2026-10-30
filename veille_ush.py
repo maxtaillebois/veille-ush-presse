@@ -8,7 +8,7 @@ Sous-commandes :
   collect    Outlook (Graph) -> panoramas LuQi -> raw_articles.json
   build      Fusionne raw_articles.json + analyse.json (agent) -> articles.json
   push       Commit + push articles.json sur GitHub
-  mail-recap Envoie le récap par mail (Graph) à Maxime
+  mail-recap Envoie le récap par mail (Graph) aux destinataires de la veille
 
 Tout le HTTP sortant passe par `curl` (piège n°12 de la doc : requests/urllib
 peuvent être bloqués par le sandbox ; curl est validé).
@@ -19,7 +19,8 @@ Variables d'environnement (définies en variables de routine, jamais dans le cod
   VUSH_CLIENT_SECRET   Client secret de l'app Graph
   VUSH_MAILBOX         Boîte à lire (ex. maxime.taillebois@procivis.fr)
   VUSH_GH_PAT          PAT GitHub (Contents: read/write sur veille-ush-presse)
-  VUSH_RECAP_TO        Destinataire du mail récap (défaut = VUSH_MAILBOX)
+  VUSH_RECAP_TO        Destinataires du mail récap, séparés par des virgules
+                       (optionnel — défaut = RECAP_TO_DEFAULT ci-dessous)
 """
 
 import json
@@ -30,6 +31,16 @@ import sys
 import tempfile
 import html as htmllib
 from datetime import date, datetime, timedelta, timezone
+
+# Destinataires du mail récap du vendredi matin : les trois personnes qui font la
+# veille (Maxime, Aurélie, Stéphanie). Pour ajouter ou retirer quelqu'un, modifier
+# cette liste et pousser sur `main` — la routine clone le dépôt à chaque run.
+# La variable de routine VUSH_RECAP_TO, si elle est définie, remplace cette liste.
+RECAP_TO_DEFAULT = (
+    "maxime.taillebois@procivis.fr,"
+    "aurelie.hennetier@procivis.fr,"
+    "stephanie@papiersdesoi.fr"
+)
 
 REPO_DIR = os.path.dirname(os.path.abspath(__file__))
 RAW_PATH = os.path.join(REPO_DIR, "raw_articles.json")
@@ -431,7 +442,10 @@ def _fmt_date(iso_str):
 
 def cmd_mail_recap():
     mailbox = _env("VUSH_MAILBOX")
-    recap_to = os.environ.get("VUSH_RECAP_TO") or mailbox
+    recap_raw = os.environ.get("VUSH_RECAP_TO") or RECAP_TO_DEFAULT
+    recap_list = [a.strip() for a in recap_raw.replace(";", ",").split(",") if a.strip()]
+    if not recap_list:
+        fail("aucun destinataire pour le mail récap (VUSH_RECAP_TO vide).")
     if not os.path.exists(ARTICLES_PATH):
         fail("articles.json absent — lancer `build` avant `mail-recap`.")
     with open(ARTICLES_PATH, 'r', encoding='utf-8') as f:
@@ -463,7 +477,7 @@ def cmd_mail_recap():
         "message": {
             "subject": f"Veille presse USH {semaine} — collecte terminée",
             "body": {"contentType": "HTML", "content": body},
-            "toRecipients": [{"emailAddress": {"address": recap_to}}],
+            "toRecipients": [{"emailAddress": {"address": a}} for a in recap_list],
         },
         "saveToSentItems": True,
     }
@@ -482,7 +496,7 @@ def cmd_mail_recap():
         os.unlink(tmp)
     if rc != 0 or out.strip() not in ("202", "200"):
         fail(f"envoi du mail récap : http={out.strip()} {err}")
-    print(f"Mail récap envoyé à {recap_to}.")
+    print(f"Mail récap envoyé à {', '.join(recap_list)}.")
 
 
 # --------------------------------------------------------------------------
